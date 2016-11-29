@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .pseudo-classes{
+            width:800px;
+            height: auto;
+            padding-bottom: 25px;
+        }
+        a:link{
+            color: #00ff00;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+            color: red;
+        }
+        a:visited{
+            color:#000;
+        }
+        a:active{
+            color:blue;
+
+        }
+        #focusTest:focus{
+            background-color: #0000ff;
+        }
+        #focusButton:focus{
+            background-color: #ff0000;
+
+        }
+        #focusButton:hover{
+            background-color: red;
+        }
+        ul{
+            list-style: none;
+            /*display: none;*/
+            /*visibility: hidden;*/
+            /*margin-left: -20px;*/
+
+        }
+        #qw:checked~#qq{
+            visibility: hidden;
+
+        }
+        /*#qw:hover{*/
+            /*visibility: hidden;*/
+        /*}*/
+
+
+        #qq{
+            background-color: lime;
+            width: 100px;
+            height: 100px;
+        }
+        #qw{
+            margin-left: -20px;
+        }
+        #focusButton1{
+            background: none;
+            border: none;
+        }
+        #focusButton1 .inner{
+            width: 300px;
+            height: 150px;
+            background-color: blue;
+            visibility: hidden;
+        }
+        #focusButton1:focus .inner{
+            visibility: visible;
+        }
+        #focusButton1 .title{
+            width: 300px;
+            height: 25px;
+        }
+        #focusButton1:focus{
+            outline: none;
+        }
+        table{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            outline: none;
+            border-bottom: none;
+        }
+    </style>
+
+</head>
+<body>
+<h1>伪类</h1>
+<div id="qe" class="pseudo-classes">
+    <ul >
+        <li><a href="www.baidu.com">百度</a></li>
+        <li><a href="www.tencent.com">腾讯</a></li>
+        <li><a href="www.alibaba.com">阿里巴巴</a></li>
+        <li><a href="www.sina.com.cn">新浪</a></li>
+    </ul>
+    <br>
+
+    <input title="focus-test" type="text" id="focusTest">
+    <input type="button" id="focusButton" value="focusButton"><br>
+    <input type="checkbox" id="qw"><label for="qw">点击隐藏</label><br><br><br>
+
+    <div id="qq"></div>
+</div>
+<button id="focusButton1">
+    <div class="title">点我啊!</div>
+    <div class="inner"></div>
+</button>
+
+<table><tr><td>
+
+</td></tr></table>
+</body>
+</html>

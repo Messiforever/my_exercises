@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器与属性值选择器</title>
+    <style>
+        [title] {
+            color: #fff;
+            background-color: #777;
+        }
+
+        [title-abc] {
+            color: antiquewhite;
+        }
+
+        [data-code] {
+            color: #0f0;
+            background-color: #000;
+        }
+
+        [for=goodsId] {
+            color: red;
+        }
+
+        #goodsCode {
+            color: red;
+        }
+
+        #dataSubmitWrapper > label {
+            color: lime;
+        }
+
+        [title=abc] + [title=def] {
+            margin-top: 60px;
+        }
+
+        #dataSubmitWrapper {
+            margin-left: 200px;
+        }
+
+        [for=goodsName]~[for=goodsCode]{
+            color: aqua;
+        }
+        .pseudo-classes{
+            width:800px;
+            height: auto;
+            padding-bottom: 25px;
+        }
+        a:link{
+            color: #00ff00;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        a:visited{
+            color:#000;
+        }
+        a:active{
+            color:blue;
+
+        }
+        #focusTest:focus{
+            background-color: #0000ff;
+        }
+        #focusButton:focus{
+            background-color: #ff0000;
+        }
+    </style>
+
+
+</head>
+<body>
+<h1>CSS属性选择器</h1>
+<p>段落一</p>
+<p title="abc">title-abc</p>
+<p title="def">title-def</p>
+<p data-code="ghi">data-code=ghi</p>
+<form action="#" method="post">
+    <div id="dataSubmitWrapper" class="container">
+        <label for="goodsCode">商品代码</label>：<input required id="goodsCode" type="text"><br>
+        <p><label for="goodsId">商品Id</label>: <input required type="text" id="goodsId"></p><br>
+        <label for="goodsName">商品名称</label>: <input required type="text" id="goodsName"><br>
+        <input type="submit" value="提 交"><input type="button" value="取 消"><br>
+        <label for="zhidingyi">是否为自定义</label>：<input type="checkbox" id="zhidingyi" checked name="gender">
+        <br>
+        <br>
+        <label for="address">产地</label>
+        <select id="address">
+            <option>成都</option>
+            <option>重庆</option>
+            <option selected>上海</option>
+            <option>北京</option>
+        </select><br>
+        <br>
+        <label>美国</label>：<input type="checkbox">
+        <label>英国</label>：<input type="checkbox">
+        <label>沙特阿拉伯</label>：<input type="checkbox">
+        <label>阿富汗</label>：<input type="checkbox">
+        <label>日本</label>：<input type="checkbox"><br>
+        <input type="checkbox"onclick="swapCheck()">
+    </div>
+    <br>
+
+</form>
+
+<label>头像</label>：<img src="html.jpg" height="200px">
+<br>
+<ul>
+    <li><a href="www.baidu.com">百度</a></li>
+    <li><a href="www.tencent.com">腾讯</a></li>
+    <li><a href="www.alibaba.com">阿里巴巴</a></li>
+    <li><a href="www.sina.com.cn">新浪</a></li>
+</ul>
+
+
+</body>
+</html>

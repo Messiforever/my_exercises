@@ -1,0 +1,256 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.header-outside{
+    width: 100%;
+    height: auto;
+
+}
+.header{
+    width: 1900px;
+    height: 84px;
+    margin: 0 auto;
+    border: 1px solid #C8C8C8;
+    /*background-color: #C8C8C8;*/
+
+}
+.header-inner{
+    width: 1500px;
+    height: 84px;
+    margin: 0 auto;
+    position: relative;
+}
+.header-inner div{
+    float: left;
+}
+.header-inner img{
+    display: block;
+}
+.header-select{
+     position: absolute;
+    top: 20px;
+     left: 138px;
+ }
+.serach{
+    position: absolute;
+    top: 20px;
+    left: 270px;
+    /*position: relative;*/
+}
+.serach input{
+    width: 456px;
+    height: 40px;
+}
+.serach img{
+    position: absolute;
+    right: 10px;
+    top: 3px;
+}
+.header-select select{
+    width: 100px;
+    height: 40px;
+}
+.add-button input{
+    width: 51px;
+    height: 41px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 41px;
+    font-family: 黑体;
+    color: white;
+    background-color: #C8C8C8;
+    position: absolute;
+    left: 800px;
+    top: 20px;
+}
+.user-comtent{
+    width: 700px;
+    height: 48px;
+    position: absolute;
+    bottom: 15px;
+    right: -100px;
+}
+.user-comtent img{
+    display: block;
+    float: left;
+}
+.user-comtent div{
+    float: left;
+}
+.user-comtent select{
+    border: none;
+}
+.user-comtent a{
+    text-decoration: none;
+    color: #444444;
+    font-family: 宋体;
+    font-size: 18px;
+
+}
+.user-comtent input[type=button]{
+    background-color: #FF4466;
+    border-radius: 6px;
+    border: none;
+    color: white;
+}
+.hrs{
+    width: 2px;
+    height: 31px;
+    background-color: #EBEBEB;
+}
+.comtent-outside{
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+.comtent{
+    width: 1900px;
+    height: 6318px;
+    margin: 0 auto;
+    background-color: #F1F2F3;
+}
+.comtent-inner{
+    width: 1500px;
+    height: 6318px;
+    background-color: #F1F2F3;
+    margin: 0 auto;
+    position: relative;
+}
+.comtent-header{
+    width: 1500px;
+    height: 610px;
+    position: absolute;
+    top: 50px;
+    border-bottom: 2px solid #D4D5D5;
+}
+.gallery{
+    position: absolute;
+}
+.hot{
+     width: 586px;
+     height: 368px;
+     position: absolute;
+     right: 0;
+     background-color: white;
+ }
+.app-download{
+    width: 586px;
+    height: 166px;
+    position: absolute;
+    right: 0;
+    bottom: 54px;
+    background-color: white;
+}
+.zhuanjijinxuan{
+    width: 1500px;
+    height: 524px;
+    position: absolute;
+    top: 662px;
+
+}
+.zhuanji-nav{
+    width: 1500px;
+    height: 105px;
+    position: absolute;
+}
+.zhuanji-nav h3{
+      position: absolute;
+      top: 20px;
+      font-family: 等线;
+}
+.gengduoderen,.wangqihuigu{
+    position: absolute;
+    right: 0;
+    top: 30px;
+}
+.wangqihuigu input,.gengduoderen input{
+    background-color: #22B4F6;
+    font-family: 微软雅黑;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 102px;
+    height: 35px;
+    font-size: 20px;
+}
+.zhuanji-gallery{
+    width: 1500px;
+    height: 408px;
+    position: absolute;
+    top: 105px;
+}
+.zhuanji-gallery .photos{
+    width: 282px;
+    height: 408px;
+    float: left;
+    margin-left: 22px;
+    background-color: white;
+}
+.danpingtuijian{
+    width: 1500px;
+    height: 533px;
+    position: absolute;
+    top: 1266px;
+}
+.danpingtuijian-head{
+    width: 1500px;
+    height: 58px;
+    position: absolute;
+}
+.danpingtuijian-gallery{
+    width: 1500px;
+    height: 376px;
+    position: absolute;
+    top: 58px;
+
+
+}
+.danpingtuijian-photos{
+    width: 282px;
+    height: 374px;
+    background-color: white;
+    float: left;
+    margin-left: 22px;
+}
+.zhuanji-gallery .photos:first-child,.danpingtuijian-photos:first-child{
+
+   margin-left: 2px;
+}
+.darentuijian{
+    width: 1504px;
+    height: 426px;
+    border-top: 2px solid #D4D5D5;
+    position: absolute;
+    top: 1885px;
+}
+.darentujian-head{
+    width: 1500px;
+    height: 108px;
+    position: absolute;
+}
+.darentuijian-gallery{
+    width: 1504px;
+    height: 318px;
+    position: absolute;
+    top: 108px;
+
+}
+.darentuijian-photos{
+    margin-left: 25px;
+    float: left;
+}
+.darentuijian-photos:first-child{
+  margin-left: 0;
+}
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+.footer-inner{
+    width: 1900px;
+    height: 335px;
+    background-color: #E1E2E3;
+    margin: 0 auto;
+}

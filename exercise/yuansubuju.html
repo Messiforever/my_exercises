@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素布局</title>
+    <style>
+        h1{
+            font-family:"微软雅黑 Light";
+        }
+        #username{
+          border-color: black;
+            background-color: aquamarine;
+        }
+        #sex{
+            color: lime;
+        }
+        span{
+            color: red;
+        }
+        img{
+            width: 100px;
+            margin-left: 50px;
+           margin-top: -13px;
+        }
+        #emil{
+            background-color: blue;
+            border-color: black;
+        }
+        #address{
+            font-family: 方正兰亭超细黑简体;
+            font-size: 35px;
+        }
+        #address1{
+            height: 35px;
+            width: 400px;
+
+        }
+        h3{
+            font-style: italic;
+            color: blue;
+
+        }
+        ul,ol{
+            margin-left: 110px;
+            font-family: "微软雅黑 Light";
+        }
+        #huadong{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<h1>学员信息等级</h1><br>
+<label for="username">姓名</label>：<input type="text" id="username"><br>
+<label id="sex">性别</label>：<input type="radio" name="gender">男 <input type="radio" checked name="gender">女 <br>
+<label>爱好</label>：<input type="checkbox" name="lanqiu">篮球<input type="checkbox" name="weibo">刷微博<input type="checkbox" name="shaping">购物<input type="checkbox" name="zongjie"><span>总结知识结构技能</span>
+<br>
+<label>头像</label>：<br><img src="html.jpg" alt=""><br>
+<label for="emil">邮箱</label>：<input type="text" id="emil"><br><br><br>
+<laber>所在地</laber>：<select name="sheng">
+    <option value="">四川</option>
+    <option value="">陕西</option>
+    <option value="">山东</option>
+    <option value="">广西</option>
+</select>
+<select name="shi">
+    <option value="" selected>成都</option>
+    <option value="">重庆</option>
+    <option value="">西安</option>
+    <option value="">上海</option>
+</select>
+<select name="qu">
+    <option value="" selected>双流</option>
+    <option value="">武侯</option>
+    <option value="">温江</option>
+    <option value="">锦江</option>
+</select>
+<select name="street" id="">
+    <option value="" selected>贵溪街道</option>
+    <option value="">武侯街道</option>
+    <option value="">温江街道</option>
+    <option value="">锦江街道</option>
+</select>
+<br><br>
+<label id="address">详细地址</label>：<input id="address1" type="text">
+<h3>考过的证书：</h3>
+<ul>
+    <li>计算机登记证</li>
+    <li>好人证</li>
+    <li>学位证</li>
+</ul>
+<br>
+<ol start="5" type="I">
+    <li>大学英语四级证</li>
+    <li>证书</li>
+    <li>优秀团员</li>
+    <li>五好学生证</li>
+</ol>
+<br>
+<br>
+<label for="">数学成绩</label>：<input type="number" id="huadong">
+<br>
+<label for="">空气湿度</label>：<input type="range">
+</body>
+</html>

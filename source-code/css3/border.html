@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3 边框</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        body .row:after{
+            content:' ';
+            clear:both;
+            display:block;
+        }
+        body .instance{
+            width:300px;
+            height:120px;
+            margin-top:35px;
+        }
+        .border-exercise{
+            border-radius:25px;
+            background-color:#333;
+            color:#fff;
+            padding:20px;
+        }
+        .border-shadow,.border-shadow1{
+            box-shadow:10px 10px 25px 5px #888;
+            border:1px solid #f00;
+            float:left;
+        }
+        .border-image{
+            border: 15px dashed transparent;
+
+            border-image-source:url(../images/biubiu/border.png);
+            border-image-repeat:round;/*repeat stretch*/
+            border-image-slice:30 30;
+            /*border-image:url(../images/biubiu/border.png) 30 30 round;*/
+        }
+        .border-image2{
+            border: 15px dashed transparent;
+            border-image-source: url(../images/biubiu/topic.png);
+            border-image-repeat: round;
+            border-image-slice: 13 13;
+        }
+        .border-shadow1{
+            box-shadow:0 0 25px 5px #888 inset;
+            margin-left:55px;
+        }
+    </style>
+</head>
+<body>
+    <div class="border-exercise instance">
+        圆角矩形
+    </div>
+
+    <div class="row">
+        <div class="border-shadow instance">
+            边框阴影
+        </div>
+        <div class="border-shadow1 instance">
+            内边框阴影
+        </div>
+    </div>
+
+    <div class="border-image instance">
+        border image;
+    </div>
+    <div class="border-image2 instance">
+        border image;
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pseudo-class</title>
+    <style>
+        .pseudo-classes{
+            width:800px;
+            height:auto;
+            padding-bottom:25px;
+        }
+        a:link{
+            color:#00ff00;
+        }
+        a:hover{
+            text-decoration:none;
+            color:#f00;
+        }
+        a:visited{
+            color:#000;
+        }
+        a:active{
+            color:blue;
+        }
+        #focusTest:focus{
+            background-color:#0000ff;
+        }
+        #focusButton:focus{
+            background-color:#ff0000;
+        }
+        .show-element{
+            width:200px;
+            height:120px;
+            background-color:#00ff00;
+            /*display:none;*/
+            visibility:hidden;
+        }
+        #checkedTest{
+            margin-left:-20px;
+        }
+        #checkedTest:checked ~ .show-element{
+            visibility:visible;
+        }
+        #focusButton1{
+            background:none;
+            border:none;
+        }
+        #focusButton1 .title{
+            width:300px;
+            height:25px;
+        }
+        #focusButton1 .inner{
+            width:300px;
+            height:150px;
+            background-color:#000;
+            visibility:hidden;
+        }
+        #focusButton1:focus{
+            outline:none;
+        }
+        #focusButton1:focus .inner{
+            visibility:visible;
+        }
+        .nth-child-container{
+            width:300px;
+            height:200px;
+        }
+        .nth-child-container label:first-child{
+            color:#f00;
+        }
+        .nth-child-container label:last-child{
+            color:#f00;
+        }
+        .nth-child-container label:nth-child(7){
+            color:#0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>伪类</h1>
+    <h2>a标签的伪类</h2>
+    <div class="pseudo-classes">
+        <ul>
+            <li>
+                <a href="http://sina.com">新浪</a>
+            </li>
+            <li>
+                <a href="http://tencent.com">腾讯</a>
+            </li>
+            <li>
+                <a href="http://www.taobao.com">淘宝</a>
+            </li>
+            <li>
+                <a href="http://www.google.com">谷歌</a>
+            </li>
+        </ul>
+        <input title="focus-test" type="text" id="focusTest" />
+        <input type="button" id="focusButton" value="focusButton" />
+    </div>
+    <input type="checkbox" id="checkedTest">
+    <label for="checkedTest">toggle</label>
+    <div class="show-element">
+    </div>
+    <button id="focusButton1">
+        <div class="title">
+            点我啊！
+        </div>
+        <div class="inner">
+        </div>
+    </button>
+
+    <div class="nth-child-container">
+        <label>first-child</label> <br />
+        <label>child</label> <br />
+        <label>child</label> <br />
+        <label>child</label> <br />
+        <label>child</label> <br />
+        <label>last-child</label>
+    </div>
+
+</body>
+</html>

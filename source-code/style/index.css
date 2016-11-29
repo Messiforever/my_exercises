@@ -1,0 +1,304 @@
+body{
+    margin:0;
+}
+*{
+    box-sizing:border-box;
+}
+a{
+    color:#fff;
+    text-decoration:none;
+}
+.logo-container{
+    width:100%;
+    height:156px;
+    position:relative;
+}
+.logo-inner{
+    width:1000px;
+    height:100%;
+    margin:0 auto;
+    position:absolute;
+    left:50%;
+    margin-left:-500px;
+    text-align:center;
+}
+.logo-container .logo{
+    width:173px;
+    height:90px;
+}
+.logo-inner > .logo{
+    width:173px;
+    height:90px;
+    background-image:url(../images/biubiu/logo.png);
+}
+.logo-container a{
+    display:block;
+    width:173px;
+    height:90px;
+    margin-top:21px;
+    margin-left:15px;
+    text-decoration:none;
+}
+.web-title{
+    width:173px;
+    height:auto;
+    margin-top:9px;
+    color:#000;
+    letter-spacing:2px;
+}
+.navigator{
+    width:100%;
+    height:35px;
+    background-color:#8C2106;
+}
+.navigator .inner{
+    width:1000px;
+    height:100%;
+    margin:0 auto;
+    line-height:35px;
+}
+.navigator .inner a{
+    display:block;
+    float:left;
+}
+.search-container{
+    width:280px;
+    height:25px;
+    background-color:#E13409;
+    float:left;
+    margin-top:5px;
+    margin-left:16px;
+    border:1px solid #6F1A04;
+    border-radius:5px;
+    line-height:1px;
+}
+.search-input{
+    height:100%;
+    background-color:rgba(0,0,0,0);
+    border:none;
+    outline:none;
+    width:258px;
+    padding-left:5px;
+    color:#fff;
+}
+.search-container > *{
+    display:block;
+    float:left;
+}
+.search-container > img{
+    margin-top:1px;
+}
+.banner{
+    width:1000px;
+    height:auto;
+    margin:30px auto 0 auto;
+    overflow:hidden;
+}
+.banner > div{
+    float:left;
+}
+.banner a{
+    color:#000;
+}
+.banner a:hover{
+    color:purple;
+    text-decoration:underline;
+}
+.banner li{
+    /*margin-top:5px;*/
+    line-height:28px;
+}
+.hot-app{
+    width:158px;
+    height:auto;
+    margin-left:15px;
+}
+.hot-app .title{
+    width:100%;
+    height:29px;
+    border-left:solid #E13409 8px;
+    border-bottom:solid #E13409 7px;
+    padding-left:5px;
+}
+.gallery{
+    width:491px;
+    height:auto;
+    margin-left:23px;
+    position:relative;
+}
+.gallery img{
+    display:block;
+}
+.gallery-control-container{
+    width:100%;
+    height:39px;
+    background-color:rgba(0,0,0,0.5);
+    position:absolute;
+    bottom:0;
+}
+
+.gallery-controller{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background-color:#959595;
+    float:right;
+    text-align:center;
+    line-height:24px;
+    margin-right:20px;
+    margin-top:8px;
+    cursor:pointer;
+}
+.gallery-controller:last-child{
+    background-color:#f00;
+    color:#fff;
+}
+
+.gallery-controller:hover{
+    background-color:red;
+    color:#fff;
+}
+.hot-remark{
+    width:290px;
+    height:auto;
+    margin-left:15px;
+}
+.hot-remark .title{
+    width:100%;
+    height:29px;
+    border-left:8px solid #E13409;
+    border-bottom:7px solid #E13409;
+    padding-left:5px;
+}
+.hot-app-list a{
+    color:#000;
+}
+
+.hot-app-list{
+    margin-left:-25px;
+}
+.order-app{
+    width: 928px;
+    height:auto;
+    margin:40px auto 0 auto;
+}
+.order-result-container{
+    width:928px;
+    height: auto;
+    margin:0 auto;
+}
+.order-result{
+    width:970px;
+    height:auto;
+    margin:0 auto;
+    text-align:center;
+    overflow:hidden;
+}
+.app-container{
+    width:150px;
+    height:auto;
+    float:left;
+    margin-right:44px;
+    margin-bottom:32px;
+}
+.app-container img{
+    display:block;
+    border:1px solid #fdc880;
+    margin-bottom:10px;
+}
+.pager{
+    width:928px;
+    height:auto;
+    margin:21px auto 0 auto;
+}
+.pager input[type=button]{
+    height:32px;
+    border-radius:5px;
+}
+.pager input[type=button]:focus{
+    outline:none;
+}
+.pager span{
+    font-size:50px;
+    letter-spacing: -16px;
+    color:#999;
+}
+
+.footer{
+    width:100%;
+    height:250px;
+    background-color:#2D2D2D;
+    margin-top:34px;
+}
+.footer > .content{
+    width:1000px;
+    height:auto;
+    margin:0 auto;
+}
+.footer .content > div{
+    float:left;
+}
+.footer .links{
+    width:234px;
+    height:auto;
+}
+.friendship{
+    width:74px;
+    height:auto;
+    color:#AD6503;
+    font-size:14px;
+    float:left;
+    margin-top:24px;
+}
+.friendship-content{
+    float:left;
+    list-style:none;
+    margin-left:-48px;
+    margin-top:46px;
+}
+.friendship-content a{
+    font-size:14px;
+    color:#B4B4B4;
+}
+.friendship-content > li{
+    margin-bottom: 9px;
+}
+.friendship-content > li:last-child{
+    margin-top: 30px;
+}
+.register{
+    width:255px;
+    height:auto;
+    color:#B2B2B2;
+    margin-left:123px;
+}
+.register p{
+    text-align:center;
+}
+.label-container{
+    float:left;
+    width:77px;
+    text-align:right;
+    font-size:14px;
+}
+.register input[type=text]
+,.register input[type=password]
+,.register input[type=number]{
+    width:178px;
+    height:27px;
+    border-radius: 4px;
+    background-color:#646464;
+    border:1px solid #FDAF46;
+}
+
+.register .row{
+    margin-bottom:12px;
+    text-align:right;
+}
+.register input[type=submit]{
+    width:54px;
+    height:30px;
+    border-radius:5px;
+    background-color:#b2b2b2;
+    border:none;
+}

@@ -1,0 +1,172 @@
+﻿<html>
+<head>
+	<title>
+		我的第一个网页
+	</title>
+	<style>
+		h1{
+			color:red;
+			font-size:14px;
+		}
+		p{
+			color:#f00;
+		}
+		p{
+			color:rgb(255,0,0);
+		}
+		p{
+			color:rgb(0%,100%,0%);
+		}
+		p{
+			font-size:32px;
+		}
+		h1,h2,h3,h4,h5,h6{
+			color:green;
+		}
+		body{
+			font-family:'Verdana, sans-serif';
+		}
+		p{
+			font-family:'微软雅黑';
+			background-color:rgba(255,255,0,1)
+		}
+		li span{
+			font-style:italic;
+			font-weight:normal;
+		}
+		h2 > span{
+			color:blue;
+		}
+		body h3 > span{
+			color:rgb(5,173,177);
+		}
+		hr + p{
+			margin-top:50px;
+		}
+		
+		#imgIdentifier{
+			width:300px;
+			height:150px;	
+			background-color:yellow;
+		}
+		.list-item{
+			width:300px;
+			height:200px;
+			background-color:gray;
+		}
+		
+		#sideBar{
+			width:600px;
+			height:500px;
+			background-color:gray;
+			margin:20px;
+		}
+		#sideBar ul > li p{
+			color:green;
+			background-color:yellow;
+		} 
+		
+	</style>
+</head>
+<body>
+	<div id="sideBar">
+		<div class="inner">
+			<ul>
+				<li>
+					<p>
+						这是后代无序列表项
+					</p>
+				</li>
+			</ul>
+		</div>
+		
+		<ul>
+			<li>
+				<p>
+					这是子无序列表项
+				</p>
+			</li>
+		</ul>
+		
+	</div>
+
+	<h1>This is title.</h1>
+	<h2>
+		<p>
+			<span>This is title.</span>
+		</p>
+		<span>I'm first children.</span>
+	</h2>
+	<h3>
+		<span>This is title.</span>
+	</h3>
+	<h4>This is title.</h4>
+	<h5>This is title.</h5>
+	<h6>This is title.</h6>
+	<hr />
+	
+	<p>
+		&nbsp;&nbsp;This is a paragraph,This is a paragraph,<br />This is a paragraph,
+		This is a paragraph,This is a paragraph,<br />This is a paragraph,This is a paragraph,
+		This is a paragraph,This is a paragraph,<br />This is a paragraph,
+		This is a paragraph,This is a <br />paragraph,This is a paragraph,
+		This is a paragraph,<br />This is a paragraph,
+		&lt;html&gt;
+	</p>
+	<hr />
+	<ul>
+		<li>
+			<span>我是span里的文字</span>
+		</li>
+		<li>Itme</li>
+		<li class="list-item">Itme</li>
+		<li>Itme</li>
+		<li>Itme</li>
+		<li>Itme</li>
+	</ul>
+	<ol start="4" type="a">
+		<li>Itme</li>
+		<li class="list-item">Itme</li>
+		<li class="list-item">Itme</li>
+		<li>Itme</li>
+		<li>Itme</li>
+		<li>Itme</li>
+	</ol>
+	<hr />
+	<a href="http://www.baidu.com" target="_blank">百度一下</a>
+	<img id="imgIdentifier" src="../images/html.jpg" title="图片提示文字" />
+	
+	<label>
+		I'm label.
+	</label>
+	
+	<form action="#">
+		<label>用户名</label>：<input type="text" name="userName" /> <br />
+		<label>密码</label>：<input type="password" name="passWord" /> <br />
+		<label>确认密码</label>：<input type="password" name="confirmPassword" /> <br />
+		<label>邮箱</label>：<input type="email" name="email" /><br />
+		<label>地址</label>：
+		<select>
+			<option>四川</option>
+			<option>广东</option>
+			<option>河北</option>
+			<option selected>河南</option>
+			<option>新疆</option>
+		</select><br />
+		<label>性别</label>：
+		<input type="radio" name="gender" />男
+		<input type="radio" checked name="gender" />女<br />
+		<label>爱好</label>：
+		<input type="checkbox" name="favorite" />魔兽世界
+		<input type="checkbox" name="favorite" />英雄联盟
+		<input type="checkbox" name="favorite" />骑马
+		<input type="checkbox" checked name="faorite" />射箭
+		<br />
+		<input type="submit" value="提交" name="submit" />
+		<input type="button" value="取消" name="cancel" />
+	</form>
+	<hr />
+	
+	
+<body>
+</html>

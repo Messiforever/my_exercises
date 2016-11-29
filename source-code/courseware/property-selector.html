@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器与属性值选择器</title>
+    <style>
+        [title] {
+            color: #fff;
+            background-color: #777;
+        }
+
+        [title=def] {
+            color: #00f;
+        }
+
+        [data-code] {
+            color: #0f0;
+            background-color: #000;
+        }
+
+        #dataSubmitWrapper label[for=goodsId] {
+            color: red;
+        }
+        .container li > [title]{
+            color:red;
+        }
+
+        .images-container{
+            width:400px;
+            height:350px;
+            background-color:#000;
+        }
+
+        .images-container img{
+            width:120px;
+        }
+    </style>
+</head>
+<body>
+<h1>CSS属性选择器</h1>
+<p>段落1</p>
+<p title="abc">title-abc</p>
+<p title="def">title-def</p>
+<p data-code="ghi">data-code = ghi</p>
+<hr/>
+
+<h2>示例3</h2>
+<div id="dataSubmitWrapper" class="container">
+    <form action="#">
+        <label for="goodsCode">商品代码</label>：<input id="goodsCode" type="text"/><br/>
+        <label for="goodsId">商品Id</label>：<input id="goodsId" type="text"/><br/>
+        <label for="goodsName">商品名称</label>：<input id="goodsName" type="text"/><br/>
+        <label for="isCustom">是否为自定义</label>：<input type="checkbox" id="isCustom"/><br/>
+        <label>商品特性</label>：
+        <input type="checkbox" id="i12"/> <label for="i12">易碎</label>
+        <input type="checkbox" id="i13"/> <label for="i13">防潮</label> <br/>
+        <label>出产地</label>：
+        <input type="radio" id="americ" name="addr"/><label for="americ">美国</label>
+        <input type="radio" id="japan" name="addr"/><label for="japan">日本</label>
+        <input type="radio" id="hongkong" name="addr"/><label for="hongkong">香港</label>
+        <input type="radio" id="china" name="addr"/><label for="china">中国</label> <br/>
+
+        <input type="submit" value="提 交"/> <input type="button" value="取 消"/> <br/>
+    </form>
+</div>
+
+<h2>示例2</h2>
+<div class="container">
+    <ul>
+        <li>
+            <p>无序列表项1</p>
+        </li>
+        <li>
+            <span title="attr1">我是span的文本</span>
+        </li>
+        <li>
+            <p title="attr1">我是有属性的无序列表文本</p>
+        </li>
+    </ul>
+</div>
+<hr/>
+
+<h3>示例4</h3>
+    <div class="images-container">
+    <img src="../images/html.jpg" alt="html" />
+    <img src="../images/img-test.jpg" alt="img-test" />
+    <img src="../images/img-test1.jpg" alt="img-test" />
+    <img src="../images/www.jpg" alt="www" />
+        <select name="" id="province">
+            <option value="0">四川</option>
+            <option value="1">四川</option>
+            <option value="2">四川</option>
+            <option value="3">四川</option>
+        </select>
+        <select name="" id="city">
+            <option value="0">成都</option>
+            <option value="1">四川</option>
+            <option value="2">四川</option>
+            <option value="3">四川</option>
+        </select>
+        <select name="" id="district">
+            <option value="0">双流</option>
+            <option value="1">四川</option>
+            <option value="2">四川</option>
+            <option value="3">四川</option>
+        </select>
+        <select name="" id="street">
+            <option value="0">某某街道</option>
+            <option value="1">四川</option>
+            <option value="2">四川</option>
+            <option value="3">四川</option>
+        </select>
+
+</div>
+
+<ol start="5" type="I">
+    <li>大学英语四级证</li>
+    <li>证书</li>
+    <li>优秀团员</li>
+    <li>五好学生证</li>
+</ol>
+<input type="number" /> ddddddddddd
+<input type="range" />
+
+</body>
+</html>
+

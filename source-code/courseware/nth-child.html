@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            width:1000px;
+            height:auto;
+            margin:0 auto;
+        }
+
+        ul.by-index > li:nth-child(3){
+            background-color:#f00;
+        }
+
+        .odd-even > li:nth-child(even){
+            background-color:#333;
+        }
+        .odd-even > li:nth-child(odd){
+            background-color:#ddd;
+        }
+
+        .muzela > li:nth-child(2){
+            background-color:#00ff00;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="by-index">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <ul class="odd-even">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+
+        <ul class="muzela">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+        </ul>
+    </div>
+</body>
+</html>

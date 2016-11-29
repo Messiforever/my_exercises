@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素</title>
+    <link rel="stylesheet" href="../style/pseudo-element.css">
+</head>
+<body>
+    <div>
+        <h1>伪元素</h1>
+        <hr>
+        <h2>:first-line</h2>
+        <p class="text-paragraph">
+            段落摘抄 <br>
+            1、生活如酒，或芳香，或浓烈，因为诚实，它变得醇厚；生活如歌，或高昂，或低沉，因为守信，它变得悦耳； 生活如画，或明丽，或素雅，因为诚信，它变得美丽。<br>
+            2、若能掬起一捧月光，我选择最柔和的；若能采来香山红叶，我选择最艳丽的；若能摘下满天星辰，我选择最明亮的。也许你会说，我的选择不是最好，但我的选择，我相信。<br>
+            3、当三闾大夫抱着石头与江水相拥，当西楚霸王自刎时的鲜血染红了整片夕阳，当普罗米修斯裸着身体被巨鹰啄食，当拉奥孔扭曲着身体仍想保卫自己的儿子，历史的悲风中发出阵阵悲鸣，但他们生命的结尾却那么响亮有力，数千年来仍叩击着人们的心灵，播放出永不低沉的生命绝唱！<br>
+            4、人生弯弯曲曲水，世事重重叠叠山。热情去奔跑，去超越，然后才能拾掇失意后的坦然，挫折后的不屈，困苦艰难后的从容。<br>
+            5、 我们的成长要摆脱低俗事物的纷扰，用传统文化来滋养。有句话叫柔日读史，刚日读经。是说意志懈怠时读史以明志：谋臣策士，家国三寸簧舌里；金戈铁马，江山万里血泪中。读史书，能养浩然正气。也是指骄躁狂暴时读经以养性：老庄之道，清净无为是非空；菩提之心，灵台空明尘埃无。读经书，能塑静俭德性。我国浩瀚的书海之中，蕴含着无尽的宝藏，它们是我们成长真正的养分。
+        </p>
+
+
+        <h2>:first-letter</h2>
+        <p class="first-letter-paragraph">
+            段落摘抄 <br>
+            1、生活如酒，或芳香，或浓烈，因为诚实，它变得醇厚；生活如歌，或高昂，或低沉，因为守信，它变得悦耳； 生活如画，或明丽，或素雅，因为诚信，它变得美丽。<br>
+            2、若能掬起一捧月光，我选择最柔和的；若能采来香山红叶，我选择最艳丽的；若能摘下满天星辰，我选择最明亮的。也许你会说，我的选择不是最好，但我的选择，我相信。<br>
+            3、当三闾大夫抱着石头与江水相拥，当西楚霸王自刎时的鲜血染红了整片夕阳，当普罗米修斯裸着身体被巨鹰啄食，当拉奥孔扭曲着身体仍想保卫自己的儿子，历史的悲风中发出阵阵悲鸣，但他们生命的结尾却那么响亮有力，数千年来仍叩击着人们的心灵，播放出永不低沉的生命绝唱！<br>
+            4、人生弯弯曲曲水，世事重重叠叠山。热情去奔跑，去超越，然后才能拾掇失意后的坦然，挫折后的不屈，困苦艰难后的从容。<br>
+            5、 我们的成长要摆脱低俗事物的纷扰，用传统文化来滋养。有句话叫柔日读史，刚日读经。是说意志懈怠时读史以明志：谋臣策士，家国三寸簧舌里；金戈铁马，江山万里血泪中。读史书，能养浩然正气。也是指骄躁狂暴时读经以养性：老庄之道，清净无为是非空；菩提之心，灵台空明尘埃无。读经书，能塑静俭德性。我国浩瀚的书海之中，蕴含着无尽的宝藏，它们是我们成长真正的养分。
+        </p>
+
+
+        <h2>伪元素插入内容</h2>
+        <h3>:before</h3>
+        <div class="before-test">
+            before test
+        </div>
+        <h3>:after</h3>
+        <div class="after-test">
+            after test
+        </div>
+
+        <h2>示例</h2>
+        <div class="pseudo-effects" id="pseudoEffects">
+            <a href="#pseudoEffects">content1</a>
+            <br /><a href="#pseudoEffects">content2</a>
+            <br /><a href="#pseudoEffects">content3</a>
+        </div>
+
+        <h2>示例2</h2>
+        <div class="pseudo-effects2" id="pseudoEffects2">
+            <a href="#pseudoEffects2">content1</a>
+            <br /><a href="#pseudoEffects2">content2</a>
+            <br /><a href="#pseudoEffects2">content3</a>
+        </div>
+
+
+
+        <h2>调用属性</h2>
+        <h3>:before</h3>
+        <div class="before-attr" data-illustrate="伪元素调用元素属性插入元素内容之前">
+            before content test
+        </div>
+        <h3>:after</h3>
+        <div class="after-attr" data-illustrate="伪元素调用元素属性插入元素内容之后">
+            after content test
+        </div>
+
+        <h2>计数</h2>
+        <h3>:before</h3>
+        <div class="before-counter">
+            <h1>HTML tutorials</h1>
+            <h2>HTML Tutorial</h2>
+            <h2>XHTML Tutorial</h2>
+            <h2>CSS Tutorial</h2>
+
+            <h1>Scripting tutorials</h1>
+            <h2>JavaScript</h2>
+            <h2>VBScript</h2>
+
+            <h1>XML tutorials</h1>
+            <h2>XML</h2>
+            <h3>xml-1</h3>
+            <h3>xml-2</h3>
+            <h3>xml-3</h3>
+            <h2>XSL</h2>
+        </div>
+
+        <h2>清除浮动</h2>
+        <div class="gallery-container">
+            <div class="item" style="background-color:pink;"></div>
+            <div class="item" style="background-color:greenyellow;"></div>
+            <div class="item" style="background-color:#6F1A04;"></div>
+            <div class="item" style="background-color:brown;"></div>
+            <div class="item" style="background-color:hotpink;"></div>
+            <div class="item" style="background-color:blueviolet;"></div>
+        </div>
+
+        <div class="gallery-container-test2"></div>
+
+        <h2>nth-child选择器</h2>
+        <div class="nth-child-container">
+            <ul class="single-selector">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+
+            <ul class="odd-even">
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+
+            <ul class="a3n0">
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <footer>
+        This is footer。
+    </footer>
+</body>
+</html>

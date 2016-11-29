@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1123练习</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .part1 {
+            width: 1366px;
+            height: 45px;
+            background-color: #3399ff;
+            margin: 0;
+
+        }
+
+        body {
+            padding: 0;
+            border: 0;
+            margin: 0;
+
+        }
+
+        #biaoti {
+            vertical-align: bottom;
+            color: white;
+            font-family: "微软雅黑 Light";
+            font-size: 30px;
+
+        }
+
+        #soushuo {
+
+            height: 35px;
+            border-radius: 6px;
+            border-color: white;
+            background-image: url("fangdajing.png");
+            background-position: 120px -9px;
+            background-repeat: no-repeat;
+
+        }
+
+        #button1 {
+            margin-left: 1000px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px #000000;
+            background-color: #3399ff;
+            border-color: #3399ff;
+
+        }
+
+        .part2 {
+            border-bottom: #3399ff solid 3px;
+            border-left: #3399ff solid 3px;
+            /*margin-left: 40px;*/
+            width: 150px;
+        }
+
+        #biaoti1 {
+            font-family: 微软雅黑;
+            font-size: 20px;
+            margin-left: 10px;
+            margin-bottom: -1px;
+        }
+
+        .part3 {
+            border-bottom: #3399ff solid 3px;
+            border-right: #3399ff solid 3px;
+            margin-left: 1130px;
+            width: 150px;
+            margin-top: -243px;
+        }
+
+        #biaoti2 {
+            font-family: 微软雅黑;
+            font-size: 20px;
+            margin-left: 55px;
+            margin-bottom: -1px;
+        }
+
+        .list1 {
+            float: left;
+
+            list-style: none;
+        }
+
+        #picture1 {
+            margin-top: -20px;
+            margin-left: 250px;
+        }
+
+        .list2 {
+            font-family: 微软雅黑;
+            margin-left: 1130px;
+            font-size: 20px;
+            list-style: disc;
+
+        }
+
+        .list3 {
+            font-family: 微软雅黑;
+            font-size: 20px;
+            list-style: disc;
+        }
+
+        .list4 {
+            float: left;
+            font-family: "微软雅黑";
+            font-size: 15px;
+            list-style: disc;
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+
+        #fengefu {
+            margin-top: 290px;
+        }
+
+        td {
+            width: 200px;
+            height: 250px;
+            background-color: #777777;
+            border-color: black;
+
+        }
+
+        .picture3 {
+            float: left;
+            margin-left: 45px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #button3 {
+            margin-top: 950px;
+            margin-left: 50px;
+        }
+
+        #last {
+            width: 1366px;
+            height: 600px;
+            background-color: #666666;
+            margin-top: 10px;
+            float: left;
+
+        }
+
+        .youqinglainjie {
+            margin-left: 40px;
+            font-size: 20px;
+            font-family: 微软雅黑;
+            color: white;
+        }
+
+        #youqinglianjie1 {
+            margin-left: 80px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        #fengexian {
+            margin-top: 930px;
+        }
+
+        #zhuce {
+            margin-left: 300px;
+
+            color: white;
+            font-family: 微软雅黑;
+            width: 260px;
+            height: 260px;
+        }
+
+        .zhuce1 {
+            float: right;
+
+        }
+
+        #zhuce1title {
+            margin-left: 150px;
+        }
+
+        #login {
+            margin-left: 700px;
+            margin-top: -300px;
+            width: 260px;
+            font-family: 微软雅黑;
+            font-size: 20px;
+            color: white;
+            height: 260px;
+
+        }
+
+        .login1 {
+            float: right;
+
+        }
+
+        #logintitle {
+            margin-left: 150px;
+
+        }
+    </style>
+</head>
+<body>
+<img src="r1_c1.gif" alt="">
+<div class="part1">
+    <label id="biaoti">首页&nbsp;</label><input id="soushuo" type="text"><input id="button1" type="button" value="登录">
+</div>
+<br>
+<ul>
+    <li class="list1">
+        <div class="part2"><p id="biaoti1">热门手游</p></div>
+        <ul class="list3">
+            <li>王者荣耀</li>
+            <li>皇室战争</li>
+            <li>刀塔传奇</li>
+            <li>崩坏三</li>
+            <li>阴阳师</li>
+        </ul>
+    </li>
+    <li class="list1"><img id="picture1" src="r3_c3.gif" alt=""></li>
+    <li class="list1">
+        <div class="part3"><p id="biaoti2">热门评论</p></div>
+        <ul class="list2">
+            <li>王者荣耀</li>
+            <li>皇室战争</li>
+            <li>刀塔传奇</li>
+            <li>崩坏三</li>
+            <li>阴阳师</li>
+        </ul>
+    </li>
+</ul>
+<br>
+<ul>
+    <li class="list4">按评论</li>
+    <li class="list4">按元素</li>
+
+</ul>
+<div id="fengefu">
+    <hr>
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    1
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    2
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    3
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    4
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    5
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    1
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    2
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    3
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    4
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    5
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    1
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    2
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    3
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    4
+</div>
+<div class="picture3">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    5
+</div>
+<hr id="fengexian">
+<input type="button" value="首页">
+<input type="button" value="上一页">
+<label>. . .</label>
+<input type="button" value="4">
+<input type="button" value="5">
+<input type="button" value="6">
+<input type="button" value="下一页">
+<input type="button" value="末页">
+
+
+<div id="last">
+    <label class="youqinglainjie">友情链接：</label>
+    <ul id="youqinglianjie1">
+        <li class="youqinglainjie"><a href="">百度</a></li>
+        <li class="youqinglainjie"><a href="">新浪</a></li>
+        <li class="youqinglainjie"><a href="">淘宝</a></li>
+        <li class="youqinglainjie"><a href="">世纪佳缘</a></li>
+    </ul>
+
+    <div id="zhuce">
+        <div id="zhuce1title"><h3>注册 <br></h3></div>
+        <div class="zhuce1"><label>用户名</label>：<input type="text"></div>
+        <div class="zhuce1"><label>密码</label>：<input type="text"></div>
+        <div class="zhuce1"><label>确认密码</label>：<input type="text"></div>
+        <div class="zhuce1"><label>手机</label>：<input type="text"></div>
+        <div class="zhuce1"><br><input type="button" value="注册"></div>
+    </div>
+    <div id="login">
+        <div id="logintitle"><h3>登录<br></h3></div>
+        <div class="login1"><label>用户名</label>：<input type="text"></div>
+        <div class="login1"><label>密码</label>：<input type="text"></div>
+        <div class="login1"><br><input type="button" value="登录"></div>
+    </div>
+</div>
+
+
+</body>
+</html>

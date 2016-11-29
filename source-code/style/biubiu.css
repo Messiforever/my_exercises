@@ -1,0 +1,343 @@
+body{
+    margin:0;
+    padding:0;
+}
+*{
+    box-sizing:border-box;
+}
+a{
+    color:#fff;
+    text-decoration:none;
+}
+.logo-container{
+    height:156px;
+    overflow: hidden;
+}
+.logo-container .inner{
+    width:1000px;
+    height:100%;
+    margin:0 auto;
+}
+.logo-container .inner .logo{
+    width:173px;
+    height:120px;
+    margin:21px 0 0 15px;
+    text-align:center;
+}
+.navigator{
+    height:35px;
+    background-color:#8C2106;
+}
+.navigator .inner{
+    width: 1000px;
+    height:100%;
+    margin:0 auto;
+    color:#fff;
+    line-height:35px;
+}
+.navigator .inner a{
+    display:block;
+    float:left;
+    width:65px;
+    height:100%;
+    text-align: center;
+}
+.search-container{
+    width: 280px;
+    height: 23px;
+    border-radius: 4px;
+    border: 1px solid #6F1A04;
+    background-color: #E13409;
+    float: left;
+    margin: 5px 0 0 3px;
+    line-height:1;
+}
+.search-container input{
+    width: 260px;
+    border:none;
+    background:none;
+    height:100%;
+    padding-left:3px;
+    color:#881F04;
+}
+.search-container input:focus{
+    outline:none;
+}
+
+.search-container .plus{
+    width:15px;
+    height: 18px;
+    background-image:url('../images/biubiu/plus.png');
+    float:right;
+    margin:2px 3px 0 0;
+    cursor:pointer;
+}
+.content{
+    width:1000px;
+    margin:30px auto 0 auto;
+    height:2000px;
+}
+.content .banner{
+    height:auto;
+    width:100%;
+    position:relative;
+    overflow:hidden;
+}
+.content .banner .hot-game{
+    width:181px;
+    height:auto;
+    float:left;
+}
+.content .banner .hot-game .title{
+    width:158px;
+    height:26px;
+    border-left:8px solid #E13409;
+    border-bottom:7px solid #E13409;
+    padding-left:5px;
+}
+.content .banner .hot-comment .title{
+    width:158px;
+    height:26px;
+    border-left:8px solid #E13409;
+    border-bottom:7px solid #E13409;
+    padding-left:5px;
+}
+.content .banner .gallery{
+    width:491px;
+    height:219px;
+    float:left;
+    position:relative;
+
+}
+.content .banner .gallery .bottom{
+    width:100%;
+    height:39px;
+    background-color:rgba(0,0,0,0.5);
+    position:absolute;
+    bottom:0;
+    left:0;
+}
+.content .banner .gallery .number-bottom{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background-color:#959595;
+    float:right;
+    text-align:center;
+    line-height:24px;
+    margin-top:8px;
+    margin-right:15px;
+}
+.content .banner .hot-comment{
+    width:290px;
+    height:auto;
+    float:right;
+}
+.content .banner a{
+    color:#000;
+}
+.content .banner a:hover{
+    color:#f00;
+    text-decoration:underline;
+}
+.content .search-result{
+    width:100%;
+    height:auto;
+}
+.content .search-bars{
+    height:40px;
+    border-bottom:1px solid #FDC880;
+    margin-top:20px;
+}
+.result-wrapper{
+    width: 926px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.result-container{
+    width: 970px;
+    height: auto;
+    overflow: hidden;
+}
+.result-container .item{
+    width: 150px;
+    height: 165px;
+    float: left;
+    margin:26px 44px 0 0;
+}
+.result-container .item img{
+    border:1px solid #FDC880;
+}
+
+.result-container .item p{
+    text-align: center;
+    margin: 7px 0;
+}
+
+.pager{
+    width:100%;
+    height:68px;
+    margin-top:74px;
+}
+.pager > *{
+    cursor:pointer;
+}
+.footer{
+    height:250px;
+    background-color:#000;
+    color:#B4B4B4;
+}
+.footer .inner{
+    width:1000px;
+    height:auto;
+    overflow:hidden;
+    margin:0 auto;
+}
+.footer .inner > *{
+    float:left;
+}
+.friend-links{
+    width:238px;
+    height:auto;
+    overflow:hidden;
+}
+.friend-links .links2{
+    width:100%;
+    height:auto;
+    clear:both;
+}
+.friend-links-container{
+    width: 150px;
+    height: auto;
+    float: left;
+    margin-top: 46px;
+    margin-bottom: 56px;
+}
+.friend-links a{
+    color:#B4B4B4;
+}
+.friend-links .title{
+    color:#AD6503;
+    float:left;
+    margin-top:23px;
+}
+.register{
+    width: 255px;
+    height: auto;
+    overflow: hidden;
+    margin-left: 100px;
+}
+.register h3{
+    text-align:center;
+}
+.register .row{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    clear: both;
+    margin-top: 12px;
+}
+.register .title{
+    width:80px;
+    height:25px;
+    text-align:right;
+    float:left;
+}
+.register input[type=text],
+.register input[type=password]{
+    float:left;
+    border:#FDAF46 1px solid;
+    background-color:#646464;
+    border-radius:3px;
+    height:25px;
+}
+.register.login{
+    float:right;
+}
+[type=submit].register,[type=submit].login{
+    float:right;
+    width:54px;
+    cursor:pointer;
+}
+.layer{
+    width:100%;
+    height:1000px;
+    position:fixed;
+    background-color:rgba(0,0,0,0.3);
+    top:0;
+    left:0;
+    z-index:500;
+    visibility:hidden;
+}
+[for=addRemark]{
+    cursor:pointer;
+}
+#addRemark{
+    visibility:hidden;
+}
+#addRemark:checked ~ .layer{
+    visibility:visible;
+}
+.remark-container{
+    width:920px;
+    height:425px;
+    background-color:#fff;
+    border-radius:4px;
+    margin:100px auto 0 auto;
+}
+.remark-container h4{
+    color:#ccc;
+}
+.remark-container textarea{
+    width:100%;
+    height:254px;
+    border-radius:4px;
+    color:#ccc;
+}
+
+.input-block{
+    width:80%;
+    height:auto;
+    margin:0 auto;
+}
+.input-checks{
+    width:100%;
+    height:auto;
+    overflow:hidden;
+}
+.input-checks div{
+    width: 142px;
+    height: 21px;
+    float: left;
+    position:relative;
+}
+.input-checks div label{
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    padding-left: 21px;
+}
+
+.input-checks div input[type=checkbox]:checked ~ .se-icon{
+    background-position:-377px -70px;
+}
+.input-checks div .se-icon{
+    width:20px;
+    height:20px;
+    background-image:url('../images/bg.png');
+    background-position:-375px -15px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.input-block .footer-wrapper{
+    height:40px;
+    width:100%;
+}
+.input-block .footer-wrapper button{
+    float:right;
+}
+
+

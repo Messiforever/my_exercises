@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+        }
+        *{
+            box-sizing:border-box;
+        }
+        .background-container{
+            width:300px;
+            height:200px;
+            background-image:url('../images/img-test.jpg');
+            background-size:250px 166px;
+            /*background-size:250px 120px;*/
+            background-repeat:no-repeat;
+            border:1px solid #000;
+        }
+
+        .background-origin{
+            width: 270px;
+            height: 195px;
+            background-image: url(../images/img-test.jpg);
+            margin-top: 15px;
+            background-size: 200px;
+            background-repeat: no-repeat;
+            padding: 30px;
+            border: 20px solid rgba(0,0,0,0.5);
+            /*background-origin:border-box;*/
+            /*background-origin:padding-box;*/
+            /*background-origin:content-box;*/
+        }
+        .background-multi{
+            width: 404px;
+            height: 262px;
+            border: #000 dotted 20px;
+            padding: 20px 0 0 56px;
+            margin: 30px 0;
+            background: url(../images/css3/background-2.png) content-box,
+            url(../images/css3/background-1.png) border-box;
+            background-size: 258px 190px,404px 262px;
+            background-repeat: no-repeat;
+            text-align: center;
+            line-height: 211px;
+        }
+        .clip{
+            width: 350px;
+            height:200px;
+            background-clip:content-box;
+            background-color:#000;
+            color:#fff;
+            border:10px pink solid;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        背景图的大小(background-size)
+    </div>
+
+    <div class="background-origin">
+        背景图定位(content-box、border-box、padding-box)
+    </div>
+
+    <div class="background-multi">
+        多重背景图片！！！
+    </div>
+
+    <div class="clip">
+        background-clip
+    </div>
+
+</body>
+</html>
+

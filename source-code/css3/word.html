@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本操作</title>
+    <style>
+        .text-container{
+            text-shadow: 0 0 5px #00f;
+            letter-spacing:20px;
+            border-radius:5px;
+        }
+        .break{
+            width:500px;
+            height:auto;
+            border:1px dotted #333;
+            padding:10px;
+            margin:20px 0;
+            border-radius:5px;
+        }
+        .break-auto{
+            /*word-wrap:break-word;*/
+        }
+        .indent{
+            width:130px;
+            text-indent:30px;
+        }
+        .negative-indent{
+            width:300px;
+            height: 112px;
+            margin:20px 0 0 30px;
+            text-indent:-30px;
+        }
+        .align-line{
+            width:600px;
+            height:auto;
+            text-align:right;
+            border:1px solid #333;
+        }
+        .word-letter-spacing{
+            word-spacing:30px;
+            letter-spacing: 3px;
+        }
+        .upcase-lowcase{
+            width:300px;
+        }
+        .decoration-container{
+            width:500px;
+            height:35px;
+            padding: 20px;
+            margin:10px;
+            border:1px dotted #000;
+            /*text-decoration:none;*/
+            /*text-decoration:underline;*/
+            text-decoration:overline;
+            /*text-decoration:line-through;*/
+        }
+        .white-space{
+            /*white-space:normal;*/
+            white-space:pre;
+        }
+        .no-wrap{
+            white-space:nowrap;
+            width:200px;
+            border:1px solid deepskyblue;
+            margin:10px;
+            padding:10px;
+        }
+        .no-wrap2{
+            width:400px;
+            margin:10px;
+            padding:10px;
+            border:1px solid deepskyblue;
+        }
+        .no-wrap2 li{
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            overflow:hidden;
+        }
+        .no-wrap2 a{
+            font-size:14px;
+            color:dodgerblue;
+            text-decoration:none;
+        }
+        .no-wrap2 a:hover{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        我是文本阴影
+    </div>
+
+    <div class="break">
+        我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！ 我是文本自动换行！
+    </div>
+    <div class="break break-auto">
+        I'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'mautobreaklineI'm
+    </div>
+
+    <p class="indent">
+        文本缩进，文本缩进，文本缩进，文本缩进，文本缩进，文本缩进，文本缩进，文本缩进，文本缩进。
+    </p>
+    <p class="negative-indent">
+        <input title="负缩进" type="text">负数文本缩进，负数文本缩进，负数文本缩进，负数文本缩进，负数文本缩进，负数文本缩进，负数文本缩进
+    </p>
+
+    <p class="align-line">
+        文本水平对齐方式啦啦啦。。。<br>
+        text-align:left;<br>
+        text-align:center;<br>
+    </p>
+
+    <p class="word-letter-spacing">
+        This is word spacing and letter spacing.
+    </p>
+
+    <p class="upcase-lowcase">
+        文本大小写<br>
+        text-transform:none;<br>
+        text-transform:uppercase;<br>
+        text-transform:lowercase;<br>
+        text-transform:capitalize;
+    </p>
+
+    <p class="decoration-container">
+        文本装饰
+    </p>
+
+    <p class="white-space">
+        处理空白                    字符
+    </p>
+    <p class="no-wrap">
+        不换行，超出文本束带结发收到两份的速度佛山大沥乐山大佛老师的浪费收到两份少得可怜。
+    </p>
+    <div class="no-wrap2">
+        <ul>
+            <li>
+                <a href="#">隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号</a>
+            </li>
+            <li>
+                <a href="#">隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号</a>
+            </li>
+            <li>
+                <a href="#">隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号</a>
+            </li>
+            <li>
+                <a href="#">隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号</a>
+            </li>
+            <li>
+                <a href="#">隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号，隐藏文本使用省略号</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

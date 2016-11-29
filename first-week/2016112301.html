@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*.qw{*/
+        /*width: 500px;*/
+        /*height: 500px;*/
+        /*background-image: url("背景雪碧图.png");*/
+        /*background-repeat: no-repeat;*/
+        /*background-color: #777777;*/
+        /*}*/
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-image: url("背景雪碧图.png");
+            margin-left: 100px;
+        }
+
+        .bg-sprite {
+            background-position: -129px -17px;
+        }
+
+        .bg-sprite:hover {
+            background-position: -129px -69px;
+        }
+
+        .bg-sprite1 {
+            background-position: -17px -17px;
+        }
+
+        .bg-sprite1:hover {
+            background-position: -17px -69px;
+        }
+
+        .bg-sprite2 {
+            background-position: -70px -17px;
+        }
+
+        .bg-sprite2:hover {
+            background-position: -70px -69px;
+        }
+
+        .bg-sprite3 {
+            background-position: -246px -17px;
+        }
+
+        .bg-sprite3:hover {
+            background-position: -246px -69px;
+        }
+
+        .qe {
+            width: 120px;
+            height: 120px;
+            background-color: lime;
+            box-sizing: border-box;
+            /*box-sizing: content-box;*/
+            border: 10px solid;
+            border-color: blue;
+
+        }
+
+        .position.absoaute2 {
+            position: relative;
+            top: 20px;
+            left: 20px;
+
+        }
+
+        .position.absoaute3 {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+        .position {
+            width: 55px;
+            height: 55px;
+            background-color: red;
+            margin-left: 20px;
+
+            float: left;
+        }
+
+        .position.absoaute4 .inner {
+            position: relative;
+            left: 10px;
+            top: 10px;
+            background-color: lime;
+        }
+
+        .position.absoaute5 {
+            position: fixed;
+            top: 200px;
+            left: 200px;
+        }
+
+        #table1 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid;
+            border-color: black;
+            border-collapse: collapse;
+            margin-left: 300px;
+            background-color: #BEBEBE;
+            border-style: dashed;
+
+        }
+
+        td {
+            border: 1px solid;
+            border-color: black;
+            text-align: center;
+            border-style: dashed;
+
+        }
+        #table2{
+            position: relative;
+            top:40px;
+            left: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="icon"></div>
+<div class="bg-sprite icon">1</div>
+<div class="bg-sprite1 icon">2</div>
+<div class="bg-sprite2 icon">3</div>
+<div class="bg-sprite3 icon">4</div>
+<div class="qe">
+
+</div>
+
+<div class="absoaute1 position ">1</div>
+<div class="absoaute2 position">2</div>
+<div class="absoaute3 position ">3</div>
+<div class="absoaute4 position ">4
+    <div class="inner position">5</div>
+
+
+</div>
+<div class="absoaute5 position">5</div>
+
+<table id="table1">
+    <tr>
+        <td colspan="2">
+            1
+        </td>
+        <td>
+            1
+        </td>
+
+        <td>
+            1
+        </td>
+    </tr>
+    <tr>
+        <td>
+            2
+        </td>
+        <td rowspan="2" colspan="2">
+            2
+            <table id="table2"><tr><td>
+                1
+            </td></tr>
+            <tr><td>2</td></tr></table>
+        </td>
+
+        <td>
+            2
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="3">
+            3
+        </td>
+
+
+        <td>
+            3
+        </td>
+    </tr>
+    <tr>
+
+        <td>
+            4
+        </td>
+        <td>
+            4
+        </td>
+        <td>
+            4
+        </td>
+    </tr>
+    <tr>
+
+        <td>
+            5
+        </td>
+        <td>
+            5
+        </td>
+        <td>
+            5
+        </td>
+    </tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</body>
+</html>
