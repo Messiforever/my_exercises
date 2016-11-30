@@ -253,6 +253,7 @@
     height: 335px;
     background-color: #E1E2E3;
     margin: 0 auto;
+    position: relative;
 }
 .everybody{
     width: 1500px;
@@ -264,7 +265,7 @@
     float: left;
     width: 280px;
     height: auto;
-    margin-left: 15px;
+    margin-left: 23px;
 }
 .everybody .td:first-child{
     margin-left: 2px;
@@ -337,61 +338,144 @@
  }
 .tr13{
     width: 280px;
-    height: px;
+    height: 753px;
     background-color: white;
 }
 .tr14{
     width: 280px;
-    height: px;
+    height: 1238px;
     background-color: white;
+}
+.tr14 img{
+    display: block;
+    margin: 0 auto;
 }
 .tr15{
     width: 280px;
-    height: px;
+    height: 478px;
     background-color: white;
 }
 .tr16{
     width: 280px;
-    height: px;
+    height: 344px;
     background-color: white;
 }
 .tr17{
     width: 280px;
-    height: px;
+    height: 568px;
     background-color: white;
 }
 .tr18{
     width: 280px;
-    height: px;
+    height: 555px;
     background-color: white;
 }
 .tr19{
     width: 280px;
-    height: px;
+    height: 427px;
     background-color: white;
 }
 .tr20{
     width: 280px;
-    height: px;
+    height: 804px;
     background-color: white;
 }
 .tr21{
     width: 280px;
-    height: px;
+    height: 1178px;
     background-color: white;
 }
 .tr22{
     width: 280px;
-    height: px;
+    height: 486px;
     background-color: white;
 }
 .tr23{
     width: 280px;
-    height: px;
+    height: 525px;
     background-color: white;
 }
 .tr24{
     width: 280px;
-    height: px;
+    height: 624px;
     background-color: white;
+}
+.footer-content{
+    width: 1515px;
+    height: 200px;
+    position: absolute;
+    top: 27px;
+    left: 200px;
+
+}
+.footer-content li{
+
+    list-style: none;
+    font-size: 16px;
+    color: #666666;
+   margin-top: 16px;
+
+}
+.footer-content ul:last-child{
+    position: absolute;
+    left: 120px;
+    top: 34px;
+
+}
+.footer-content a{
+    text-decoration: none;
+
+}
+.footer-content a:visited{
+    color: #666666;
+
+}
+.footer-content div{
+    width: 302px;
+    height: 200px;
+    float: left;
+    border-left: 2px solid #CFD0D1;
+}
+.footer-content div .seconelink{
+    display: block;
+    position: absolute;
+    left: 300px;
+}
+.footer-content div .thirdlink{
+    display: block;
+    position: absolute;
+    left: 430px;
+
+}
+.footer-content div:nth-child(3){
+    background-image: url("二维码.png");
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: center;
+}
+.footer-content div:nth-child(3) p{
+    margin-left: 95px;
+    color: #666666;
+
+}
+.footer-content div:nth-child(3) p:first-child{
+    margin-left: 110px;
+    margin-top: 170px;
+}
+.footer-content div:nth-child(4) ul:last-child{
+
+
+    left: 1050px;
+}
+.footer-content div:last-child ul:last-child{
+
+
+    left: 1350px;
+}
+.buttons{
+    width: 58px;
+    height: 171px;
+    position: absolute;
+    top: 122px;
+    right: 125px;
 }
