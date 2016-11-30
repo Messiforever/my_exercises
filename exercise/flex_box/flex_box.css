@@ -1,9 +1,10 @@
 .wrap{
-    width:600px;
-    height:200px;
+    width:700px;
+    height:250px;
     display:-moz-box;
     display:-webkit-box;
     display:box;
+    border: 10px solid #C8C8C8;
 }
 .sectionOne{
     background:orange;
