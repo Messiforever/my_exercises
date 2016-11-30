@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test2</title>
+    <style>
+        .radius{
+            width: 100%;
+            height: auto;
+
+        }
+        .radius div{
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin-left: 20px;
+            border: 1px solid #6F1A04;
+        }
+        .radius1{
+            border-radius: 50%;
+        }
+       .radius .radius2{
+            width: 100px;
+            border-radius: 100px;
+        }
+        .radius .radius3{
+
+            border-radius: 0 100px 0 100px;
+        }
+        .radius .radius4{
+
+            border-radius: 0 100px 100px 100px;
+        }
+        .radius .radius5{
+
+            border-radius: 25px 100px 0 25px;
+
+        }
+        .radius .radius6{
+
+            border-radius: 100px 25px 100px 25px;
+            box-shadow: 5px 5px 10px 2px #3399ff inset;
+        }
+        .radius .radius7{
+            border: 15px dashed transparent;
+            border-image-source: url("border.png");
+            border-image-repeat: round;
+            border-image-slice: 30 30;
+            width: 100px;
+            height: 100px;
+        }
+        .radius .radius8{
+            border: 20px dashed transparent;
+            border-image-source: url("边框.png");
+            border-image-repeat: round;
+            border-image-slice: 70 70;
+            width: 200px;
+            height: 200px;
+        }
+        .radius .radius8{
+            width: 300px;
+            height: 300px;
+            background-image: url("边框.png");
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            background-origin: border-box;
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+<div class="radius">
+    <div class="radius1"></div>
+    <div class="radius2"></div>
+    <div class="radius3"></div>
+    <div class="radius4"></div>
+    <div class="radius5"></div>
+    <div class="radius6"></div>
+    <div class="radius7"></div>
+    <div class="radius8"></div>
+    <div class="radius9"></div>
+    <div class="radius10"></div>
+    <div class="radius11"></div>
+
+</div>
+</body>
+</html>
