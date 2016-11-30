@@ -254,3 +254,144 @@
     background-color: #E1E2E3;
     margin: 0 auto;
 }
+.everybody{
+    width: 1500px;
+    height: 3880px;
+    position: absolute;
+    top: 2311px;
+}
+.everybody .td{
+    float: left;
+    width: 280px;
+    height: auto;
+    margin-left: 15px;
+}
+.everybody .td:first-child{
+    margin-left: 2px;
+}
+.tr1,.tr2,.tr3,.tr4,.tr5,.tr6,.tr7,.tr8,.tr9,.tr10,.tr11,.tr12,.tr13,.tr14,.tr15,.tr16,.tr17,.tr18,.tr19,.tr20,.tr21,.tr22,.tr23,.tr24{
+    margin-top: 26px;
+    border: 1px solid #C8C8C8;
+
+}
+
+.tr1{
+    width: 280px;
+    height: 600px;
+    background-color: white;
+
+}
+.tr2{
+    width: 280px;
+    height: 722px;
+    background-color: white;
+}
+.tr3{
+    width: 280px;
+    height: 480px;
+    background-color: white;
+}
+.tr4{
+    width: 280px;
+    height: 484px;
+    background-color: white;
+}
+.tr5{
+     width: 280px;
+     height: 484px;
+     background-color: white;
+ }
+.tr6{
+    width: 280px;
+    height: 570px;
+    background-color: white;
+}.tr7{
+     width: 280px;
+     height: 570px;
+     background-color: white;
+ }
+.tr8{
+    width: 280px;
+    height: 570px;
+    background-color: white;
+}
+.tr9{
+    width: 280px;
+    height: 730px;
+    background-color: white;
+}
+.tr10{
+    width: 280px;
+    height: 592px;
+    background-color: white;
+}
+.tr11{
+     width: 280px;
+     height: 426px;
+     background-color: white;
+ }
+.tr12{
+     width: 280px;
+     height: 578px;
+     background-color: white;
+ }
+.tr13{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr14{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr15{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr16{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr17{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr18{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr19{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr20{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr21{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr22{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr23{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
+.tr24{
+    width: 280px;
+    height: px;
+    background-color: white;
+}
