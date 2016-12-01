@@ -141,6 +141,7 @@
     right: 0;
     bottom: 54px;
     background-color: white;
+
 }
 .zhuanjijinxuan{
     width: 1500px;
@@ -504,12 +505,101 @@
 .hot-news{
     width: 502px;
     height: auto;
-
+    margin-left: 40px;
 
 }
 .hot-news div{
     width: 502px;
     height: 64px;
-    /*border-bottom: 1px solid #b2b2b2;*/
+    border-bottom: 1px solid #b2b2b2;
+    line-height: 64px;
+    color: #444444;
 }
-
+.hot-news div:nth-child(1) input{
+    background-color: #FFBB33;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.hot-news div:nth-child(2) input{
+    background-color: #FF4466;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.app-download-link{
+    width: 278px;
+    height: 161px;
+    line-height: 161px;
+}
+.app-download div{
+    float: left;
+}
+.app-download-link p{
+    margin-top: -130px;
+    margin-left: 10px;
+    font-family: "微软雅黑 Light";
+}
+.app-download-link input{
+    width: 104px;
+    height: 35px;
+    border-radius: 4px;
+    color: white;
+    background-color: #E84C3D;
+    border: none;
+    margin-top: -70px;
+    margin-left: 16px;
+    display: block;
+}
+.app-download-link h2{
+    margin-left: 14px;
+    font-family: "微软雅黑 Light";
+}
+.zhuanji-gallery p{
+    font-size: 18px;
+    font-family: "微软雅黑 Light";
+    margin-top: 2px;
+    margin-left: 10px;
+}
+.zhuanji-gallery h6{
+    font-family: "微软雅黑 Light";
+    margin-top: 40px;
+    margin-left: 10px;
+    display: block;
+}
+.danpingtuijian-photos input{
+    width: 71px;
+    height: 32px;
+    background-color: #FFBB33;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    margin-left: 200px;
+    margin-top: -20px;
+    display: block;
+}
+.danpingtuijian-photos p{
+    color: #666666;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.danpingtuijian-photos h6{
+    color: #999999;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.buttonmore input{
+    background-color: #22B4F6;
+    width: 151px;
+    height: 50px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+}
+.buttonmore{
+    position: absolute;
+    bottom: 0;
+    right: 680px;
+}
