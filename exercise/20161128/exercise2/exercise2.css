@@ -488,7 +488,7 @@
 }
 .hot-links{
      width: 502px;
-     height: 105px;
+     height: 80px;
     margin-left: 20px;
 }
 .hot-links div{
@@ -504,15 +504,12 @@
 .hot-news{
     width: 502px;
     height: auto;
-    margin-left: 30px;
-    margin-top: 40px;
+
 
 }
 .hot-news div{
     width: 502px;
     height: 64px;
-    border-bottom: 1px solid #b2b2b2;
+    /*border-bottom: 1px solid #b2b2b2;*/
 }
-.hot-news span{
-    color: #444444;
-}
+
