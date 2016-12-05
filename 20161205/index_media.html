@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>media媒体查询</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: glyphicons,微软雅黑;
+
+        }
+        a{
+            color: #FFFFFF;
+        }
+        li{
+            text-decoration: none;
+            list-style: none;
+        }
+        .container{
+            width: 100vw;
+            height: 60vh;
+            background-color: #000000;
+            /*padding: 1px;*/
+            /*!*border-top: 1px solid transparent;*!   垂直方向外边距合并问题*/
+            /*float: left;*/
+            overflow: hidden;
+        }
+        @media all and (min-width: 1001px){
+                .container{
+                    background-color: deepskyblue;
+                }
+        }
+        @media all and (min-width: 500px) and (max-width: 1000px) {
+            .container{
+                background-color: navy;
+            }
+
+        }
+        @media all and (min-width: 400px) and (max-width: 800px){
+            .container{
+                background-color: darkcyan;
+
+            }
+            li:before{
+                content: "\2709";
+            }
+            a:after{
+                content: "("attr(data-emil)")";
+            }
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>改变浏览器窗口大小，查看效果</h1>
+      <ul>
+          <li><a href="mailto:sample@163.com" data-emil="124124">David</a></li>
+          <li><a href="mailto:sample@163.com" data-emil="124124">paubo</a></li>
+          <li><a href="mailto:sample@163.com" data-emil="124124">Bob</a></li>
+
+      </ul>
+
+    </div>
+</body>
+</html>
