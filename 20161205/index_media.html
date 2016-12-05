@@ -12,6 +12,10 @@
             font-family: glyphicons,微软雅黑;
 
         }
+        @font-face {
+            font-family: glyphicons;
+            src: url();
+        }
         a{
             color: #FFFFFF;
         }
@@ -32,6 +36,9 @@
                 .container{
                     background-color: deepskyblue;
                 }
+           .container li:before{
+                content: "\2709";
+            }
         }
         @media all and (min-width: 500px) and (max-width: 1000px) {
             .container{
@@ -44,7 +51,7 @@
                 background-color: darkcyan;
 
             }
-            li:before{
+            .container li:before{
                 content: "\2709";
             }
             a:after{
@@ -55,18 +62,20 @@
         }
 
 
+
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>改变浏览器窗口大小，查看效果</h1>
-      <ul>
-          <li><a href="mailto:sample@163.com" data-emil="124124">David</a></li>
-          <li><a href="mailto:sample@163.com" data-emil="124124">paubo</a></li>
-          <li><a href="mailto:sample@163.com" data-emil="124124">Bob</a></li>
 
-      </ul>
+</body> <div class="container">
+    <h1>改变浏览器窗口大小，查看效果</h1>
+    <ul>
+        <li><a href="mailto:sample@163.com" data-emil="124124">David</a></li>
+        <li><a href="mailto:sample@163.com" data-emil="124124">paubo</a></li>
+        <li><a href="mailto:sample@163.com" data-emil="124124">Bob</a></li>
 
-    </div>
-</body>
+    </ul>
+
+</div>
 </html>

@@ -1,0 +1,349 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑，Arial,"GLYPHICONS Halflings";
+}
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+.footer{
+    width: 100vw;
+    height: 8vh;
+    position: absolute;
+    bottom: 0;
+    background-color: #000000;
+    z-index: 1;
+}
+.footer:before{
+    content: attr(data-mobile);
+    color: white;
+    font-size: 20px;
+
+}
+.footer span:first-child{
+    color: white;
+    font-family: Arial;
+    font-size: 36px;
+    font-style: italic;
+}
+.footer span:last-child{
+    color: #343434;
+    font-family: 微软雅黑;
+    font-size: 36px;
+    font-style: italic;
+}
+.menu{
+    width: 70vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.77);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.menu div{
+    width: 31%;
+    height: 20%;
+    /*float: left;*/
+    /*background-color: #00a1cb;*/
+    margin-top: 7px;
+    margin-left: 7px;
+    position: relative;
+}
+
+.menu div:nth-child(1):before{
+    content: "\e008";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(2):before{
+    content: "\e013";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(3):before{
+    content: "\e111";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(4):before{
+    content: "\e171";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(5):before{
+    content: "\e105";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(6):before{
+    content: "\e118";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(7):before{
+    content: "\e103";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(8):before{
+    content: "\e115";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(9):before{
+    content: "\e121";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(10):before{
+    content: "\e145";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(11):before{
+    content: "\e123";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(12):before{
+    content: "\e019";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(13):before{
+    content: "\e139";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(14):before{
+    content: "\e135";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(15):before{
+    content: "\e024";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(16):before{
+    content: "\e072";
+    line-height: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+    color: white;
+}
+.menu div:nth-child(1){
+    background-color: #B61705;
+}
+.menu div:nth-child(1) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 87px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(2){
+    background-color: #0086A8;
+}
+.menu div:nth-child(2) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 87px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(3){
+    background-color: #6B00BB;
+}
+.menu div:nth-child(3) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 97px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(4){
+    background-color: #BB006B;
+}
+.menu div:nth-child(4) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 107px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(5){
+    background-color: #A66800;
+}
+.menu div:nth-child(5) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 87px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(6){
+    background-color: #779902;
+}
+.menu div:nth-child(6) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 97px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(7){
+    background-color: #0113BA;
+}
+.menu div:nth-child(7) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 87px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(8){
+    background-color: #009747;
+}
+.menu div:nth-child(8) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 87px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(9){
+    background-color: #417A62;
+}
+.menu div:nth-child(9) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 87px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(10){
+    background-color: #E800BF;
+}
+.menu div:nth-child(10) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 97px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(11){
+    background-color: #01BA95;
+}
+.menu div:nth-child(11) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 87px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(12){
+    background-color: #1B5AC5;
+}
+.menu div:nth-child(12) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 102px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(13){
+    background-color: #00A69D;
+}
+.menu div:nth-child(13) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 102px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(14){
+    background-color: #279B00;
+}
+.menu div:nth-child(14) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 102px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(15){
+    background-color: #3C6A6F;
+}
+.menu div:nth-child(15) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 102px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.menu div:nth-child(16){
+    background-color: #333333;
+}
+.menu div:nth-child(16) p{
+    color: white;
+    position: absolute;
+    top: 65px;
+    left: 87px;
+    font-family: 微软雅黑;
+    font-size: 16px;
+}
+.nav{
+    width: 652px;
+    height: 245px;
+}
