@@ -68,8 +68,6 @@ a{
     justify-content: center;
     transition: width 0.4s,height 0.4s;
     overflow: hidden;
-
-
 }
 .menu div{
     width: 24%;
@@ -79,7 +77,8 @@ a{
     justify-content: center;
     align-items: center;
     margin-top: 7px;
-    animation: can 10s infinite;
+    animation-delay: 2s;
+    animation: can 8s infinite;
 }
 .menu div:hover{
     /*border: 1px solid #9cfff7;*/
@@ -299,9 +298,15 @@ a{
 }
 @keyframes can {
     0%{
-        transform:rotateY(0deg);
+        transform:rotateX(0deg);
+    }
+    40%{
+        transform:rotateX(0deg);
+    }
+    60%{
+        transform:rotateX(360deg);
     }
     100%{
-        transform:rotateY(360deg);
+        transform:rotateX(360deg);
     }
 }
