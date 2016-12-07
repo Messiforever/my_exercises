@@ -1,0 +1,151 @@
+body{
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: Arial,微软雅黑, "GLYPHICONS Halflings";
+}
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center center;
+}
+.content{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+footer{
+    width: 100vw;
+    height: 50px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 0;
+}
+.main-menu{
+    width: 70vw;
+    height: 70vh;
+    background-color: rgba(0,0,0,0.7);
+    /*opacity: 1;*/
+    position: absolute;
+    bottom: 50px;
+    padding: 1vw 1.5vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: none;
+     visibility: hidden;
+    /*display: block;*/
+}
+.main-menu:focus{
+    outline: none;
+}
+.main-menu >div{
+    width: 16.5vw;
+    height: 15.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+}
+.main-menu > div:hover{
+    border: 2px solid #ddd;
+}
+.main-menu > div .icon{
+    font-size: 36px;
+}
+.main-menu > div:active{
+    /*border: 2px solid #ddd;*/
+    transform: scale(0.98,0.98);
+    border: none;
+}
+.main-menu > div:nth-child(1){
+    background-color: #B61705;
+}
+.main-menu > div:nth-child(2){
+    background-color: #0086A8;
+}
+.main-menu > div:nth-child(3){
+    background-color: #6B00BB;
+}
+.main-menu > div:nth-child(4){
+    background-color: #BB006B;
+}
+.main-menu > div:nth-child(5){
+    background-color: #A66800;
+}
+
+.main-menu > div:nth-child(6){
+    background-color: #779902;
+}
+
+.main-menu > div:nth-child(7){
+    background-color: #0113BA;
+}
+
+.main-menu > div:nth-child(8){
+    background-color: #009747;
+}
+
+.main-menu > div:nth-child(9){
+    background-color: #417A62;
+}
+.main-menu > div:nth-child(10){
+    background-color: #E800BF;
+}
+
+.main-menu > div:nth-child(11){
+    background-color: #01BA95;
+}
+
+.main-menu > div:nth-child(12){
+    background-color: #1B5AC5;
+}
+
+.main-menu > div:nth-child(13){
+    background-color: #00A69D;
+}
+
+.main-menu > div:nth-child(14){
+    background-color: #279B00;
+}
+
+.main-menu > div:nth-child(15){
+    background-color: #3C6A6F;
+}
+
+.main-menu > div:nth-child(16){
+    background-color: #333333;
+}
+.main-menu >div .icon:before{
+   content: "\e008";
+}
+.main-menu label{
+    font-style: italic;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+    visibility: visible;
+}
+.main-menu:hover{
+
+    visibility: visible;
+}
+.gallery{
+     visibility: hidden;
+ }

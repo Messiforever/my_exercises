@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环</title>
+</head>
+<body>
+<script>
+    document.write("<h1>for循环语法</h1>");
+    var i;
+    var j;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++){document.writeln("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<h1>for循环语法1</h1>");
+    for(i=0;i<10;i++){
+        for(j=0;j<=i;j++){document.writeln("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<h1>for循环语法2</h1>");
+    for(i=0;i<10;i++){
+        for(j=10;j>i;j--){document.writeln("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<h1>for循环全金字塔</h1>");
+    for(i=1;i<10;i++){
+        for(j=0;j<10-i;j++){document.write("&nbsp;");
+        }
+        for(var k=0;k<2*i-1;k++){document.write("* ");
+        }
+        document.write("<br>");
+    }
+    for(i=1;i<10;i++){
+        for(j=0;j<i;j++){document.write("&nbsp;");
+        }
+        for(var k=0;k<19-2*i;k++){document.write("* ");
+        }
+        document.write("<br>");
+    }
+    var arry = [9,5,7,6,8,2,4,1,3,0];
+    document.write(arry);
+    var temp;
+    for(i =0; i<arry.length;i++){
+        for(j=i+1; j<arry.length;j++){
+            if(arry[1]>arry[j]){
+                temp=arry[j];
+                arry[j]=arry[i];
+                arry[i]=temp;
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

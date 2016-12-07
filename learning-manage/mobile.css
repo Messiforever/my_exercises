@@ -1,0 +1,55 @@
+.container{
+    background: #fff;
+}
+.main-menu >div{
+    width: 30.5vw;
+    height: 15.5vh;
+}
+.main-menu{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    visibility: visible;
+    position: static;
+    background-color: white;
+
+}
+.main-menu label{
+    display: none;
+}
+footer{
+  position: static;
+}
+.gallery{
+   width: 100vw;
+   height: 50vw;
+    position: relative;
+    visibility: visible;
+}
+.gallery img{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+
+
+}
+.gallery-targgles{
+    width: 91px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -45px;
+
+}
+.gallery-targgles div{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    float: left;
+    margin-left: 5px;
+
+
+}
