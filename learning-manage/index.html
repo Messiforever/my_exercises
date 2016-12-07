@@ -14,11 +14,14 @@
 
        </header>
        <div class="gallery">
-           <img src="images/backgroundmobile.png" alt="">
+           <!--<img src="images/backgroundmobile.png" alt="">-->
+           <div class="carousel" id="carousel">
+               <img src="images/gallery1.png" alt="">
+               <img src="images/gallery2.png" alt="">
+               <img src="images/gallery3.png" alt="">
+               <img src="images/gallery4.png" alt="">
+           </div>
            <div class="gallery-targgles">
-               <div></div>
-               <div></div>
-               <div></div>
                <div></div>
                <div></div>
                <div></div>
@@ -98,5 +101,24 @@
        </footer>
    </div>
 </div>
+<script>
+        var carousel = document.getElementById("carousel");
+        carousel.style.left = 0;
+        var i = 0;
+       function runCarousel() {
+           var poiLeft= carousel.style.left;
+           var left = poiLeft.substring(0,poiLeft.length-2);
+           left = Number(left);
+           left =left-415;
+           carousel.style.left=left + "px";
+           i++;
+           if(i>3){
+               carousel.style.left="0px";
+               i=0;
+           }
+           setTimeout(runCarousel,4000);
+       }
+         setTimeout(runCarousel,4000);
+</script>
 </body>
 </html>

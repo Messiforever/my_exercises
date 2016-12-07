@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+<script>
+    function invokeHanle1() {
+        console.log("函数被函数调用");
+    }
+    function loaded(parameter) {
+        alert("你好,世界!");
+        invokeHanle1();
+        parameter();
+    }
+    loaded(invokeHanle1);
+    document.write("<br>");
+    document.write("<h2>arguments</h2>");
+    function multiPar(p1,p2,p3,p4) {
+        var p1 = arguments[0];
+        var p2 = arguments[1];
+        var p3 = arguments[2];
+        var p4 = arguments[3];
+        document.write(p1);
+        document.write(p2);
+        document.write(p3);
+        document.write(p4);
+
+    }
+    multiPar(1,2,3,4);
+    document.write("<br>");
+    document.write("<h2>setTimeout</h2>");
+    var i = 0;
+    function outputMsg() {
+        document.write("<br>");
+        document.write(i);
+        i++;
+        if(i<8){
+            setTimeout(outputMsg,300);
+        }
+
+    }
+    outputMsg();
+</script>
+</body>
+</html>

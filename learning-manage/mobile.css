@@ -27,12 +27,19 @@ footer{
    height: 50vw;
     position: relative;
     visibility: visible;
+    overflow: hidden;
+}
+.gallery .carousel{
+    width: 1720px;
+    height: 100%;
+    position: absolute;
+    transition: left 0.5s;
 }
 .gallery img{
     width: 100vw;
     height: 100%;
-    display: flex;
-
+    display: block;
+    float: left;
 
 }
 .gallery-targgles{
@@ -49,7 +56,7 @@ footer{
     border-radius: 50%;
     background-color: #fff;
     float: left;
-    margin-left: 5px;
+    margin-left: 10px;
 
 
 }

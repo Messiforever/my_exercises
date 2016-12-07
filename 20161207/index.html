@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-数组Array</title>
+</head>
+<body>
+string number undefined boolean object null（都是数据类型） <br>
+<h1>js内置对象（函数）</h1>
+String Number Array(前面的既是函数也是对象)
+<script>
+    document.write("<h1>字符串申明</h1>");
+    var strData = new String("data");
+    console.log(strData);
+    var strData2 = "data";
+    console.log(strData2);
+    var numStr =String(123);
+    console.log(numStr);
+    //实例判断
+    var flag = numStr instanceof String;
+    console.log(flag);
+    document.write("<h1>数字申明</h1>");
+      var numberData = new Number(123);
+      var convertNumber = Number("123");
+      var convertNot = Number("abc");
+    document.write(convertNot);
+    var flag1=NaN==convertNot;
+    document.write("<br>");
+    document.write("NaN === NaN =" + flag1)
+    console.log(flag1);
+
+    var pInt =parseInt("213");
+    document.write("<br>");
+    document.write("parseInt('213')--->" + pInt);
+
+    document.write("<h1>数组</h1>");
+    document.write("<h2>数组定义</h2>");
+    var a = new Array();
+    a.push("123");
+    a.push(123);
+    a.push(true);
+    a.push(undefined);
+    a.push(null);
+    a.push({title:"I'm a object."});
+    document.write("<h3>数组遍历</h3>");
+    for(var i=0;i<a.length;i++){
+        document.writeln(a[i]);
+        console.log(a[i]);
+    }
+    document.write("<br>");
+    var i1 =0;
+    while (i1 < a.length){
+        document.writeln(a[i1]);
+        i1++;
+    }
+    document.write("<br>");
+    document.write("<h3>数组元素连接</h3>");
+      var resultJoin = a.join("$");
+      document.write(resultJoin);
+    document.write("<h3>dowhile遍历数组</h3>");
+    var resultSplit=resultJoin.split("$");
+    var iDoWhile=0;
+     do{
+         document.write(resultSplit[iDoWhile]);
+         iDoWhile++;
+     }
+     while (iDoWhile < resultSplit.length)
+      document.write("<br>");
+     document.write((undefined==" "));
+
+
+
+</script>
+</body>
+</html>

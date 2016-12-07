@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+</head>
+<body>
+<div id="container">
+    <div id="child">
+      <div id="granSon">
+
+      </div>
+    </div>
+    <div id="child2">
+
+    </div>
+</div>
+<script>
+  var container = document.getElementById("container");
+    container.style.width="500px";
+    container.style.height="200px";
+    container.style.backgroundColor="#000000";
+
+    var nodes=container.childNodes;//childNodes不包含孙子标签，会包含text（回车）
+    alert(nodes.length);
+  document.write("<br>");
+    var childElement = document.getElementById("child");
+       var  pElement = childElement.parentNode;
+    function showName(title,title1,title2) {
+        var s= "abc";
+        var s1= "ghi" + title1;
+        var s2= "jkl" + title2;
+        console.log(s+title+s1+s2);
+    }
+    showName("def","212","122");
+    showName("DEF","232","323");
+    showName("DeF","343","434");
+</script>
+</body>
+</html>
