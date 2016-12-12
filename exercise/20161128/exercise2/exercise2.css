@@ -5,7 +5,6 @@
 .header-outside{
     width: 100%;
     height: auto;
-
 }
 .header{
     width: 1900px;
@@ -13,7 +12,6 @@
     margin: 0 auto;
     border: 1px solid #C8C8C8;
     /*background-color: #C8C8C8;*/
-
 }
 .header-inner{
     width: 1500px;

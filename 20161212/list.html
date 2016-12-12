@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无序列表</title>
+    <style>
+        li{
+          width:700px;
+            height: 35px;
+            border-bottom: 1px solid #333333;
+            line-height: 35px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="editable"></li><li class="editable"></li><li class="editable"></li><li class="editable"></li>
+</ul>
+<script>
+    var lis = document.getElementsByClassName("editable");
+    var eleObj = {};
+    for(var i=0; i<lis.length; i++){
+        var editable = lis[i];
+        editable.addEventListener("click",function (e) {
+        var currentLi = e.currentTarget;
+        var inputElement = document.getElementsByClassName("text-input");
+            if(inputElement.length===0){
+                var input= document.createElement("input");
+                input.setAttribute("class","text-input");
+                input.value = currentLi.innerText;
+                currentLi.innerText="";
+                currentLi.appendChild(input);
+                input.addEventListener("keyup",function (e) {
+                    if(e.keyCode===13){
+                        input.style.visibility ="hidden";
+                        currentLi.innerText = input.value;
+                    }
+//                    if(e.keyCode===9){
+//                        currentLi.nextSibling.focus();
+//                    }
+                });
+                input.addEventListener("blur",function () {
+                    input.style.visibility ="hidden";
+                    currentLi.innerText = input.value;
+                });
+                input.focus();
+            }
+        });
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

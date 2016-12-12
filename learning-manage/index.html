@@ -106,15 +106,19 @@
         carousel.style.left = 0;
         var i = 0;
        function runCarousel() {
+           var gallery = document.getElementsByClassName("gallery");
+           gallery = gallery[0];
+           var gWidth= (gallery.clientWidth+gallery.offsetWidth)/2;
            var poiLeft= carousel.style.left;
            var left = poiLeft.substring(0,poiLeft.length-2);
            left = Number(left);
-           left =left-415;
+           left =left-gWidth;
            carousel.style.left=left + "px";
            i++;
            if(i>3){
                carousel.style.left="0px";
                i=0;
+
            }
            setTimeout(runCarousel,4000);
        }

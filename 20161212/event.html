@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<script>
+    var eventHandles;
+    eventHandles = {
+        addEventListener: function (key,handle) {
+            if (typeof eventHandles[key] === "undefined") {
+                eventHandles[key] = [];
+            }
+            eventHandles[key].push(handle);  //eventHandles[key]是一个数组，将handle push进去
+        },
+        dispatcher: function(key) {
+            var l = eventHandles[key].length;
+            for (var i = 0; i < l; i++) {
+                eventHandles[key][i]();
+            }
+        },
+        default: "default"
+    };
+     eventHandles.title = "I m a title"; //动态添加属性
+     eventHandles["zh-title"] = "中文标题";//动态添加属性
+      console.log(eventHandles["zh-title"]);
+
+
+    function makeWater() {
+        for(var i =0;i < 100;i++){
+            var temp = i + 1;
+            if(temp==100){
+                eventHandles.dispatcher("water-is-boil");
+            }
+        }
+    }
+
+    eventHandles.addEventListener(
+            "water-is-boil",
+            function () {
+                document.write("水开了");
+            });
+
+    makeWater();
+
+//    waterBoilHandle = ["123"]
+
+</script>
+</body>
+</html>

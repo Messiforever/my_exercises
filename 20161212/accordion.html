@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        .content{
+            width: 500px;
+            height: 420px;
+            margin: 100px auto;
+            background-color: white;
+            border: 1px solid #8D8F8B;
+            overflow-y: auto;
+            position: relative;
+        }
+        h3{
+            width: 450px;
+            height: 40px;
+            background-color: #F6F6F6;
+            border-radius: 5px 5px 0 0;
+            color: #000000;
+            border: 1px solid #8D8F8B;
+            margin: 0 auto;
+            margin-top: 2px;
+            cursor: pointer;
+            line-height: 40px;
+            display: block;
+        }
+        .content div{
+            width: 450px;
+            border: 1px solid #8D8F8B;
+            margin-top: 0;
+            margin: 0 auto;
+            height: 0;
+            visibility: hidden;
+            transition: height 0.3s,visibility 0.3s;
+            background-color: white;
+
+        }
+        .content div p{
+            font-family: 微软雅黑;
+        }
+        h3:hover{
+                 background-color: #EDEDED;
+             }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h3 id="title1">Section 1</h3>
+    <div id="section1">
+        <p>
+            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+        </p>
+    </div>
+    <h3 id="title2">Section 2</h3>
+    <div id="section2">
+        <p>
+            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+            suscipit faucibus urna.
+        </p>
+    </div>
+    <h3 id="title3">Section 3</h3>
+    <div id="section3">
+        <p>
+            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+        </p>
+        <ul>
+            <li>List item one</li>
+            <li>List item two</li>
+            <li>List item three</li>
+        </ul>
+    </div>
+    <h3 id="title4">Section 4</h3>
+    <div id="section4">
+        <p>
+            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+            mauris vel est.
+        </p>
+        <p>
+            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos.
+        </p>
+    </div>
+</div>
+<script>
+   var section1 = document.getElementById("section1");
+   var section2 = document.getElementById("section2");
+   var section3 = document.getElementById("section3");
+   var section4 = document.getElementById("section4");
+   var title1 = document.getElementById("title1");
+   var title2 = document.getElementById("title2");
+   var title3 = document.getElementById("title3");
+   var title4 = document.getElementById("title4");
+
+    title1.addEventListener("click",function () {
+        title1.style.backgroundColor="#007FFF";
+        section1.style.height="220" + "px";
+        section1.style.visibility="visible";
+        section2.style.height="0" + "px";
+        section2.style.visibility="hidden";
+        section3.style.height="0" + "px";
+        section3.style.visibility="hidden";
+        section4.style.height="0" + "px";
+        section4.style.visibility="hidden";
+    });
+   title2.addEventListener("click",function () {
+       title2.style.backgroundColor="#007FFF";
+       section2.style.visibility="visible";
+       section2.style.height="220" + "px";
+       section1.style.height="0" + "px";
+       section1.style.visibility="hidden";
+       section3.style.height="0" + "px";
+       section3.style.visibility="hidden";
+       section4.style.height="0" + "px";
+       section4.style.visibility="hidden";
+
+
+   });
+   title3.addEventListener("click",function () {
+       title3.style.backgroundColor="#007FFF";
+       section3.style.height="220" + "px";
+       section3.style.visibility="visible";
+       section2.style.height="0" + "px";
+       section1.style.height="0" + "px";
+       section4.style.height="0" + "px";
+       section2.style.visibility="hidden";
+       section1.style.visibility="hidden";
+       section4.style.visibility="hidden";
+   });
+   title4.addEventListener("click",function () {
+       title4.style.backgroundColor="#007FFF";
+       section4.style.height="220" + "px";
+       section3.style.height="0" + "px";
+       section2.style.height="0" + "px";
+       section1.style.height="0" + "px";
+       section4.style.visibility="visible";
+       section3.style.visibility="hidden";
+       section2.style.visibility="hidden";
+       section1.style.visibility="hidden";
+   });
+
+</script>
+</body>
+</html>

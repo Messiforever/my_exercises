@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单操作</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        form{
+            color: #2D2D2D;
+            font-family: 微软雅黑;
+            font-size: 20px;
+        }
+        .content{
+            width: 500px;
+            height: 200px;
+            background-color: #8D8F8B;
+            margin: 50px auto;
+            border-radius: 8px;
+
+        }
+        input[type=text]{
+            width: 100px;
+            height: 28px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="content">
+    <form action="">
+        <br>
+        <label for="username">&nbsp;姓名：</label><input type="text" id="username"><br>
+        <label>&nbsp;性别：</label>男<input type="radio" name="sex">女<input type="radio" name="sex"><br>
+        <label>&nbsp;爱好：</label><input type="checkbox" class="favo">篮球<input type="checkbox" class="favo">足球<input type="checkbox" class="favo">游泳<input type="checkbox" class="favo">骑自行车<input type="checkbox" id="all">全选<input type="checkbox" id="inall">取消全选<br>
+        <label>&nbsp;国籍：</label><input type="radio" name="address">中国<input type="radio" name="address">德国<input type="radio" name="address">美国
+        <br>
+        &nbsp;<input type="submit" value="提交">&nbsp;&nbsp;<input type="reset" value="取消">
+    </form>
+</div>
+
+<script>
+          var all = document.getElementsByClassName("favo");
+          var alls = document.getElementById("all");
+          var inall = document.getElementById("inall");
+          alls.addEventListener("click",function () {
+              for(var i=0;i<all.length;i++){
+                  var allarry =all[i];
+                  allarry.setAttribute("checked","true");
+              }
+
+          });
+          inall.addEventListener("click",function () {
+              for(var i=0;i<all.length;i++){
+                  var allarry =all[i];
+                      allarry.setAttribute("checked","false");
+
+              }
+
+          });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+<div id="container">
+    <div class="child">
+        <div class="grandson"></div>
+    </div>
+    <div class="child2"></div>
+
+
+    <!--dom操作元素-->
+    <div class="container" style="width: 800px;height:400px; background-color: #00a1cb"><div class="inner">1</div><div class="inner">222</div><div class="inner">3333</div><div class="inner">44444</div></div>
+</div>
+<script>
+    function output(msg) {
+        document.write("<br>");
+        document.write("<h1>"+msg+"</h1>")
+    }
+    var klassContainer = document.getElementsByClassName("container");
+    var container0 = klassContainer[0];
+    var divElement = document.createElement("div");  //新增子元素
+    divElement.innerText="5";//新增子元素
+    container0.appendChild(divElement);//新增子元素
+//    container0.innerHTML = container0.innerHTML + "<div>6</div>";//新增子元素
+//    container0.innerText = container0.innerText + "<div>6</div>";//新增子元素
+    var con = container0.firstChild;
+    output(con.innerText);
+    var con1 = container0.firstChild.nextSibling;
+    output(con1.innerText);
+    var con2 = container0.lastChild.previousSibling;
+    output(con2.innerText);
+    var nodetype = container0.nodeType;
+    output(nodetype);
+    output(con.nodeValue);
+    output(container0.nodeName);
+
+    //获取子元素第二种方式
+    document.write(klassContainer.length);
+    var container0 = klassContainer[0];
+    var children = container0.children; //获取子元素，只包含HTML元素
+    output("childern属性："+children.length);
+    var childNodes = container0.childNodes;
+    output("childNodes属性："+childNodes.length);
+    output("childElementCount属性："+container0.childElementCount); //获取子元素数量
+
+
+</script>
+</body>
+</html>
