@@ -25,20 +25,46 @@
             height: 30px;
             padding-left: 10px;
             line-height: 30px;
+            position: relative;
         }
         .contextmenu .item:hover{
             background-color: #9D9D9D;
+        }
+        .contextmenu .item:hover .item-second-menu{
+            visibility: visible;
+        }
+        .item .item-second-menu{
+            width: 200px;
+            height: 183px;
+            position: absolute;
+            left: 250px;
+            top: -1px;
+            background-color: #ffffff;
+            border: 1px solid #8D8F8B;
+            visibility: hidden;
         }
     </style>
 </head>
 <body>
 <div class="contextmenu">
-    <div class="item">添加收藏</div>
-    <div class="item">复制文本</div>
-    <div class="item">菜单一</div>
-    <div class="item">菜单二</div>
-    <div class="item">菜单三</div>
-    <div class="item">菜单四</div>
+    <div class="item">添加收藏
+    <div class="item-second-menu">二级菜单</div>
+    </div>
+    <div class="item">复制文本
+        <div class="item-second-menu">二级菜单</div>
+    </div>
+    <div class="item">菜单一
+        <div class="item-second-menu">二级菜单</div>
+    </div>
+    <div class="item">菜单二
+        <div class="item-second-menu">二级菜单</div>
+    </div>
+    <div class="item">菜单三
+        <div class="item-second-menu">二级菜单</div>
+    </div>
+    <div class="item">菜单四
+        <div class="item-second-menu">二级菜单</div>
+    </div>
 </div>
 <script>
     document.addEventListener("contextmenu",function (e) {
@@ -47,6 +73,7 @@
         var mX= e.clientX;
         var mY= e.clientY;
         var container = document.querySelector(".contextmenu");
+        var itemSecondMenu = document.querySelectorAll("item-second-menu");
         var windowsWidth= window.outerWidth;
         var windowsHeight= window.outerHeight;
         container.style.visibility="visible";
@@ -54,6 +81,8 @@
         if( (mX >= windowsWidth-250 && mX <= windowsWidth) || (mY >= windowsHeight-200 && mY <= windowsHeight)){
             container.style.left=mX-250 + "px";
             container.style.top=mY-200 + "px";
+
+
         }else {
             container.style.left=mX + "px";
             container.style.top=mY + "px";

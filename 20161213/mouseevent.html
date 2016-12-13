@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mouse事件</title>
+    <style>
+        #container{
+            width: 400px;
+            height: 300px;
+            background-color: #009747;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+
+</div>
+<script>
+    function listen(selector,event,fn) {
+        var ele = document.querySelector(selector);
+        ele.addEventListener(event,fn);
+    }
+
+//     listen("#container","mouseenter",function (e) {
+//
+//         alert(e.offsetX);
+//         alert(e.offsetY);
+////        alert("mouseEnter");
+//    });
+//    listen("#container","mouseleave",function (e) {
+//        alert("mouseleave");
+//    });
+//    listen("#container","dblclick",function (e) {
+//
+//        alert(e.offsetX);
+//        alert(e.offsetY);
+//
+//    });
+
+//    listen("#container","mouseover",function (e) {
+//        alert("over");
+//    });
+//    listen("#container","mouseout",function (e) {
+//        alert("out");
+//    });
+    listen("#container","mousedown",function (e) {
+//        alert("mousedown");
+        arguments[0].currentTarget.style.backgroundColor="black";
+    });
+    listen("#container","mouseup",function (e) {
+//        alert("mouseup");
+        arguments[0].currentTarget.style.backgroundColor="#009747";
+    });
+</script>
+</body>
+</html>

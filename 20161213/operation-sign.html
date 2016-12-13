@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+</head>
+<body>
+<script>
+    var a= 0;
+    var b =5;
+    if(a==0 && b==5){
+        document.write("a=="+a+"&& b ==" +b+"==" +(a==0 && b==5));
+    }
+
+    document.write("<h3>三元运算符</h3>");
+    function poerationSign(flag) {
+        flag ?document.write("?true"):document.write("?false");
+    }
+    poerationSign(true);
+    document.write("<br>");
+    var student = {
+        name:"向老师"
+        ,gender:"男"
+        ,color:"yellow"
+        ,target:"美女"
+        ,sleep:function () {
+
+        }
+    };
+    document.write(student.gender);
+    delete student.gender;
+    document.write("<br>");
+    document.write(student.gender);
+    document.write("<br>");
+    document.write("<h3>for-in</h3>");
+    for(var key in student){
+        document.writeln("key:"+ key);
+        document.writeln("value:"+ student[key]);
+        document.writeln("<br>");
+    }
+
+
+</script>
+</body>
+</html>

@@ -39,7 +39,29 @@
        var mX= e.clientX;
        var mY= e.clientY;
        var container = document.querySelector(".contextmenu");
-        container.style.visibility="visible";
+        var wWidth = window.innerWidth;
+        var wHeight = window.innerHeight;
+
+        var cWidth = container.clientWidth;
+        var cHeight = container.clientHeight;
+
+        container.style.visibility = "visible";
+        container.style.left = mX + "px";
+        container.style.top = mY + "px";
+
+        if(cWidth + mX > wWidth){
+            var subOrient = (cWidth + mX) - wWidth;
+            container.style.left = (mX - subOrient - 2) + "px";
+//            document.querySelector(".sub-items").style.left = -250+"px";
+//        }else{
+//            document.querySelector(".sub-items").style.left = 250+"px";
+        }
+
+        if(cHeight + mY > wHeight) {
+            var subVertically = (cHeight + mY) - wHeight;
+            container.style.top = (mY - subVertically - 2) + "px";
+        }
+
         container.style.transform= "translate("+mX+"px, "+mY+"px)";
         document.addEventListener("click",function (e) {
             container.style.visibility="hidden";

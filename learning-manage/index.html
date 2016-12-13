@@ -102,9 +102,13 @@
    </div>
 </div>
 <script>
+    var i = 0;
         var carousel = document.getElementById("carousel");
+        var galleryTarggles = document.querySelectorAll(".gallery-targgles > div");
+
         carousel.style.left = 0;
-        var i = 0;
+
+        var timeoutInterval;
        function runCarousel() {
            var gallery = document.getElementsByClassName("gallery");
            gallery = gallery[0];
@@ -113,16 +117,35 @@
            var left = poiLeft.substring(0,poiLeft.length-2);
            left = Number(left);
            left =left-gWidth;
+           for(var ii=0;ii<galleryTarggles.length;ii++){
+               galleryTarggles[ii].style.backgroundColor="#fff";
+           }
            carousel.style.left=left + "px";
+           galleryTarggles[i].style.backgroundColor="red";
            i++;
            if(i>3){
                carousel.style.left="0px";
                i=0;
-
            }
-           setTimeout(runCarousel,4000);
+           timeoutInterval = setTimeout(runCarousel,1000);
        }
-         setTimeout(runCarousel,4000);
+
+        var gallery = document.querySelector(".gallery");
+
+            timeoutInterval = setTimeout(runCarousel,1000);
+    galleryTarggles[i].style.backgroundColor="red";
+          gallery.addEventListener("mouseenter",function () {
+
+                clearTimeout(timeoutInterval);
+        });
+          gallery.addEventListener("mouseleave",function () {
+              runCarousel();
+        });
+
+
+
+
+
 </script>
 </body>
 </html>
