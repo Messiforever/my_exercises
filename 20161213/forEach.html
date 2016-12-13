@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foreach</title>
+</head>
+<body>
+<script>
+    function forEach(fn) {
+        var arry = [1,2,3,4,5,6,7,8];
+        var i = 0;
+        while(i < arry.length){
+            var item = arry[i];
+            fn(item);
+            i++;
+        }
+    }
+    forEach(function (item) {
+        document.write("<br>");
+        document.write(item);
+    })
+
+</script>
+</body>
+</html>

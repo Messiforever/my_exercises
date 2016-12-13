@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Context-Menu</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .contextmenu {
+           width: 250px;
+            height: auto;
+            visibility: hidden;
+            border: 1px solid #8D8F8B;
+
+
+        }
+        .contextmenu .item{
+            width: 100%;
+            height: 30px;
+            padding-left: 10px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="contextmenu">
+   <div class="item">添加收藏</div>
+   <div class="item">复制文本</div>
+   <div class="item">菜单一</div>
+   <div class="item">菜单二</div>
+   <div class="item">菜单三</div>
+   <div class="item">菜单四</div>
+</div>
+<script>
+    document.addEventListener("contextmenu",function (e) {
+
+       e.preventDefault();
+       var mX= e.clientX;
+       var mY= e.clientY;
+       var container = document.querySelector(".contextmenu");
+        container.style.visibility="visible";
+        container.style.transform= "translate("+mX+"px, "+mY+"px)";
+        document.addEventListener("click",function (e) {
+            container.style.visibility="hidden";
+        });
+    });
+
+</script>
+</body>
+</html>

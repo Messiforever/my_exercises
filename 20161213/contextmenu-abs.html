@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Context-Menu</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+ body{
+     overflow: inherit;
+ }
+
+        .contextmenu {
+            width: 250px;
+            height: auto;
+            visibility: hidden;
+            border: 1px solid #8D8F8B;
+            position: static;
+
+
+        }
+        .contextmenu .item{
+            width: 100%;
+            height: 30px;
+            padding-left: 10px;
+            line-height: 30px;
+        }
+        .contextmenu .item:hover{
+            background-color: #9D9D9D;
+        }
+    </style>
+</head>
+<body>
+<div class="contextmenu">
+    <div class="item">添加收藏</div>
+    <div class="item">复制文本</div>
+    <div class="item">菜单一</div>
+    <div class="item">菜单二</div>
+    <div class="item">菜单三</div>
+    <div class="item">菜单四</div>
+</div>
+<script>
+    document.addEventListener("contextmenu",function (e) {
+
+        e.preventDefault();
+        var mX= e.clientX;
+        var mY= e.clientY;
+        var container = document.querySelector(".contextmenu");
+        var windowsWidth= window.outerWidth;
+        var windowsHeight= window.outerHeight;
+        container.style.visibility="visible";
+        container.style.position="absolute";
+        if( (mX >= windowsWidth-250 && mX <= windowsWidth) || (mY >= windowsHeight-200 && mY <= windowsHeight)){
+            container.style.left=mX-250 + "px";
+            container.style.top=mY-200 + "px";
+        }else {
+            container.style.left=mX + "px";
+            container.style.top=mY + "px";
+        }
+        document.addEventListener("click",function (e) {
+            container.style.visibility="hidden";
+        });
+
+    });
+
+</script>
+</body>
+</html>

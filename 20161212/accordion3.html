@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            width: 800px;
+            height: 500px;
+            overflow-y: auto;
+        }
+        [data-flag=select]{
+            width: 100%;
+            height: 35px;
+            background-color: #00a1cb;
+            color: #ffffff;
+            cursor: pointer;
+            line-height: 35px;
+            padding-left: 10px;
+        }
+        [data-flag] + div{
+            width: 100%;
+            height: 0;
+            transition: height 0.5s;
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="item1" data-flag="select">
+        Section1
+    </div>
+    <div class="item1-content" data-content>
+        Content1
+    </div>
+    <div class="item2" data-flag="select">
+        Section2
+    </div>
+    <div class="item2-content" data-content>
+        Content2
+    </div>
+    <div class="item3" data-flag="select">
+        Section3
+    </div>
+    <div class="item3-content" data-content>
+        Content3
+    </div>
+    <div class="item4" data-flag="select">
+        Section4
+    </div>
+    <div class="item4-content" data-content>
+        Content4
+    </div>
+
+</div>
+<script>
+    var titles = document.querySelectorAll("[data-flag=select]");
+    for(var i = 0;i<titles.length; i++){
+        titles[i].addEventListener("click",function (e) {
+            var contents = document.querySelectorAll("[data-content]");
+            contents.forEach(function (element) {
+                element.style.height = 0;
+            });
+             var current = e.currentTarget;
+             var item = current.getAttribute("class");
+             var content = item + "-content";
+             var contentItem = document.getElementsByClassName(content)[0];
+            contentItem.style.height="300px";
+        });
+    }
+</script>
+</body>
+</html>
