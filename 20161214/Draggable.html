@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draggable</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 600px;
+            height: 400px;
+            border: 1px solid #8D8F8B;
+            margin: 100px auto;
+            position: relative;
+            overflow: auto;
+        }
+        .inner{
+            width: 120px;
+            height: 100px;
+            position: absolute;
+            background-color: #00a1cb;
+            border: 1px solid #00ff00;
+            color: white;
+            font-size: 20px;
+            font-family: 微软雅黑;
+            text-align: center;
+            z-index: 1;
+        }
+        .content{
+            width: 200px;
+            height: 200px;
+            background-color: #9D9D9D;
+            position: absolute;
+            left: 200px;
+            top:50px;
+            color: white;
+            font-size: 20px;
+            font-family: 微软雅黑;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="inner"><h6>Drag me around</h6></div>
+    <div class="content"><h5>Drag here</h5></div>
+</div>
+<script>
+    var container = document.querySelector(".container");
+    var inner = document.querySelector(".inner");
+    var h6 = document.querySelector("h6");
+    var h5 = document.querySelector("h5");
+    var content = document.querySelector(".content");
+    var flag=false;
+    var mouseX;
+    var mouseY;
+    var mouseinnerX;
+    var mouseinnerY;
+
+   container.addEventListener("mousedown",function (e) {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+    });
+    inner.addEventListener("mousedown",function () {
+        flag=true;
+    });
+       h6.addEventListener("click",function (e) {
+            e.stopPropagation();
+         });
+     inner.addEventListener("mousemove",function (e) {
+            if(flag){
+                mouseinnerX=e.pageX;
+                mouseinnerY=e.pageY;
+                inner.style.left=inner.offsetLeft+(mouseinnerX-mouseX)+"px";
+                inner.style.top=inner.offsetTop+(mouseinnerY-mouseY)+"px";
+                mouseX=mouseinnerX;
+                mouseY=mouseinnerY;
+                if(inner.offsetLeft>200 && inner.offsetLeft<400 && inner.offsetTop>50 && inner.offsetTop<250){
+                    h5.innerText="Dropped!";
+                    content.style.backgroundColor="#FFFA90";
+                }
+            }
+        });
+    container.addEventListener("mouseup",function () {
+        flag=false;
+    });
+    container.addEventListener("mouseleave",function () {
+        flag=false;
+    });
+
+
+</script>
+</body>
+</html>
