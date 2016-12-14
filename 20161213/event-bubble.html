@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .base{
+        width: 600px;
+            height: 600px;
+            background-color: #000;
+        }
+        .child{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        .grand-son{
+            width: 200px;
+            height: 200px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="base">
+    <div class="child">
+        <div class="grand-son">
+
+        </div>
+    </div>
+</div>
+<script>
+    function listen(selecter,eventString) {
+//        var eventListen;
+//        var event;
+        if(selecter.attachEvent){
+            selecter.attachEvent("on"+eventString,fn);
+//            eventString=selecter.attachEvent;
+//            event = "on"+eventString;
+        }else if(selecter.addEventListener){
+            selecter.addEventListener(eventString,fn);
+//            eventListen=selecter.addEventListener;
+//            event = eventString;
+        }
+//        eventListen(event,fn);
+    }
+
+    var base = document.querySelector(".base");
+    var child = document.querySelector(".child");
+    var grandSon = document.querySelector(".grand-son");
+
+    child.addEventListener("click",handle);
+    function handle(e) {
+       var target = e.target;
+        var current = e.currentTarget;
+        alert("target:"+target.getAttribute("class"));
+        alert("current:"+current.getAttribute("class"));
+    }
+    base.addEventListener("click",function (e) {
+        alert(e.target.getAttribute("class"));
+        alert(e.currentTarget.getAttribute("class"));
+    });
+    grandSon.addEventListener("click",function (e) {
+        e.stopPropagation();
+    });
+    //attachEvent();在IE低版本浏览器中出现,
+
+</script>
+</body>
+</html>

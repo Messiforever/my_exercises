@@ -51,6 +51,11 @@
 //        alert("mouseup");
         arguments[0].currentTarget.style.backgroundColor="#009747";
     });
+    listen("#container","mousemove",function (e) {
+        document.getElementById("container").innerText=("X="+e.pageX+" "+"Y="+e.pageY);
+
+
+    })
 </script>
 </body>
 </html>

@@ -29,8 +29,9 @@ footer{
     visibility: visible;
     overflow: hidden;
 }
+
 .gallery .carousel{
-    width: 1720px;
+    width: 1750px;
     height: 100%;
     position: absolute;
     transition: left 0.5s;

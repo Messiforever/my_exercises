@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>compatible</title>
+</head>
+<body>
+<div id="compatible" style="width: 200px;height: 200px;background-color: #0EB61B"></div>
+<script>
+    var compatible = document.getElementById("compatible");
+    listen(compatible,"click",function () {
+        alert("我是兼容性监听！");
+    });
+    function listen(selector,eventString,fn) {
+        if(selector.attachEvent){
+            selector.attachEvent("on"+eventString,fn);
+        }else if(selector.addEventListener){
+            selector.addEventListener(eventString,fn);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attach-event</title>
+</head>
+<body>
+<div style="width: 200px;height: 200px;background-color: red"></div>
+<script>
+
+    var target = document.querySelector("div");
+    target.attachEvent("onclick",function () {
+        alert("我是attach event.");
+    });
+</script>
+</body>
+</html>
