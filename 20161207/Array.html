@@ -10,7 +10,45 @@ string number undefined boolean object null（都是数据类型） <br>
 String Number Array(前面的既是函数也是对象)
 <script>
     document.write("<br>");
+    var a = [1, 2, 3, 4, 5];
+    var a1= a.every(function(x){return x<4;});                   //返回true
 
+    document.write(a1);
+    document.write("<br>");
+    var a2 = a.some(function(x){return x%2===0;});           //返回false
+    document.write(a2);
+    document.write("<br>");
+
+   var newA=[3, 35, 7, 42, 14, 2];
+   var newA1 = newA.every(function (x) {
+      return x < 50;
+   });
+    document.write(newA1);
+    document.write("<br>");
+    var newA2 = newA.every(function (x) {
+        return x&2===0;
+    });
+    document.write(newA2);
+    document.write("<br>");
+
+    var newA3 = newA.every(function (x) {
+        return x&2===NaN;
+    });
+    document.write(newA3);
+    document.write("<br>");
+
+     var reduce = [2,4,6,8,10,12,14];
+     reduce.reduce(function (x,y) {
+             document.writeln(y);
+     },7);
+    document.write("<br>");
+    reduce.reduceRight(function (a,b) {
+        document.writeln(b);
+    },7);
+
+
+    document.write("<br>");
+    document.write("<br>");
 
     var filterA = [1,2,3,4,5];
     var small = filterA.filter(function (x) {
