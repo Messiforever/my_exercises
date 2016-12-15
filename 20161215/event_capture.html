@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件捕获</title>
+    <script>
+        window.addEventListener("load",function () {
+            var button = document.querySelector("input");
+            button.addEventListener("click",function () {
+                alert("我被点了！");
+            });
+        });
+
+    </script>
+</head>
+<body>
+<input type="button" value="点我啊">
+
+</body>
+</html>

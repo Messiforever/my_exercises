@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-数组Array</title>
+</head>
+<body>
+string number undefined boolean object null（都是数据类型） <br>
+<h1>js内置对象（函数）</h1>
+String Number Array(前面的既是函数也是对象)
+<script>
+    document.write("<br>");
+
+
+    var filterA = [1,2,3,4,5];
+    var small = filterA.filter(function (x) {
+       return x < 3;
+    });
+    document.write(small);
+    document.write("<br>");
+    var other = filterA.filter(function (x,i) {  //i为元素下标
+        return filterA[i] % 2 ==0;
+
+    });
+    document.write(other);
+    document.write("<br>");
+
+
+    document.write("<br>");
+    var mapArray = [100,200,300,400,500,600,700];
+    var newMap = mapArray.map(function (x) {
+        document.writeln(x);
+         return x > 300 ? 1:0;
+    });
+    document.write("<br>");
+    document.write(newMap);
+    document.write("<br>");
+    document.write("<br>");
+
+    var forEachArray = [100,200,300,400,500,600,700];
+    forEachArray.forEach(function (x) {
+        document.writeln(x);
+
+    });
+    document.write("<br>");
+
+
+
+    var arrayExercise =
+        [1,2,"hello,world",{title:"gogo"},undefined,NaN,null];
+    for(var i = 0;i<arrayExercise.length;i++){
+        document.writeln(typeof  arrayExercise[i]);
+    }
+    document.write("<br>");
+var Array = [10,9,8,7,6,5,4,3,2,1];
+for(var i = 0;i<Array.length/2;i++) {
+    var temp1 = Array[i];
+    var temp2 = Array.length - 1 - i;
+    Array.splice(i,1,Array[temp2]);
+    Array.splice(temp2,1,temp1);
+}
+document.writeln(Array);
+    document.write("<br>");
+
+var aJoin = ["h","e","l","l","o"];
+var result = aJoin.join("|");//join以指定的元素去链接数组元素
+document.write(result);
+document.write("<br>");
+var result1 = result.split("|");
+document.write(result1);
+document.write("<br>");
+result1.reverse();
+document.write(result1);
+
+
+var a = 1;
+var b = "2";
+var c = 3;
+var output1 = a + b + c;
+var output2 = a + c + b;
+    document.write("<br>");
+    document.write(output1);
+    document.write("<br>");
+    document.write(output2);
+
+    document.write("<br>");
+
+    var str = "123";
+    var str1 = "123"*1;
+    var str2 = "123"&"123";
+    document.write(typeof str1);
+    document.write(typeof str2);
+
+    document.write("<br>");
+
+
+   var words = ["as0","dd1","ed2","bs3","ab4"];
+   document.write(words);
+   document.write("<br>");
+   words.sort();
+   document.write(words);
+
+    document.write("<br>");
+    var source = "SgdGFlkGoimOIKpm";
+    var re = source.toLowerCase();
+    document.write(source);
+    document.write("<br>");
+    document.write(re);
+    document.write("<br>");
+
+    var aConcat = ["h","e","l","l","o"];
+    var aConcat2 = ["w","o","r","l","d"];
+    var aConcat3 = aConcat.concat(aConcat2);
+    document.write(aConcat3);
+    document.write("<br>");
+
+    var aSlice = [1,2,3,4,5,6,7,8,9,10];
+    var sliceResult = aSlice.slice(0,3);
+    document.write(sliceResult);
+    document.write("<br>");
+
+
+   for(var o = 0;o<aSlice.length; o++){
+       var item = aSlice.slice(aSlice.length-(o+1)
+       ,aSlice.length-(0));
+       document.writeln(item[0]);
+   }
+    document.write("<br>");
+
+    var popArray = ["a","b","c","d","e","f","g"];
+    document.write(popArray);
+    popArray.pop();
+    document.write("<br>pop后:");
+    document.write(popArray);
+    document.write("<br>");
+
+    var shiftArray = ["a","b","c","d","e","f","g"];
+    document.write(shiftArray);
+    shiftArray.shift();
+    document.write("<br>shift后:");
+    document.write(shiftArray);
+    document.write("<br>");
+
+    var unshiftArray = ["a","b","c","d","e","f","g"];
+    document.write(unshiftArray);
+    unshiftArray.unshift(1);
+    document.write("<br>unshift后:");
+    document.write(unshiftArray);
+    document.write("<br>");
+    var pushArray = ["a","b","c","d","e","f","g"];
+    document.write(pushArray);
+    pushArray.push(1);
+    document.write("<br>push后:");
+    document.write(pushArray);
+    document.write("<br>");
+
+
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<h1>字符串申明</h1>");
+    var strData = new String("data");
+    console.log(strData);
+    var strData2 = "data";
+    console.log(strData2);
+    var numStr =String(123);
+    console.log(numStr);
+    //实例判断
+    var flag = numStr instanceof String;
+    console.log(flag);
+    document.write("<h1>数字申明</h1>");
+      var numberData = new Number(123);
+      var convertNumber = Number("123");
+      var convertNot = Number("abc");
+    document.write(convertNot);
+    var flag1=NaN==convertNot;
+    document.write("<br>");
+    document.write("NaN === NaN =" + flag1)
+    console.log(flag1);
+
+    var pInt =parseInt("213");
+    document.write("<br>");
+    document.write("parseInt('213')--->" + pInt);
+
+    document.write("<h1>数组</h1>");
+    document.write("<h2>数组定义</h2>");
+    var a = new Array();
+    a.push("123");
+    a.push(123);
+    a.push(true);
+    a.push(undefined);
+    a.push(null);
+    a.push({title:"I'm a object."});
+    document.write("<h3>数组遍历</h3>");
+    for(var i=0;i<a.length;i++){
+        document.writeln(a[i]);
+        console.log(a[i]);
+    }
+    document.write("<br>");
+    var i1 =0;
+    while (i1 < a.length){
+        document.writeln(a[i1]);
+        i1++;
+    }
+    document.write("<br>");
+    document.write("<h3>数组元素连接</h3>");
+      var resultJoin = a.join("$");
+      document.write(resultJoin);
+    document.write("<h3>dowhile遍历数组</h3>");
+    var resultSplit=resultJoin.split("$");
+    var iDoWhile=0;
+     do{
+         document.write(resultSplit[iDoWhile]);
+         iDoWhile++;
+     }
+     while (iDoWhile < resultSplit.length)
+      document.write("<br>");
+     document.write((undefined==" "));
+
+
+
+</script>
+</body>
+</html>
