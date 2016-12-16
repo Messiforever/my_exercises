@@ -1,0 +1,243 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.register{
+    width: 200px;
+    height: 150px;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    left: 800px;
+    top:64px;
+
+}
+
+.nav{
+    width: 100vw;
+    height: 10vh;
+    background-color: #0C92F2;
+}
+.search{
+    width: 984px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.search-inner{
+    width: 284px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+.search-inner input{
+    width: 280px;
+    height: 37px;
+    background-color: #0B84DA;
+    border-radius: 5px;
+    display: block;
+    border: none;
+   color: white;
+
+}
+header .menu{
+    width: 100vw;
+    height: 8vh;
+    border-bottom: 1px solid #C8C8C8;
+}
+.menu-inner{
+    width: 984px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.menu-inner div{
+    width: auto;
+    height: 100%;
+    line-height: 8vh;
+    font-family: 微软雅黑;
+    margin-left: 40px;
+}
+.menu-inner div:nth-child(8){
+   position: absolute;
+    right: 150px;
+}
+.menu-inner div:nth-child(7){
+    position: absolute;
+    right: 250px;
+}
+.menu-inner div a{
+    text-decoration: none;
+}
+main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 984px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.inner-left{
+      width: 722px;
+      height: 3000px;
+  }
+.gallery{
+    width: 722px;
+    height: 409px;
+
+}
+.youji{
+    width: 100%;
+    height: 167px;
+    border-bottom:1px solid #C8C8C8 ;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tour{
+     width: 722px;
+     height: 80px;
+     padding: 1px;
+    border-bottom:1px solid #C8C8C8 ;
+ }
+.tour div{
+    height: auto;
+    width: auto;
+    border-left: 5px solid #FFDB00;
+    margin-top: 40px;
+    font-family: "微软雅黑 Light";
+
+}
+.tour-address{
+    width: 722px;
+    height: 275px;
+    border-bottom:1px solid #C8C8C8 ;
+}
+.tour-address > div{
+    float: left;
+}
+.tour-address .address{
+    width: 722px;
+    height: 50px;
+    clear: both;
+}
+.tour-address .address div{
+    width: 140px;
+    height: auto;
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.tour-address .address div a{
+    text-decoration: none;
+}
+.tour-gallery{
+
+}
+.hots-tours{
+    width: 386px;
+    height: auto;
+    margin-left: 30px;
+}
+.hots-tours div{
+    width: 386px;
+    height: 50px;
+    border-bottom:1px solid #C8C8C8 ;
+    line-height: 50px;
+}
+.hots-tours span{
+    font-size: 40px;
+}
+.hots-tours a{
+    font-size: 22px;
+    text-decoration: none;
+}
+.tourtalk{
+    width: 722px;
+    height: 512px;
+}
+.tourtalk > div{
+    float: left;
+}
+.talktitle{
+    width: 722px;
+    height: 85px;
+    clear: both;
+    border-left: 5px solid #FFDB00;
+}
+.talktitle p{
+    font-size: 8px;
+    margin-top: -10px;
+    margin-left: 10px;
+
+}
+
+.talker{
+    width: 307px;
+    height: 348px;
+}
+.talker2{
+    width: 399px;
+    height: 348px;
+    margin-left: 16px;
+}
+.talker2 div{
+    float: left;
+    height: 215px;
+}
+
+.inner-right{
+    width: 240px;
+    height: 3000px;
+}
+.inner-right .menu{
+    width: 204px;
+    height: 282px;
+    margin: 0 auto;
+    background-color: #F7F7F7;
+}
+.tourApp{
+    width: 204px;
+    height: auto;
+    margin-top: 40px;
+}
+.inner-right .menu .hots{
+    width: 100%;
+    height: 78px;
+    border-bottom: 1px solid #C8C8C8;
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: space-around;
+
+}
+.inner-right .menu .hots input[type=button]{
+    width: 100px;
+    height: 50px;
+    background-color: #FFDB00;
+    border-radius: 4px;
+    border: none;
+    margin-top: 10px;
+
+}
+.inner-right .menu .hots div{
+    line-height: 30px;
+
+}
+.inner-right .menu .hots div p{
+    font-size: 10px;
+}

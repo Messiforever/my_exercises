@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量作用域</title>
+</head>
+<body>
+<script>
+    //变量申明（定义）作用域提升
+    function preFun(abc) {
+        document.write("<br>");
+        document.write("变量作用域提升abc="+abc);
+        var  abc = "abc" ;
+    }
+    preFun();
+    document.write("<br>");
+    function returnFn() {
+        var result = "hello world";
+        result+="。";
+        return result;
+    }
+    document.write("<br>");
+    function noneReturnFn() {
+        var result = "hello world";
+    }
+    var invokeResult = returnFn();
+    var pseudoResult = noneReturnFn();
+    document.write("函数调用返回invokeResult=",invokeResult);
+    document.write("<br>");
+    document.write("没有返回值的函数调用pseudoResult=",pseudoResult);
+
+    document.write("<br>");
+    //全局作用域
+    var a = "123";
+
+    document.write("<br>");
+    document.write("全局作用域的a："+window.a);
+    document.write("<br>");
+
+    //嵌套作用域
+    function fnScope() {
+        var fnA = 123;
+        document.write("<br>");
+        document.write("函数作用域里的fnA="+fnA);  //局部变量
+        document.write("<br>");
+        document.write(window.fnA);//这里会出现undefined
+
+        function childScope() {
+            var childA = "abc";
+            document.write("<br>");
+            document.write("嵌套作用域中的变量childA="+childA);
+            document.write("嵌套作用域里父级函数作用域里的fnA="+fnA);
+        }
+    }
+   fnScope();
+    document.write("<br>");
+    document.write("<br>");
+    //方法
+    var invokeService = {
+        getData:function () {
+            return{
+                title: "I'm a title.",favorite:["登山","游泳"]
+            }
+        }
+    };
+    var data = invokeService.getData();
+    document.write("<br>");
+    document.write(data.favorite);
+    document.write("<br>");
+    /**
+     *    函数调用方式
+    *  1.直接调用
+    *  */
+    var name = "全局变量 name";
+    function invokeWay() {
+         this.newTitle = "new - title";
+        document.write("<br>");
+        document.write("直接调用函数输出！" + this.name);
+        document.write("<br>");
+        document.write("指定This调用的参数！" + arguments[0]);
+    }
+    invokeWay();
+    document.write("<br>");
+    //2.作为方法调用
+    var obj = {
+        name:"obj title",
+        fn:invokeWay
+    };
+    obj.fn();
+    document.write("<br>");
+     //2.2间接调用转移
+    var objFun = obj.fn;
+    objFun();
+    document.write("<br>");
+    //3.指定This调用
+    var thisObj = {
+        name:"this-object"
+    };
+    invokeWay.apply(thisObj,[1,2,3]);
+    //3.2.
+    document.write("<br>");
+    invokeWay.call(thisObj,1,2,3);
+    //3.3
+    document.write("<br>");
+   var bindCallack =  invokeWay.bind(thisObj,["this is a bind"]);
+   bindCallack();
+    document.write("<br>");
+    document.write("<br>");
+    //4.new关键字调用函数
+    var generation = new invokeWay("new 关键字");
+    document.write("<br>");
+    document.write("new关键字调用函数! " + generation.newTitle);
+
+</script>
+</body>
+</html>
