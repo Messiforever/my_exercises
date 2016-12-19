@@ -12,7 +12,7 @@ body{
     position: fixed;
     left: 800px;
     top:64px;
-
+    border-radius: 5px;
 }
 
 .nav{
@@ -44,7 +44,6 @@ body{
     display: block;
     border: none;
    color: white;
-
 }
 header .menu{
     width: 100vw;
@@ -57,6 +56,12 @@ header .menu{
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
+}
+a:visited{
+    color: #000000;
+}
+a:hover{
+    color:#7C7F79;
 }
 .menu-inner div{
     width: auto;
@@ -89,7 +94,6 @@ main{
     justify-content: space-between;
     margin-top: 50px;
 }
-
 .inner-left{
       width: 722px;
       height: 3000px;
@@ -97,7 +101,6 @@ main{
 .gallery{
     width: 722px;
     height: 409px;
-
 }
 .youji{
     width: 100%;
@@ -107,7 +110,6 @@ main{
     justify-content: flex-start;
     align-items: center;
 }
-
 .tour{
      width: 722px;
      height: 80px;
@@ -120,7 +122,6 @@ main{
     border-left: 5px solid #FFDB00;
     margin-top: 40px;
     font-family: "微软雅黑 Light";
-
 }
 .tour-address{
     width: 722px;
@@ -135,6 +136,7 @@ main{
     height: 50px;
     clear: both;
 }
+
 .tour-address .address div{
     width: 140px;
     height: auto;
@@ -232,12 +234,23 @@ main{
     border-radius: 4px;
     border: none;
     margin-top: 10px;
-
 }
 .inner-right .menu .hots div{
     line-height: 30px;
-
 }
+
 .inner-right .menu .hots div p{
     font-size: 10px;
+}
+footer{
+    width: 100vw;
+    height: 50vh;
+    background-color: #1B5AC5;
+    padding: 1px;
+}
+.footer{
+    width: 984px;
+    height: 80%;
+    margin: 30px auto;
+    background-color: #ffffff;
 }

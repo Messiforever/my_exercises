@@ -165,8 +165,6 @@
 
         var timeoutInterval;
        function runCarousel() {
-//           var gallery = document.getElementsByClassName("gallery");
-//           gallery = gallery[0];
            var gWidth= (gallery.clientWidth+gallery.offsetWidth)/2;
            var poiLeft= carousel.style.left;
            var left = poiLeft.substring(0,poiLeft.length-2);
@@ -187,7 +185,6 @@
        }
     galleryTarggles[i].style.backgroundColor="red";
         var gallery = document.querySelector(".gallery");
-
             timeoutInterval = setTimeout(runCarousel,3000);
 
           gallery.addEventListener("mouseenter",function () {

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <style>
+        #countDown,#outputContainer{
+            width: 900px;
+            height: 100px;
+            font-size: 40px;
+            background-color: #B61705;
+            color: white;
+            line-height: 100px;
+            text-align: center;
+            margin: 10px auto;
+            font-family: "微软雅黑 Light";
+        }
+    </style>
+</head>
+<body>
+<div id="outputContainer"></div>
+<div id="countDown"></div>
+<script>
+    function Countdown(dates,selector) {
+        var ele = document.querySelector(selector);
+        var now = new Date();
+        var des = new Date(dates);
+        var subDate = des - now;
+        var dates = subDate/1000/60/60/24;
+        var dates2 = Math.floor(dates);
+        var dateMiniSecond = dates2*24*60*60*1000;
+        var hourMiniSecond = subDate - dateMiniSecond;
+        var hours = hourMiniSecond/1000/60/60;
+        var hours2 = Math.round(hours);
+        var hMiniSecond = hours2 * 60 * 60 *1000;
+        var mMiniSecond = hourMiniSecond - hMiniSecond;
+        var minuteMiniSecond = mMiniSecond/1000/60;
+        var minuteMiniSecond2 = Math.floor(minuteMiniSecond);
+        var mrMiniSecond = minuteMiniSecond2*60*1000;
+        var secondMini = mMiniSecond - mrMiniSecond;
+        var second = secondMini/1000;
+        var second2 = Math.floor(second);
+        var secondMiniSe = second2*1000;
+        var miniSecond2 = secondMini -secondMiniSe;
+        ele.innerText = "距离春节还有："+dates2+"天"
+        +hours2+"时"
+        +minuteMiniSecond2+"分"
+        +second2+"秒"
+        +miniSecond2+"毫秒";
+    }
+    setInterval(function () {
+        Countdown("2017-1-28","#countDown");
+    },1);
+    function Timer() {
+        var self = this;
+        self.now = new Date();
+        self.year = self.now.getFullYear();
+        self.month = self.now.getMonth() + 1;
+        self.date = self.now.getDate();
+        self.hours = self.now.getHours();
+        self.minute = self.now.getMinutes();
+        self.second = self.now.getSeconds();
+        self.miniSecond = self.now.getMilliseconds();
+        self.output = function (selecter) {
+            var o = document.querySelector(selecter);
+            o.innerText = "当前时间："+self.year + "-"
+                + self.month + "-"
+                + self.date  + " "
+                + self.hours + ":"
+                + self.minute + ":"
+                + self.second + ":"
+                + self.miniSecond;
+        }
+
+    }
+    setInterval(function () {
+        var timer = new Timer();
+        timer.output("#outputContainer");
+    }, 1);
+
+</script>
+</body>
+</html>

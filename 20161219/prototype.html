@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+</head>
+<body>
+   <script>
+    function Human() {
+        this.height = 170;
+        this.weight = 55;
+    }
+    var human = new Human();
+    function Student() {
+        this.name = "Messi";
+        this.gender = "男";
+        this.age = 18;
+        this.native = "China";
+    }
+    Student.prototype = human;
+    var Messi = new Student();
+    alert("Messi is height:"+Messi.height);
+    alert("Messi is weight:"+Messi.weight);
+    var instance = Messi instanceof Human;
+    alert(instance);
+
+    document.write("<br>");
+
+    function Animal(lifeSpan) {
+        this.lifeSpan = lifeSpan ? lifeSpan: 100;
+        this.birth = "1970-1-1";
+        this.name = "animal";
+    }
+    function Black() {
+        this.target = ["cute","noisy"];
+        this.nickName = "nini";
+
+    }
+    var littleBlack = new Black();
+    Animal.apply(littleBlack,[30]);
+    Animal.call(littleBlack,30);
+    var littleBlackFn = Animal.bind(littleBlack,[30]);  //bind返回的是一个函数，输出时需再执行一次
+    var littleBlack3 = littleBlackFn();
+    var data = JSON.stringify(littleBlack);
+    document.write(data);
+    document.write("<br>");
+
+    var message = "Messi is your brother"
+    var computer = {
+        message:"coming message",
+        output:function () {
+            document.write(this.message);
+        },
+        input:function (msg) {
+            this.message = msg;
+
+        }
+    };
+    computer.input("invoke function by object !");
+    computer.output();
+    document.write("<br>");
+    var firstMsg = "global";
+    function output() {
+        document.write(this.firstMsg);  //this window对象firstMsg
+    }
+    output();
+    var globalFn = computer.output;
+    globalFn();
+   </script>
+</body>
+</html>
