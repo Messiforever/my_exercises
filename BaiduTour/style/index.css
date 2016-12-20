@@ -13,8 +13,8 @@ body{
     left: 800px;
     top:64px;
     border-radius: 5px;
+    z-index: 3;
 }
-
 .nav{
     width: 100vw;
     height: 10vh;
@@ -56,6 +56,11 @@ header .menu{
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
+
+}
+.menu-down:hover{
+    height: 100px;
+    background-color: #8D8F8B;
 }
 a:visited{
     color: #000000;
@@ -65,10 +70,11 @@ a:hover{
 }
 .menu-inner div{
     width: auto;
-    height: 100%;
+    height: auto;
     line-height: 8vh;
     font-family: 微软雅黑;
     margin-left: 40px;
+    position: relative;
 }
 .menu-inner div:nth-child(8){
    position: absolute;
@@ -82,7 +88,7 @@ a:hover{
     text-decoration: none;
 }
 main{
-    width: 100%;
+    width: 100vw;
     height: auto;
     display: flex;
     justify-content: center;
@@ -96,11 +102,62 @@ main{
 }
 .inner-left{
       width: 722px;
-      height: 3000px;
+      height: auto;
   }
 .gallery{
     width: 722px;
     height: 409px;
+    overflow: hidden;
+    position: relative;
+}
+.gallery .carrousel{
+    height: 409px;
+    width: 4332px;
+    position: absolute;
+    z-index: 1;
+}
+.gallery .carrousel div{
+    float: left;
+}
+.gallery .carrousel  > div img{
+    width: 722px;
+    height: 409px;
+    display: block;
+}
+.gallery .carrousel-side{
+    width: 720px;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 1px;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.gallery .carrousel-side .carrousel-side-inner{
+    width: auto;
+    height: 60px;
+
+}
+.gallery .carrousel-side .carrousel-side-inner > div{
+    width: 96px;
+    height: 66px;
+    float: left;
+    margin-right: 6px;
+    margin-left: 6px;
+    border: 3px solid transparent;
+    transition: border 0.5s;
+}
+.gallery .carrousel-side .carrousel-side-inner >div:hover{
+    border: 3px solid #ffe900;
+}
+.gallery .carrousel-side > div img{
+    width: 90px;
+    height: 60px;
+    display: block;
 }
 .youji{
     width: 100%;
@@ -122,6 +179,7 @@ main{
     border-left: 5px solid #FFDB00;
     margin-top: 40px;
     font-family: "微软雅黑 Light";
+
 }
 .tour-address{
     width: 722px;
@@ -205,7 +263,7 @@ main{
 
 .inner-right{
     width: 240px;
-    height: 3000px;
+    height: auto;
 }
 .inner-right .menu{
     width: 204px;
@@ -225,7 +283,39 @@ main{
     background-color: #F7F7F7;
     display: flex;
     justify-content: space-around;
+}
+.logo1,.logo2,.logo3{
+    width: 30px;
+    height: 42px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 25px;
+}
+.logos{
+    width: 500px;
+    height: 163px;
+}
+.inner-right .menu .hots .logo1 .logos{
+    position: absolute;
+}
+.inner-right .menu .hots .logo2 .logos{
+    position: absolute;
+    left: -30px;
+}
+.inner-right .menu .hots .logo3 .logos{
+    position: absolute;
+    bottom: 2px;
+    left: -1px;
+}
+.inner-right .menu .hots a{
+    font-size: 30px;
+    color: red;
+    text-decoration: none;
+    margin-top: 10px;
 
+}
+.inner-right .menu .hots span{
+    font-size: 10px;
 }
 .inner-right .menu .hots input[type=button]{
     width: 100px;
@@ -241,12 +331,13 @@ main{
 
 .inner-right .menu .hots div p{
     font-size: 10px;
+    margin-top: -10px;
 }
 footer{
     width: 100vw;
     height: 50vh;
     background-color: #1B5AC5;
-    padding: 1px;
+    /*padding: 1px;*/
 }
 .footer{
     width: 984px;
