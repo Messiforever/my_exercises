@@ -15,13 +15,18 @@ body{
     border-radius: 5px;
     z-index: 3;
 }
+header{
+    width: 100%;
+    height: 18vh;
+}
+
 .nav{
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     background-color: #0C92F2;
 }
 .search{
-    width: 984px;
+    width: 980px;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -46,7 +51,7 @@ body{
    color: white;
 }
 header .menu{
-    width: 100vw;
+    width: 100%;
     height: 8vh;
     border-bottom: 1px solid #C8C8C8;
 }
@@ -87,18 +92,19 @@ a:hover{
 .menu-inner div a{
     text-decoration: none;
 }
-main{
-    width: 100vw;
-    height: auto;
+section{
+    width: 100%;
+    height: 2326px;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 .container{
-    width: 984px;
-    height: auto;
+    width: 980px;
+    height: 2326px;
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+
 }
 .inner-left{
       width: 722px;
@@ -194,24 +200,76 @@ main{
     height: 50px;
     clear: both;
 }
-
-.tour-address .address div{
+.tour-address .address > div{
     width: 140px;
-    height: auto;
+    height: 50px;
     float: left;
-    text-align: center;
-    margin-top: 10px;
     font-size: 20px;
+    border-top: 2px solid transparent;
+    position: relative;
 }
-.tour-address .address div a{
+.tour-address .address > div .address-menu{
+    width: 722px;
+    height: 225px;
+    position: absolute;
+    top:50px;
+}
+.tour-address .address > div:nth-child(2) .address-menu{
+    width: 722px;
+    height: 225px;
+    position: absolute;
+    top:50px;
+    left:-140px;
+    visibility: hidden;
+}
+.tour-address .address > div:nth-child(3) .address-menu{
+    width: 722px;
+    height: 225px;
+    position: absolute;
+    top:50px;
+    left:-280px;
+    visibility: hidden;
+}
+.tour-address .address > div:nth-child(4) .address-menu{
+    width: 722px;
+    height: 225px;
+    position: absolute;
+    top:50px;
+    left:-420px;
+    visibility: hidden;
+}
+.tour-address .address > div:nth-child(5) .address-menu{
+    width: 722px;
+    height: 225px;
+    position: absolute;
+    top:50px;
+    left:-560px;
+    visibility: hidden;
+}
+.tour-address .address > div .address-menu > div{
+    float: left;
+}
+.tour-address .address > div:hover{
+    border-top: 2px solid #FFDB00;
+}
+.tour-address .address div a:hover{
+    color: #7C7F79;
+}
+.tour-address .address > div > a{
+    width: 140px;
+    height: 30px;
+    display: block;
+    line-height: 30px;
+    text-align: center;
     text-decoration: none;
+    border-right: 1px solid #C8C8C8;
+    color: #0B84DA;
+    margin-top: 10px;
 }
-.tour-gallery{
 
-}
 .hots-tours{
     width: 386px;
-    height: auto;
+    height: 225px;
     margin-left: 30px;
 }
 .hots-tours div{
@@ -219,6 +277,9 @@ main{
     height: 50px;
     border-bottom:1px solid #C8C8C8 ;
     line-height: 50px;
+}
+.hots-tours > div:hover{
+    background-color: #FCFADE;
 }
 .hots-tours span{
     font-size: 40px;
@@ -266,30 +327,55 @@ main{
     height: auto;
 }
 .inner-right .menu{
-    width: 204px;
+    width: 240px;
     height: 282px;
     margin: 0 auto;
     background-color: #F7F7F7;
+    padding: 1px;
+
 }
 .tourApp{
     width: 204px;
     height: auto;
-    margin-top: 40px;
+    margin-top: 12px;
 }
 .inner-right .menu .hots{
-    width: 100%;
-    height: 78px;
+    width: 203px;
+    height: 57px;
     border-bottom: 1px solid #C8C8C8;
     background-color: #F7F7F7;
     display: flex;
     justify-content: space-around;
+    margin-left: 20px;
+    margin-top: 15px;
+
 }
+.inner-right .menu .hots:nth-child(3){
+    border: none;
+}
+.inner-right .menu .hots:last-child{
+    border: none;
+    background: url("../images/home-create-btns_7e09f23a.png")no-repeat;
+    margin-top: -2px;
+}
+.inner-right .menu .hots:last-child > div a{
+    width: 97px;
+    height: 48px;
+    display: block;
+}
+
+.inner-right .banner{
+    width: 240px;
+    height: 420px;
+    background-color: #00A69D;
+}
+
 .logo1,.logo2,.logo3{
     width: 30px;
     height: 42px;
     overflow: hidden;
     position: relative;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 .logos{
     width: 500px;
@@ -317,14 +403,7 @@ main{
 .inner-right .menu .hots span{
     font-size: 10px;
 }
-.inner-right .menu .hots input[type=button]{
-    width: 100px;
-    height: 50px;
-    background-color: #FFDB00;
-    border-radius: 4px;
-    border: none;
-    margin-top: 10px;
-}
+
 .inner-right .menu .hots div{
     line-height: 30px;
 }
@@ -334,10 +413,10 @@ main{
     margin-top: -10px;
 }
 footer{
-    width: 100vw;
+    width: 100%;
     height: 50vh;
     background-color: #1B5AC5;
-    /*padding: 1px;*/
+    padding: 1px;
 }
 .footer{
     width: 984px;

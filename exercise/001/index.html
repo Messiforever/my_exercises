@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+.fd:first-line{
+  font-size: 30px;
+
+}
+.fd::first-letter{
+  font-size: 70px;
+}
+
+.before-test:before{
+  content:url(checkbox.jpg);
+}
+.after-test:after{
+  content:url(checkbox.jpg);
+
+}
+.after-test:before{
+  content:"("attr(data-illustrate)")";
+
+}
+.before-counter h1{
+    counter-reset: subsection;
+}
+.before-counter h1:before{
+    counter-increment: section;
+    content: "Section" counter(section)".";
+}
+.before-counter h2:before{
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection)".";
+}
+        body{
+            counter-increment: section;
+        }
+.before-counter h3:before{
+    counter-increment: subsection;
+    content: counter(subsection) "." counter(subsection)".";
+}
+    </style>
+  </head>
+  <body>
+    <div class="fd">
+      <p>
+        dlgkdnvkncklgfjeltjgdmvklcmlgkvewroigkldsmnv,cnklvneiojgkldnvklrjeiogjkldmbklfejodklbmopewgmkldmblefjopgkgmblkfentgoi;engkjsoignkldgnierhog
+
+      </p>
+    </div>
+     <div class="before-test" data-illustrate="qw">
+       before
+     </div>
+     <br>
+     <br><br>
+     <div class="after-test">
+       after
+
+     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="before-counter">
+        <h1>阿苏衣服谷一首歌</h1>
+        <h2>阿苏衣服谷一首歌</h2>
+        <h2>阿苏衣服谷一首歌</h2>
+        <h2>阿苏衣服谷一首歌</h2>
+        <h3>阿苏衣服谷一首歌</h3>
+        <h3>阿苏衣服谷一首歌</h3>
+        <h3>阿苏衣服谷一首歌</h3>
+    </div>
+
+
+  </body>
+</html>
