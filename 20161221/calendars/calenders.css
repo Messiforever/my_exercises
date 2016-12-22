@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: GLYPHICONS;
+    src: url("fonts/glyphicons-halflings-regular.ttf");
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑 Light",GLYPHICONS;
+}
+.container.calender{
+    width: 230px;
+    height: 500px;
+    border: 1px solid #C8C8C8;
+    /*justify-content: space-between;*/
+    background-color: #000000;
+    color: white;
+
+
+}
+.container.calender > div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container.calender .date-container{
+    flex-grow: 10;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 2px solid transparent;
+
+}
+.container.calender .date-container.now{
+    border: 2px solid #7C7F79;
+}
+.container.calender .date-container:hover{
+    border: 2px solid #7C7F79;
+}
+.container.calender .date-container.next{
+    color: #3C6A6F;
+}
+
+.top,.down{
+    width: 20px;
+    height: 30px;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+.tool-bar{
+    justify-content: flex-end;
+}

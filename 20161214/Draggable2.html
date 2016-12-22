@@ -3,16 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <title>Draggle</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #dragContainer{
+        width:200px;
+        height:200px;
+        background-color:red;
+        position:relative;
+        color: white;
+        border: 2px solid #00ff00;
+
+            }
+        #dragContainer > div{
+            width: 2px;
+            height: 2px;
+            background-color: #2D2D2D;
+            position: absolute;
+        }
+        #lefttop{
+            left: 0;
+            cursor: nw-resize;
+        }
+        #leftdown{
+            left: 0;
+            bottom: 0;
+            cursor: sw-resize;
+        }
+        #righttop{
+            right: 0;
+            cursor: ne-resize;
+        }
+        #rightdown{
+            right: 0;
+            bottom: 0;
+            cursor: se-resize;
+        }
+        #leftmiddle{
+            left: 0;
+            bottom: 50%;
+            cursor: w-resize;
+        }
+        #rightmiddle{
+            right: 0;
+            bottom: 50%;
+            cursor: e-resize;
+        }
+        #middletop{
+            left: 50%;
+            cursor: w-resize;
+
+        }
+        #middledown{
+            left: 50%;
+            bottom: 0;
+            cursor: s-resize;
+        }
+    </style>
 </head>
 <body>
-<div id="dragContainer"
-     style="width:200px;height:200px;background-color:red;position:absolute;color: white">
+<div id="dragContainer">
+    <div id="lefttop"></div>
+    <div id="leftmiddle"></div>
+    <div id="leftdown"></div>
+    <div id="middletop"></div>
+    <div id="middledown"></div>
+    <div id="righttop"></div>
+    <div id="rightmiddle"></div>
+    <div id="rightdown"></div>
 </div>
 <script>
     var mousePoint = {};
+    var XmousePoint = {};
     var isMouseDown = false;
+    var flag = false;
+    var rm = 0;
+    var rt = 0;
+    var rd = 0;
+    var md = 0;
+    var mt = 0;
+    var lt = 0;
+    var lm = 0;
+    var ld = 0;
+    var middleTop;
+    var leftMiddle;
     var dragContainer = document.getElementById("dragContainer");
+    var lefttop = document.getElementById("lefttop");
+    var leftmiddle = document.getElementById("leftmiddle");
+    var leftdown = document.getElementById("leftdown");
+    var middletop = document.getElementById("middletop");
+    var middledown = document.getElementById("middledown");
+    var righttop = document.getElementById("righttop");
+    var rightmiddle = document.getElementById("rightmiddle");
+    var rightdown = document.getElementById("rightdown");
     dragContainer.addEventListener("mousedown",function(e){
+
         isMouseDown = true;
         mousePoint.x = e.pageX;
         mousePoint.y = e.pageY;
@@ -20,8 +111,10 @@
     document.addEventListener("mouseup"
             ,function(e){
                 isMouseDown = false;
+                flag=false;
             });
     document.addEventListener("mousemove",function(e){
+        e.stopPropagation();
         var mouseX = e.pageX;
         var mouseY = e.pageY;
         if(isMouseDown){
@@ -35,6 +128,201 @@
         mousePoint.x = mouseX;
         mousePoint.y = mouseY;
     });
+    rightmiddle.addEventListener("mousedown",function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      flag=true;
+      rm = 1;
+      md = 0;
+      mt = 0;
+      rt = 0;
+      rd = 0;
+      lt = 0;
+      lm = 0;
+      ld = 0;
+      XmousePoint.x = e.pageX;
+
+    });
+    middletop.addEventListener("mousedown",function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      flag=true;
+      mt = 1;
+      md = 0;
+      rm = 0;
+
+      rt = 0;
+      rd = 0;
+      lt = 0;
+      lm = 0;
+      ld = 0;
+      XmousePoint.y = e.pageY;
+      middleTop= dragContainer.offsetHeight+dragContainer.offsetTop;
+
+
+    });
+    middledown.addEventListener("mousedown",function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      flag=true;
+      md = 1;
+      rm = 0;
+      mt = 0;
+      rt = 0;
+      rd = 0;
+      lt = 0;
+      lm = 0;
+      ld = 0;
+      XmousePoint.y = e.pageY;
+
+    });
+    righttop.addEventListener("mousedown",function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      flag=true;
+      md = 0;
+      rm = 0;
+      mt = 0;
+      rt = 1;
+      rd = 0;
+      lt = 0;
+      lm = 0;
+      ld = 0;
+      XmousePoint.y = e.pageY;
+      XmousePoint.x = e.pageX;
+    });
+    rightdown.addEventListener("mousedown",function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      flag=true;
+      md = 0;
+      rm =0;
+      mt = 0;
+      rt = 0;
+      rd = 1;
+      lt = 0;
+      lm = 0;
+      ld = 0;
+      XmousePoint.x = e.pageX;
+      XmousePoint.y = e.pageY;
+    });
+    leftmiddle.addEventListener("mousedown",function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      flag=true;
+      md = 0;
+      rm =0;
+      mt = 0;
+      rt = 0;
+      rd = 0;
+      lt = 0;
+      lm = 1;
+      ld = 0;
+      XmousePoint.x = e.pageX;
+      leftMiddle=dragContainer.offsetWidth+dragContainer.offsetLeft;
+    });
+    lefttop.addEventListener("mousedown",function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      flag=true;
+      md = 0;
+      rm =0;
+      mt = 0;
+      rt = 0;
+      rd = 0;
+      lt = 1;
+      lm = 0;
+      ld = 0;
+      XmousePoint.x = e.pageX;
+      XmousePoint.y = e.pageY;
+    });
+    leftdown.addEventListener("mousedown",function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      flag=true;
+      md = 0;
+      rm =0;
+      mt = 0;
+      rt = 0;
+      rd = 0;
+      lt = 0;
+      lm = 0;
+      ld = 1;
+      XmousePoint.x = e.pageX;
+      XmousePoint.y = e.pageY;
+    });
+    document.addEventListener("mouseup",function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      flag=false;
+      md = 0;
+      rm = 0;
+      mt = 0;
+      rt = 0;
+      rd = 0;
+      lt = 0;
+      lm = 0;
+      ld = 0;
+    });
+    document.addEventListener("mousemove",function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var XmouseX = e.pageX;
+      var XmouseY = e.pageY;
+      if(flag){
+            if(rightmiddle.addEventListener && rm==1) {
+              var XsubX = XmouseX - XmousePoint.x;
+              dragContainer.style.width =dragContainer.offsetWidth+XsubX+"px";
+                }
+                if(middledown.addEventListener && md ==1) {
+                  var XsubY = XmouseY - XmousePoint.y;
+                  dragContainer.style.height =dragContainer.offsetHeight+XsubY+"px";
+                    }
+                        if(rightdown.addEventListener && rd==1) {
+                          var XsubX = XmouseX - XmousePoint.x;
+                          var XsubY = XmouseY - XmousePoint.y;
+                          dragContainer.style.width =dragContainer.offsetWidth+XsubX+"px";
+                          dragContainer.style.height =dragContainer.offsetHeight+XsubY+"px";
+                            }
+                                if(middletop.addEventListener && mt==1) {
+                                  var XsubY = XmouseY - XmousePoint.y;
+                                  dragContainer.style.height =dragContainer.offsetHeight-XsubY+"px";
+                                  dragContainer.style.top=middleTop-dragContainer.offsetHeight+"px";
+                                    }
+                                        if(righttop.addEventListener && rt==1) {
+                                          var XsubY = XmouseY - XmousePoint.y;
+                                          var XsubX = XmouseX - XmousePoint.x;
+                                          dragContainer.style.height =dragContainer.offsetHeight-XsubY+"px";
+                                          dragContainer.style.width =dragContainer.offsetWidth+XsubX+"px";
+                                          dragContainer.style.top=middleTop-dragContainer.offsetHeight+"px";
+                                            }
+
+                                                if(leftmiddle.addEventListener && lm==1) {
+                                                  var XsubX = XmouseX - XmousePoint.x;
+                                                  dragContainer.style.width =dragContainer.offsetWidth-XsubX+"px";
+                                                  dragContainer.style.left =leftMiddle-dragContainer.offsetWidth+"px";
+                                                    }
+                                                   if(lefttop.addEventListener && lt==1) {
+                                                    var XsubX = XmouseX - XmousePoint.x;
+                                                    var XsubY = XmouseY - XmousePoint.y;
+                                                      dragContainer.style.width =dragContainer.offsetWidth-XsubX+"px";
+                                                     dragContainer.style.height =dragContainer.offsetHeight-XsubY+"px";
+                                                      dragContainer.style.left =leftMiddle-dragContainer.offsetWidth+"px";
+                                                      dragContainer.style.top=middleTop-dragContainer.offsetHeight+"px";
+        }
+                                                         if(leftdown.addEventListener && ld==1) {
+                                                           var XsubX = XmouseX - XmousePoint.x;
+                                                           var XsubY = XmouseY - XmousePoint.y;
+                                                           dragContainer.style.width =dragContainer.offsetWidth-XsubX+"px";
+                                                           dragContainer.style.left =leftMiddle-dragContainer.offsetWidth+"px";
+                                                           dragContainer.style.height =dragContainer.offsetHeight+XsubY+"px";
+                                                             }
+
+      }
+      XmousePoint.x = XmouseX;
+      XmousePoint.y = XmouseY;
+    });
+
 </script>
 </body>
 </html>

@@ -412,6 +412,87 @@ section{
     font-size: 10px;
     margin-top: -10px;
 }
+.police{
+    width: 240px;
+    height: 77px;
+    background-color: #F7F7F7;
+    margin-top: 15px;
+
+}
+.school{
+    margin-top: 15px;
+}
+.dreamer{
+    width: 240px;
+    height: 168px;
+    margin-top: 15px;
+}
+.daren{
+    width: 240px;
+    height: 712px;
+    background-color: #F7F7F7;
+    margin-top: 15px;
+    position: relative;
+}
+.daren  h3 span{
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    margin-left: 10px;
+}
+.sina,.baidutieba{
+    width: 240px;
+    height: 81px;
+    margin-top: 10px;
+    position: relative;
+}
+.sina{
+    background: url("../images/weibo-focus-bg_e5d9bf78.png")center center no-repeat;
+}
+.sina a,.baidutieba a{
+    display: block;
+    width: 62px;
+    height: 22px;
+    position: absolute;
+    top: 46px;
+    left: 84px;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 22px;
+    text-align: center;
+    overflow: hidden;
+
+}
+.sina a {
+}
+.bg{
+    width: 207px;
+    height: 68px;
+    background: url("../images/bg_flbtn_443ee970.png")center center no-repeat;
+    position: absolute;
+    left: -62px;
+}
+.bg:nth-child(2){
+    width: 207px;
+    height: 68px;
+    background: url("../images/bg_flbtn_443ee970.png")center center no-repeat;
+    position: absolute;
+    left: -186px;
+    top: 6px;
+}
+
+.baidutieba{
+    background: url("../images/tieba_cooperation_1570c700.png")center center no-repeat;
+}
+.darennew{
+    width: 36px;
+    height: 36px;
+    background: url("../images/daren-new_1cca6a56.png")center center no-repeat;
+    position: absolute;
+    right: 0;
+
+}
+
+
 footer{
     width: 100%;
     height: 50vh;

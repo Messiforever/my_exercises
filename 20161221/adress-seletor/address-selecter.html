@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="address-selecter.css"/>
+    <script src="province.js"></script>
+</head>
+<body>
+   <div class="container">
+       <div class="province">请选择省：<select name="" id="province"></select></div>
+       <div class="city">请选择市：<select name="" id="city"></select></div>
+       <div class="county">请选择县：<select name="" id="county"></select></div>
+   </div>
+
+
+     <script>
+     var province = document.querySelector("#province");
+     var provinces = window.util.provinces;
+     var op = document.createElement("option");
+     op.value = "";
+     op.text = "请选择省份";
+     province.appendChild(op);
+     function Province(){
+     for(var i =0;i<provinces.length;i++){
+       op = document.createElement("option");
+       op.value = provinces[i].ProID;
+       op.text = provinces[i].name;
+       province.appendChild(op);
+     }
+     }
+     Province();
+
+     var city = document.querySelector("#city");
+          op = document.createElement("option");
+          op.value = "";
+          op.text = "请选择市";
+          city.appendChild(op);
+          province.addEventListener("change",function(){
+            city.innerHTML = "";
+            op = document.createElement("option");
+            op.value = "";
+            op.text = "请选择市";
+            city.appendChild(op);
+            county.innerHTML = "";
+            op = document.createElement("option");
+            op.value = "";
+            op.text = "请选择区县";
+            county.appendChild(op);
+            var proId = province.value;
+            var cities = window.util.cities;
+            cities.forEach(function(cityone){
+              if(cityone.ProID == proId){
+                op = document.createElement("option");
+                op.value = cityone.CityID;
+                op.text = cityone.name;
+                city.appendChild(op);
+              }
+            });
+          });
+
+          var county = document.querySelector("#county");
+          op = document.createElement("option");
+          op.value = "";
+          op.text = "请选择区县";
+          county.appendChild(op);
+          city.addEventListener("change",function(){
+            county.innerHTML = "";
+            op = document.createElement("option");
+            op.value = "";
+            op.text = "请选择区县";
+            county.appendChild(op);
+            var cityId = city.value;
+            var districts = window.util.district;
+            districts.forEach(function(coun){
+              if(coun.CityID == cityId){
+                var op = document.createElement("option");
+                op.value = coun.Id;
+                op.text = coun.DisName;
+                county.appendChild(op);
+              }
+            });
+
+          });
+
+   </script>
+
+</body>
+</html>
