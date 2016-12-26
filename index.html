@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .register{
+            width: 300px;
+            height: 400px;
+
+        }
+        .register div{
+            width: auto;
+            height: 30px;
+
+
+        }
+        .register div input,.register div label{
+            display: block;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<form action="/menu/list" method="post">
+    <div class="register">
+        <div><label for="">用户名：<input type="text" id="username" name="username"></label></div>
+        <div><label for="">密&nbsp;码：<input type="password" id="password" name="password"/></label></div>
+        <div><input type="radio" name="gender" value="man"/><label for="">男</label><input type="radio" name="gender" value="woman"/><label
+                for="">女</label><label for="">性别：</label></div>
+        <div><label for="">邮箱：<input type="email" name="email"/></label><br/></div>
+        <div> <label for="">手机：<input type="number" name="mobile"/></label><br/></div>
+        <div><input type="checkbox" name="favo" value="football"/><label for="">足球</label> <input type="checkbox" name="favo" value="basketball"/><label
+                for="">篮球</label> <input type="checkbox" name="favo" value="badminton"/><label for="">羽毛球</label></label><label for="">爱好：</label></div>
+        <div>
+            <input type="reset" value="取消"/><input type="submit" value="提交" /></div>
+    </div>
+
+
+</form>
+<script src="source-server.js"></script>
+</body>
+</html>
