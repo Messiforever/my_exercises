@@ -1,0 +1,90 @@
+
+.text p {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    line-height: 50%;
+}
+
+.image img {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.block-of-text p {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* ====================================
+   Base styling, to make the demo more fancy
+   ==================================== */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,100);
+
+body {
+    font-family: Roboto, sans-serif;
+    background: #2C3D51;
+    padding: 1em;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    margin: 0.5em 0 1em 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 16px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-weight: bold;
+    color: #ECF0F1;
+}
+
+section {
+    display: block;
+    max-width: 500px;
+    background: #E74C3C;
+    margin: 0 auto 1em;
+    height: 150px;
+    border-radius: .2em;
+    position: relative;
+    color: white;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+img, p {
+    padding: 1em;
+    margin: 0;
+}
+
+.block-of-text {
+    height: 220px;
+}
+
+.read-more {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-top: 3em;
+}
+a {
+    text-decoration: none;
+    color: #E74C3C;
+}
