@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+<div class="chat">
+    <div id="usersmessage"></div>
+    <div id="cancel"><p></p></div>
+    <div id="message"></div>
+    <div id="send" ><input type="text" placeholder="请输入消息"/><input type="button" value="发送" id="SendMessage"/></div>
+
+</div>
+<input type="text" placeholder="请输入用户名" id="userInput"/>
+<input type="button" id="connect" value="Connect"/><br/>
+<span id="status">Connection closed!</span><br/>
+<span id="connecttime"></span><br/>
+<span id="output"></span><br/>
+<div id="dataContainer"></div>
+
+<script>
+  var message = document.querySelector("#message");
+  var chat = document.querySelector(".chat");
+  var cancel = document.querySelector("#cancel");
+  var userInput = document.getElementById("userInput");
+  var button = document.getElementById("connect");
+  var allusers = document.getElementById("allusers");
+  var status = document.getElementById("status");
+  var output = document.getElementById("output");
+  var connectTime = document.getElementById("connecttime");
+  var source, userName,sendUser;
+
+    var send = document.querySelector("#send > input[type=text]");
+
+  function ajax(url, method, data, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+          if(xhr.readyState == 4 && xhr.status ==200) {
+             callback(xhr.responseText);
+              }
+    };
+    xhr.open(method,url,true);
+    xhr.send(data);
+  }
+  function getAllOnlineUser() {
+  ajax("http://localhost:8090/chat?GetALLUser=true","get",null,function (users) {
+    users = JSON.parse(users);
+        if(Array.isArray(users)) {
+              var h = "";
+
+              for(var i = 0;i<users.length;i++){
+                h +="<div ondblclick='Chat(event)'>"+users[i]+"</div>";
+
+              }
+          var d= document.querySelector("#dataContainer");
+
+          d.innerHTML = h;
+
+            }
+
+
+  });
+}
+  function Chat(event) {
+    var usersmessage = "";
+    var nowone = event.currentTarget.innerHTML;
+    sendUser = event.currentTarget.innerHTML;
+    usersmessage = "<div>"+"用户："+nowone+"</div>";
+    message.innerHTML = usersmessage ;
+        if(userName == nowone) {
+
+            }else {
+          chat.style.zIndex=100;
+          chat.style.opacity=1;
+        }
+  }
+   cancel.addEventListener("click",function () {
+     chat.style.zIndex=1;
+     chat.style.opacity=0;
+     delete message.innerHTML;
+   });
+    function connect(userName) {
+      source = new EventSource("http://localhost:8090/chat?username=" + userName);
+      source.addEventListener("message", function (event) {
+        var m =JSON.parse(event.data);
+            if(m.key === "user-offline") {
+              getAllOnlineUser();
+                }else     if(m.key === "user-online") {
+              getAllOnlineUser();
+                    }else     if(m.content) {
+                             document.querySelector("#usersmessage").innerHTML +="<div>"+m.content+"<---------"+getNowFormatDate()+"</div>";
+                        }
+//        output.textContent = event.data;
+
+      }, false); //false意思是不要在捕获阶段执行，在冒泡阶段执行
+
+      source.addEventListener("connecttime", function (event) {
+        connectTime.textContent = "Connection was last established at:" + event.data;
+      }, false);
+
+      source.addEventListener("open", function (event) {
+        button.value = "Disconnect";
+        button.onclick = function (event) {
+          button.value = "Connect";
+          button.onclick = function () {
+            userName = userInput.value;
+            connect(userName);
+          };
+          source.close();
+          status.textContent = "Connection closed!";
+        };
+
+        status.textContent = "Connection open";
+      }, false);
+
+      source.addEventListener("error", function (event) {
+        if (event.target.readyState === EventSource.CLOSED) {
+          source.close();
+          status.textContent = "Connection closed!";
+        }
+        else if (event.target.readyState === EventSource.CONNECTING) {
+          status.textContent = "Connection closed. Attempting tp reconnect!";
+        } else {
+          status.textContent = "Connection closed. Unknown error!";
+        }
+      }, false);
+
+    }
+    if (!!window.EventSource) {  //“！！”意思是双重否定表肯定，保持它的值为布尔值
+      button.onclick = function () {
+        userName = userInput.value;
+        if (userInput != "") {
+          connect(userName);
+        } else {
+          alert("用户名不能为空！！");
+        }
+
+      }
+
+    } else {
+      button.style.display = "none";
+      status.textContent = "Sorry,your browser doesn't support server-sent events";
+    }
+    var SendMessage = document.querySelector("#SendMessage");
+  SendMessage.addEventListener("click",function () {
+    var sendMsg = send.value;
+    ajax("http://localhost:8090/chat?Chatting=true&to="+sendUser+"&sendMsg="+sendMsg,"get",null,function (users){
+
+    });
+  });
+
+  function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+      month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+      strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+      + " " + date.getHours() + seperator2 + date.getMinutes()
+      + seperator2 + date.getSeconds();
+    return currentdate;
+  }
+
+
+</script>
+</body>
+</html>

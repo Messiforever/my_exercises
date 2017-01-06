@@ -6,3 +6,7 @@
 .idea/my_exercises.iml
 .idea/vcs.xml
 .idea/workspace.xml
+/node_modules/
+learning-manage/.idea/
+node_modules/
+

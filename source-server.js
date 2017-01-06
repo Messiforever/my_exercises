@@ -5,6 +5,7 @@
 // var http = require('http');
 // var url = require('url');
 var express = require('express');
+var solve = require('./solve-requst-parameters')
 var app = express();
 app.use("/",express.static(__dirname));  //定位到当前根目录的静态资源,将一个目录转化为静态目录
 var port = 8888;
@@ -15,7 +16,8 @@ router.post("/menu/list",function (req,res) {
 
  req.on('data',function (data) {
    var dataR = decodeURIComponent(data);
-   res.json({r:dataR});
+   var r = solve.solve(dataR);
+   res.json(r);
  });
   var dataSource = {
     data:[{
@@ -33,6 +35,10 @@ router.post("/menu/list",function (req,res) {
 });
 
 app.use("/",router);
+
+
+
+
 
 // console.log('hello world');
 //

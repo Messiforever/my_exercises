@@ -1,0 +1,26 @@
+body{
+    color: red;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 130px;
+    text-align: center;
+}
+div{
+     color: black;
+ }
+.container{
+    color: blue;
+}
+div div{
+    color: purple;
+}
+div{
+    color: black !important;
+}
+.container > .child-element{
+
+}
+.child-element + div{
+    color: lightblue;
+}

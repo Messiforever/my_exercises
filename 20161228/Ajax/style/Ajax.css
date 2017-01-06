@@ -1,0 +1,10 @@
+#dataContainer{
+    width: 1000px;
+    height: 500px;
+
+}
+
+#dataContainer > div{
+    display: flex;
+    justify-content: space-between;
+}
