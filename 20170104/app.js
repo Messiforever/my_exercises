@@ -6,7 +6,7 @@ var app = express();
 app.use("/", express.static(__dirname));
 var router = express.Router();
 app.all('*', function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:9080");
+  res.header("Access-Control-Allow-Origin","*");
   res.header("Content-Type", "application/json;charset=tuf-8");
   next();
 });

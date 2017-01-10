@@ -6,13 +6,8 @@
     <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
-<div class="chat">
-    <div id="usersmessage"></div>
-    <div id="cancel"><p></p></div>
-    <div id="message"></div>
-    <div id="send" ><input type="text" placeholder="请输入消息"/><input type="button" value="发送" id="SendMessage"/></div>
 
-</div>
+<div class="chat-container"></div>
 <input type="text" placeholder="请输入用户名" id="userInput"/>
 <input type="button" id="connect" value="Connect"/><br/>
 <span id="status">Connection closed!</span><br/>
@@ -21,19 +16,23 @@
 <div id="dataContainer"></div>
 
 <script>
-  var message = document.querySelector("#message");
-  var chat = document.querySelector(".chat");
-  var cancel = document.querySelector("#cancel");
+  var message = document.querySelector("#title");
+  var chatContainer = document.querySelector(".chat-container")
   var userInput = document.getElementById("userInput");
   var button = document.getElementById("connect");
   var allusers = document.getElementById("allusers");
   var status = document.getElementById("status");
   var output = document.getElementById("output");
   var connectTime = document.getElementById("connecttime");
-  var source, userName,sendUser;
-
-    var send = document.querySelector("#send > input[type=text]");
-
+  var source,userName,sendUser;
+  var send = document.querySelector("#send > input[type=text]");
+  var SendMessage = document.querySelector("#SendMessage");
+  var mouseinnerX;
+  var mouseinnerY;
+  var flag=false;
+  var mouseX;
+  var mouseY;
+  var create = false;
   function ajax(url, method, data, callback) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -45,7 +44,7 @@
     xhr.send(data);
   }
   function getAllOnlineUser() {
-  ajax("http://localhost:8090/chat?GetALLUser=true","get",null,function (users) {
+  ajax("/chat?GetALLUser=true","get",null,function (users) {
     users = JSON.parse(users);
         if(Array.isArray(users)) {
               var h = "";
@@ -63,26 +62,72 @@
 
   });
 }
+  var usersmessage = "";
   function Chat(event) {
-    var usersmessage = "";
     var nowone = event.currentTarget.innerHTML;
-    sendUser = event.currentTarget.innerHTML;
+    sendUser = nowone;
     usersmessage = "<div>"+"用户："+nowone+"</div>";
-    message.innerHTML = usersmessage ;
         if(userName == nowone) {
-
             }else {
-          chat.style.zIndex=100;
-          chat.style.opacity=1;
+          CreateChat();
+
         }
+        return sendUser;
   }
-   cancel.addEventListener("click",function () {
-     chat.style.zIndex=1;
-     chat.style.opacity=0;
-     delete message.innerHTML;
-   });
+  function CreateChat() {
+
+    var chatwindow = "<div class='chat'>"
+      + "<div id='title'>"+"</div>"
+      + "<div id='usersmessage'>"+"</div>"
+      +  "<div id='cancel'>"+"<p>"+"</p>"+"</div>"
+      +   "<div id='message'>"+"</div>"
+      +  "<div id='send' >"+"<input type='text' placeholder='请输入消息'/>"+"<input type='button' value='发送' id='SendMessage'/>"+"</div>"
+      +"</div>";
+    chatContainer.innerHTML +=chatwindow;
+    create = true;
+  }
+  if(create) {
+    var cancel = document.querySelector("#cancel");
+     var chat = document.querySelector(".chat");
+    cancel.addEventListener("click",function () {
+      chat.style.visibility="hidden";
+//            delete message.innerHTML;
+    });
+    SendMessage.addEventListener("click",function () {
+      var sendMsg = send.value;
+
+      ajax("/chat?Chatting=true&to="+sendUser+"&sendMsg="+sendMsg,"get",null,function (users){
+
+      });
+      if(send.value !=null) {
+        send.value = "";
+      }
+    });
+    message.innerHTML = usersmessage ;
+    chat.addEventListener("mousedown",function () {
+      flag=true;
+    });
+    chat.addEventListener("mousemove",function (e) {
+      if(flag){
+        mouseinnerX=e.pageX;
+        mouseinnerY=e.pageY;
+        chat.style.left=chat.offsetLeft+(mouseinnerX-mouseX)+"px";
+        chat.style.top=chat.offsetTop+(mouseinnerY-mouseY)+"px";
+        mouseX=mouseinnerX;
+        mouseY=mouseinnerY;
+
+      }
+    });
+  }
+
+
+
+
+
+
+
     function connect(userName) {
-      source = new EventSource("http://localhost:8090/chat?username=" + userName);
+      source = new EventSource("/chat?username=" + userName);
       source.addEventListener("message", function (event) {
         var m =JSON.parse(event.data);
             if(m.key === "user-offline") {
@@ -90,7 +135,7 @@
                 }else     if(m.key === "user-online") {
               getAllOnlineUser();
                     }else     if(m.content) {
-                             document.querySelector("#usersmessage").innerHTML +="<div>"+m.content+"<---------"+getNowFormatDate()+"</div>";
+                             document.querySelector("#usersmessage").innerHTML +="<div>"+sendUser+":"+m.content+"<---------"+getNowFormatDate()+"</div>";
                         }
 //        output.textContent = event.data;
 
@@ -143,14 +188,8 @@
       button.style.display = "none";
       status.textContent = "Sorry,your browser doesn't support server-sent events";
     }
-    var SendMessage = document.querySelector("#SendMessage");
-  SendMessage.addEventListener("click",function () {
-    var sendMsg = send.value;
-    ajax("http://localhost:8090/chat?Chatting=true&to="+sendUser+"&sendMsg="+sendMsg,"get",null,function (users){
 
-    });
-  });
-
+//获取用户发送时间
   function getNowFormatDate() {
     var date = new Date();
     var seperator1 = "-";
@@ -168,7 +207,14 @@
       + seperator2 + date.getSeconds();
     return currentdate;
   }
-
+  //拖动
+  window.addEventListener("mousedown",function (e) {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+  });
+  window.addEventListener("mouseup",function () {
+    flag=false;
+  });
 
 </script>
 </body>
