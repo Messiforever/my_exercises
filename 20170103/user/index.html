@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="dataAccept" value="开始测试"/>
+  <form action="http://localhost:8989/upload" method="post">
+      <div>
+          <label for="uploadControl">请上传图片</label>
+          <input type="file" name="file" id="uploadControl"/>
+      </div>
+      <div style="width: 500px;height: 20px;background-color: #cccccc;border-radius: 30px;">
+          <div id="effict" style="color: #fff;text-align: center;width: 0;height: 100%;background-color: #00a1cb;border-radius: 30px;">
+
+          </div>
+      </div>
+      <div>
+          <input type="submit" id="subButton" title="提交数据"/>
+      </div>
+  </form>
+<script>
+  var button=document.getElementById("dataAccept")
+  function ajaxFn(url,method,option,callback) {
+    var ajax=null;
+    if(window.XMLHttpRequest){
+      ajax=new XMLHttpRequest();
+    }else  if(window.ActiveXObject){
+      ajax=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if(ajax){
+      ajax.onreadystatechange = function () {
+        switch(ajax.readyState){
+          case 4:
+            var result={};
+            if(ajax.status==200){
+              result.content=ajax.responseText;
+            }
+            result.status=ajax.status;
+            callback(result);
+            break;
+          case 3:
+            break;
+          case 2:
+            break;
+          case 1:
+            break;
+        }
+      };
+      ajax.open(method? method:"get",url,true);
+      ajax.send(option);
+    }
+  }
+
+  button.addEventListener("click",function () {
+    ajaxFn("http://localhost:8989","post",null,function (flag) {
+      if(flag.status=200){
+        var data=JSON.parse(flag.content);
+        alert("success");
+        console.log(data.name);
+      }
+    });
+  });
+var form = document.querySelector("form");
+var uploadControl = document.querySelector("#uploadControl");
+var m = form.getAttribute("method");
+var ac = form.getAttribute("action");
+form.addEventListener('submit',function (e) {
+  e.preventDefault();
+  var xhr = new XMLHttpRequest();
+  xhr.upload.onprogress = uploadProgress;
+  xhr.upload.onloadend = uploadEndHandle;
+  
+  xhr.onreadystatechange = function (e) {};
+  var formData = new FormData(form);
+  formData.append('files[]',uploadControl);
+  xhr.open(m,ac,true);
+  xhr.send(formData);
+  return false;
+});
+var effict = document.querySelector("#effict");
+
+function uploadEndHandle() {
+  
+}
+//文件上传进度事件
+    function uploadProgress(e1) {
+          if(e1.lengthComputable) {
+                var percent = e1.loaded / e1.total;
+                var r = (percent*100).toFixed(2);  //toFixed后r为String
+                effict.innerText=r+"%";
+                effict.style.width = r+"%";
+              }
+
+    }
+
+</script>
+</body>
+</html>

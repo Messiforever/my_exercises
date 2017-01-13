@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "GLYPHICONS Halflings";
+    src: url("fonts/glyphicons-halflings-regular.ttf");
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "GLYPHICONS Halflings";
+}
+#dataContainer{
+    width: 240px;
+    height: auto;
+    position: absolute;
+    z-index: 100;
+    top: 10px;
+    right: 10px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    box-shadow: 0 0 10px 10px #333;
+
+}
+#dataContainer > div{
+  width: 100%;
+  height: 30px;
+  background-color: antiquewhite;
+  border-bottom: 1px solid #000;
+    position: relative;
+    margin-top: 2px;
+}
+.chat{
+    width: 402px;
+    height: 300px;
+    position: absolute;
+    left: 30%;
+    top: 25%;
+    background-color: aquamarine;
+    border: 1px dotted #000000;
+    border-radius: 5px;
+    visibility: visible;
+}
+#usersmessage{
+    width: 402px;
+    height: auto;
+    position: absolute;
+    top: 50px;
+}
+#title{
+    width: 400px;
+    height: 36px;
+}
+#message{
+     width: 400px;
+     height: 236px;
+    border-bottom: 1px solid #000000;
+    overflow: auto;
+ }
+#send{
+
+    width: 400px;
+    height: 60px;
+    border-bottom: 1px solid #000000;
+}
+#send input[type=text]{
+    width: 360px;
+    height: 60px;
+    outline: none;
+}
+
+#send input[type=button]{
+    width: 40px;
+    height: 60px;
+    outline: none;
+}
+#cancel{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    border-radius: 50%;
+    background-color: #333333;
+
+}
+#cancel > p{
+    margin: 0 auto;
+    line-height: 30px;
+
+    text-align: center;
+}
+#cancel > p:after{
+    content: "\e014";
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+
+}
+.chat-container{
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: auto;
+    height: auto;
+}

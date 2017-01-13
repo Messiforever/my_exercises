@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+    <style>
+
+        .blue{  color: blue;  }
+        .red{  color: red; }
+        .green{  color: green;  }
+        .pink{  color: pink;  }
+        .black{color: black}
+        .yellow{color: yellow}
+    </style>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            var side =$("#side");
+            side.click(function () {
+                var ele = $(this);
+                alert(ele.text());
+            });
+            side.on({
+                mouseenter:function () {
+                    alert("I' m comming");
+                },
+                mouseleave:function () {
+                    alert("I' m out");
+                }
+            });
+            $(".one").one("click",function () {
+                alert("I 'm one");
+            });
+            var a = $("form").attr("action");
+            alert(a);
+            $("form").css("width","600px")
+            .css({
+                height:"300px",
+                "background-color":"red"
+            });
+            $("h1").addClass("pink").removeClass("pink").addClass("blue").toggleClass("yellow",false).toggleClass("red",true);
+
+        });
+
+    </script>
+</head>
+<body>
+  <div id="side">
+      <div>abc</div>
+      <div>123</div>
+      <div>456</div>
+  </div>
+  <br>
+<div class="one">
+    one
+</div>
+  <form action="http://www.baidu.com"></form>
+<h1>what head!</h1>
+</body>
+</html>

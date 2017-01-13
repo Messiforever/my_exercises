@@ -5,7 +5,7 @@
 // var http = require('http');
 // var url = require('url');
 var express = require('express');
-var solve = require('./solve-requst-parameters')
+var solve = require('./solve-requst-parameters');
 var app = express();
 app.use("/",express.static(__dirname));  //定位到当前根目录的静态资源,将一个目录转化为静态目录
 var port = 8888;
