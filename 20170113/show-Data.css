@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+
+}
+.container{
+    width: 800px;
+    height: 550px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    margin: 10px auto 0 auto;
+}
+.head,.row{
+    height: 30px;
+    width: 100%;
+
+}
+.container .column{
+    width: 20%;
+    height: 100%;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    font-family: Arial;
+    background-color: #00a1cb;
+    /*color: #ffffff;*/
+}
+.container .head .column{
+    color: #ffffff;
+}
+.container .row .column{
+    background-color: #ffffff;
+}
+input[type=button]{
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #00a1cb;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+input[type=button]:hover{
+    background-color: crimson;
+}
+.pager{
+    width: 800px;
+    height: 30px;
+    margin: 5px auto 0 auto;
+}
+.pager > div,.page-number > div{
+    float: left;
+    padding: 5px;
+    background-color: #00a1cb;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 5px;
+    min-width: 28px;
+    text-align: center;
+    border: 1px solid #00a1cb;
+    transition: background 0.5s;
+}
+.page-number{
+    background-color: white !important;
+    padding: 0 !important;
+    border:none !important;
+    cursor: default !important;
+}
+.page-number > div{
+    background-color: white;
+    border: 1px solid gray;
+    color: #000000;
+}
+.pager > div:hover,.page-number > div:hover{
+    background-color: crimson;
+    border: 1px solid white;
+    color: white;
+}
+.page-number > .current{
+    background-color: crimson;
+    border: 1px solid white;
+    color: white;
+}
