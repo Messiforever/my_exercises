@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise</title>
+    <style>
+        .container{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left:20px;
+            top:0;
+            border-radius: 5px;
+            background-color: black;
+        }
+        .slide{
+            width: 400px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: #9D9D9D;
+            position: absolute;
+            top:320px;
+            left: 20px;
+        }
+        .button{
+            height: 100%;
+            width: 30px;
+            border-radius: 5px;
+            background-color: black;
+            cursor: e-resize;
+        }
+        .slide-left{
+            width: 0;
+            height: 100%;
+            border-radius: 5px 0 0 5px;
+            background-color: #0B84DA;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container"></div>
+<div class="slide">
+    <div class="slide-left"></div>
+    <div class="button"></div>
+</div>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+        var mouseX;
+
+        var mouseInnerX;
+        var container = $(".container");
+        var flag = false;
+        var button = $(".button");
+        $(".slide").mousedown(function (e) {
+           mouseX = e.pageX;
+            e.preventDefault();
+            e.stopPropagation();
+        });
+        button.mousedown(function (e) {
+            flag = true;
+            e.preventDefault();
+            e.stopPropagation();
+        });
+        $(document).mousemove(function (e) {
+            mouseInnerX = e.pageX;
+            if(flag){
+                var subX = mouseInnerX-mouseX;
+                var buttonoffsetleft = button.offset();
+                button.offset({
+                    left:buttonoffsetleft.left + subX
+                });
+                var left = buttonoffsetleft.left-$(".slide").offset().left;
+                $(".slide-left").width(left);
+                var containerWidth = 300-left;
+                var containerHeight = 300-left;
+
+                container.width(containerWidth);
+                container.height(containerHeight);
+                container.offset({
+                    left:20+left/2,
+                    top:left/2
+                });
+                mouseX=mouseInnerX;
+
+            }
+        }).mouseup(function (){
+           flag=false;
+        });
+    });
+</script>
+</body>
+</html>
