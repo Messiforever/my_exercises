@@ -44,15 +44,15 @@ function renderData(pageIndex) {
     var start = (pageIndex-1)*15;
    var t = start+15;
    var container = $(".container");
-   // container.html("");
-   container.html(
-       "<div class='head'>"+
-        "<div class='column'>name:</div>"+
-    "<div class='column'>gender:</div>"+
-    "<div class='column'>age:</div>"+
-    "<div class='column'>address:</div>"+
-    "<div class='column'>operation:</div>"+
-    "</div>");
+   container.html("");
+   // container.html(
+   //     "<div class='head'>"+
+   //      "<div class='column'>name:<div class='border'></div></div>"+
+   //  "<div class='column'>gender:<div class='border'></div></div>"+
+   //  "<div class='column'>age:<div class='border'></div></div>"+
+   //  "<div class='column'>address:<div class='border'></div></div>"+
+   //  "<div class='column'>operation:<div class='border'></div></div>"+
+   //  "</div>");
 
    for(var i = start;i<t;i++){
        var row = $("<div class='row'></div>");
@@ -133,14 +133,28 @@ var pNumber = $(".page-number");
 pager();
 var stepChange = 5;
 var currentPage =1;
+var currentage1 = 1;
 function pagerNumberEvent() {
     var pNumber = $(".page-number");
     pNumber.find("div").click(function () {
+        currentPage = $(this).text();
+        try{
+            currentPage = Number(currentPage);
+        }catch(e) {
+            // currentPage = NaN;
+        }
+         if(isNaN(currentPage)){
+            currentPage=currentage1;
+         }else {
+             renderData(currentPage);
+         }
         $(".current").removeClass("current");
         $(this).addClass("current");
     });
+
     $(".ellipsis2").click(function () {
         currentPage +=stepChange;
+        currentage1 = currentPage;
         var min = currentPage-stepChange;
         var max = currentPage+(stepChange-1);
         var pNumber = $(".page-number");
@@ -156,6 +170,7 @@ function pagerNumberEvent() {
     });
     $(".ellipsis").click(function () {
         currentPage -=stepChange;
+        currentage1 = currentPage;
         var min = currentPage-stepChange;
         var max = currentPage+(stepChange-1);
         var pNumber = $(".page-number");
@@ -212,3 +227,48 @@ function pagerNumberEvent() {
     // });
 }
 pagerNumberEvent();
+
+
+var rows = $(".container .row");
+var dragging = {};
+function dragHandle(){
+    $(".drag-handle").mousedown(function(e){
+        e.preventDefault();
+        rows = $(".container .row");
+        dragging.handle = $(this);
+        dragging.handleIndex =
+            $(".drag-handle").index($(this));
+        dragging.group = [];
+        rows.each(function(){
+            var cols = $(this).find(".column");
+            var l = cols.eq(dragging.handleIndex);
+            var r = cols.eq(dragging.handleIndex + 1);
+            dragging.group.push({
+                l:l,
+                r:r
+            });
+        });
+    });
+    $(document).mousemove(function(e){
+        if(dragging.prePoi){
+            var subX = e.pageX - dragging.prePoi.x;
+            if(dragging.handle){
+                var p = dragging.handle.parent();
+                var w = p.width();
+                var p0 = p.prev();
+                var w0 = p0.width();
+                p0.width(w0 + subX);
+                p.width(w - subX);
+                dragging.group.forEach(function(o){
+                    o.l.width(o.l.width() + subX);
+                    o.r.width(o.r.width() - subX);
+                });
+            }
+
+        }
+        dragging.prePoi = {x:e.pageX,y:e.pageY};
+    }).mouseup(function(){
+        dragging.handle = null;
+    });
+}
+dragHandle();

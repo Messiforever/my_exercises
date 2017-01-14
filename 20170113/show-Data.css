@@ -6,19 +6,29 @@ body{
     padding: 0;
 
 }
-.container{
+.wrapper{
     width: 800px;
-    height: 550px;
+    height: auto;
     border-radius: 5px;
     border: 1px solid #000;
     margin: 10px auto 0 auto;
+}
+.container{
+    width: 100%;
+    height: auto;
 }
 .head,.row{
     height: 30px;
     width: 100%;
 
 }
-.container .column{
+/*.head > div{*/
+    /*border-right: 1px solid #000000;*/
+/*}*/
+/*.head > div:last-child{*/
+    /*border-right: none;*/
+/*}*/
+.wrapper .column{
     width: 20%;
     height: 100%;
     float: left;
@@ -27,12 +37,28 @@ body{
     font-family: Arial;
     background-color: #00a1cb;
     /*color: #ffffff;*/
+    position: relative;
 }
-.container .head .column{
+.drag-handle{
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    cursor: ew-resize;
+    left: -5px;
+}
+.wrapper .head .column{
     color: #ffffff;
+    position: relative;
 }
 .container .row .column{
     background-color: #ffffff;
+}
+.column{
+    border-right: 1px solid #000000;
+
+}
+.column:last-child{
+    border-right: none;
 }
 input[type=button]{
     width: 50px;

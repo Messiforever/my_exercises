@@ -10,3 +10,19 @@
 learning-manage/.idea/
 node_modules/
 
+/20170113/.idea/
+/20170113/node_modules/
+/20170104/.idea/
+/20170104/node_modules/
+/20170103/.idea/
+/20170103/node_modules/
+/.gitignore
+20170103/cross-domain/
+
+/20170104/other/.idea/
+
+/20170104/other/node_modules/
+/20170114/node_modules/
+/20170114/.idea/
+20170114/.idea/
+
