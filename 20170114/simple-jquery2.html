@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>simple-jquery</title>
+</head>
+<body>
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $(function(){
+        var dragging = {};
+        function setContainer(){
+            var div = $("<div></div>");
+            $("body").append(div);
+            div.css("width","400px");
+            div.css({
+                height:"300px",
+                "background-color":"yellow",
+                border:"1px solid #000",
+                position:"absolute"
+            });
+
+
+            div.mousedown(function(e){
+                e.preventDefault();
+                dragging.jqObj = $(this);
+                dragging.direct = "";
+            });
+            function addPin(top,left,right,bottom,cursor){
+                var pin = $("<div data-pin='" + cursor + "' style='width:7px;height:7px;'></div>");
+                pin.css({
+                    position:"absolute",
+                    "z-index":1,
+                    "background-color":"#000",
+                    cursor:cursor
+                });
+                if(left){
+                    pin.css("left",left);
+                }else if(right){
+                    pin.css("right",right);
+                }
+                if(top){
+                    pin.css("top",top);
+                }else if(bottom){
+                    pin.css("bottom",bottom);
+                }
+                div.append(pin);
+                pin.mousedown(function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var dataPin = $(this).attr("data-pin");
+                    dragging.jqObj = $(this);
+                    dragging.direct = dataPin;
+                });
+            }
+            addPin("-2px","-2px",null,null,"nw-resize");
+            addPin("-2px","50%",null,null,"n-resize");
+            addPin("-2px",null,"-2px",null,"ne-resize");
+            addPin("50%",null,"-2px",null,"e-resize");
+            addPin(null,null,"-2px","-2px","se-resize");
+            addPin(null,"50%",null,"-2px","s-resize");
+            addPin(null,"-2px",null,"-2px","sw-resize");
+            addPin("50%","-2px",null,null,"w-resize");
+        }
+
+        setContainer();
+        setContainer();
+        setContainer();
+        setContainer();
+        setContainer();
+        setContainer();
+        setContainer();
+        setContainer();
+
+        $(document).mousemove(function(e){
+            if(dragging.prePoi){
+                var subX = e.pageX - dragging.prePoi.x;
+                var subY = e.pageY - dragging.prePoi.y;
+                if(dragging.jqObj){
+                    div = dragging.jqObj.parent();
+                    var oSet = div.offset();
+                    if(dragging.direct == "se-resize"){
+                        div.width(div.width() + subX);
+                        div.height(div.height() + subY);
+                    }else if(dragging.direct == "e-resize"){
+                        div.width(div.width() + subX);
+                    }else if(dragging.direct == "s-resize"){
+                        div.height(div.height() + subY);
+                    }else if(dragging.direct == "w-resize"){
+                        div.width(div.width() - subX);
+                        div.offset({
+                            top:oSet.top,
+                            left:oSet.left + subX
+                        });
+                    }else if(dragging.direct == "n-resize"){
+                        div.height(div.height() - subY);
+                        div.offset({
+                            top:oSet.top + subY,
+                            left:oSet.left
+                        });
+                    }else if(dragging.direct == "ne-resize"){
+                        div.width(div.width() + subX);
+                        div.height(div.height() - subY);
+                        div.offset({
+                            top:oSet.top + subY,
+                            left:oSet.left
+                        });
+                    }else if(dragging.direct == "sw-resize"){
+                        div.width(div.width() - subX);
+                        div.offset({
+                            top:oSet.top,
+                            left:oSet.left + subX
+                        });
+                        div.height(div.height() + subY);
+                    }else if(dragging.direct == "nw-resize"){
+                        div.width(div.width() - subX);
+                        div.height(div.height() - subY);
+                        div.offset({
+                            top:oSet.top + subY,
+                            left:oSet.left + subX
+                        });
+                    }else{
+                        var dOset = dragging.jqObj.offset();
+                        dragging.jqObj.offset({
+                            left:dOset.left + subX,
+                            top:dOset.top + subY
+                        });
+                    }
+                }
+            }
+            dragging.prePoi = {
+                x:e.pageX,
+                y:e.pageY
+            };
+        }).mouseup(function(){
+            dragging.jqObj = null;
+        });
+
+    });
+</script>
+</body>
+</html>
