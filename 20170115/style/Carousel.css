@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 700px;
+    height: 400px;
+    margin: 10px auto 0 auto;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    position: relative;
+    background-size: 100%;
+    background: url("../images/001.jpg") no-repeat no-repeat center center;
+}
+.container-side{
+    width: 698px;
+    height: 40px;
+    border-radius: 0 0 5px 5px;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.number > div{
+    width: 40px;
+    height: 40px;
+    float: right;
+    font-family: Arial;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 2px;
+    border: 1px solid #000000;
+    margin: 0 2px 0 2px;
+}
+.number > div:hover{
+    background-color: crimson;
+    color: white;
+    border-color: white;
+}

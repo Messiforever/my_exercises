@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>simple-jquery</title>
-    <style>
-        body > div{
-            min-width: 15px;
-            min-height: 15px;
-        }
-    </style>
-</head>
 <body>
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script>
     $(function () {
         var dragging = {};
 
-        function addDiv() {
+        function addDiv(param) {
             var div = $("<div></div>");
             $("body").append(div);
-            div.css("width","400px");
+            div.css("width",param?param.width:400+"px");
             div.css({
-                height:"300px",
+                height:param?param.height:300+"px",
                 "background-color":"red",
                 position:"absolute"
             });
+            if(param){
+                div.css({
+                    left:param.left+"px",
+                    top:param.top+"px"
+                })
+            }
             div.mousedown(function (e) {
                  e.preventDefault();
                 dragging.jqObj = $(this);
@@ -68,9 +64,19 @@
             addPin("50%","-2px",null,null,"w-resize");
 
         }
-       addDiv();
-       addDiv();
-       addDiv();
+        var d = window.localStorage.getItem("elements");
+        if (d){
+             d=JSON.parse(d);
+             for(var j = 0;j<d.length;j++){
+                 addDiv(d[j]);
+             }
+        }else {
+            for(var i =0;i<5;i++){
+                addDiv();
+            }
+        }
+
+
         $(document).mousemove(function (e) {
 
             if (dragging.prePoi){
@@ -142,11 +148,28 @@
 
             dragging.prePoi = {
                 x:e.pageX,
-                y:e.pageY};
+                y:e.pageY
+            };
 
         }).mouseup(function () {
             dragging.jqObj = null;
+            var data = [];
+            var jqEles = $("body > div");
+            jqEles.each(function () {
+                var single = $(this);
+                data.push({
+                    width:single.width(),
+                    height:single.height(),
+                    left:single.offset().left,
+                    top:single.offset().top
+                });
+            });
+            window.localStorage.removeItem("elements");
+            window.localStorage.setItem("elements",JSON.stringify(data));
+
+
         });
+
 
     });
 </script>
