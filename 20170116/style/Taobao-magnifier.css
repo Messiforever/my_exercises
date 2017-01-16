@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body > div {
+    float: left;
+}
+
+.container {
+    width: 400px;
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background: url("images/picture1.jpg") center center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.gallery {
+    width: 400px;
+    height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    visibility: hidden;
+
+}
+
+.picture {
+    width: 800px;
+    height: 600px;
+    position: absolute;
+
+}
+
+.magnifier {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000000;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    border-radius: 5px;
+    visibility: hidden;
+
+}
+
+.nav {
+    width: 402px;
+    height: 82px;
+    border: 1px solid #000000;
+    clear: both;
+    border-radius: 5px;
+}
+
+.nav-inner {
+    width: 100px;
+    height: 100%;
+    border: 2px solid white;
+    float: left;
+    border-radius: 5px;
+}
+
+.nav-inner > img {
+    width: 96px;
+    height: 76px;
+    border-radius: 5px;
+}
+
+.nav-inner:hover {
+    border: 2px solid crimson;
+}
