@@ -1,0 +1,23 @@
+.wrapper{
+    width: 800px;
+    height: auto;
+}
+.wrapper > div{
+    width: 100%;
+    height: auto;
+}
+.wrapper > div:first-child {
+    height: 30px;
+}
+.wrapper > div > div{
+
+}
+.wrapper > .content > div{
+    height: 30px;
+}
+.wrapper > .head,.wrapper > .content > div{
+    display: flex;
+    border-bottom: 1px solid red;
+    justify-content: space-around;
+
+}
