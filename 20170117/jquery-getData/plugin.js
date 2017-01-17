@@ -17,6 +17,7 @@
                         param.error(error);
                     }
                 });
+
             };
             //拿到数据，如何显示
             var render = function (data) {
@@ -46,7 +47,7 @@
                         row.append("<div>" + stu.enName + "</div>");
                         row.append("<div>" + stu.age + "</div>");
                         row.append("<div>" + stu.favorite + "</div>");
-                        row.append("<div>" + stu.No + "</div>");
+                        row.append("<div>" + stu.Nd + "</div>");
                         row.append("<div>" + stu.gender + "</div>");
                         row.append("<div>" + stu.height + "</div>");
                         row.append("<div>" + stu.weight + "</div>");

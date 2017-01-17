@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆环内拖动元素</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 400px;
+            height: 400px;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            background-color: #7C7F79;
+            position: relative;
+        }
+        .big-circle{
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .small-circle{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: black;
+
+        }
+        .drag-circle{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top:0;
+            left: 175px;
+            background-color: #00a1cb;
+            border-radius: 50%;
+        }
+        .drag-circle1{
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="drag-circle"></div>
+    <!--<div class="big-circle">-->
+        <!--<div class="small-circle"></div>-->
+    <!--</div>-->
+</div>
+<script src="../../node_modules/jquery/dist/jquery.js"></script>
+<script>
+    var container = $(".container");
+//    var bigCircle = $(".big-circle");
+//    var smallCircle = $(".small-circle");
+    var dragCircle = $(".drag-circle");
+    var flag = false;
+    var OX=200;
+    var OY=0;
+
+    $(document).mousemove(function (e) {
+        var mouseX=e.pageX;
+        var mouseY=e.pageY;
+
+        e.stopPropagation();
+            dragCircle.offset({
+                top:point[i].y-25,
+                left:point[i].x-25
+            });
+            i++;
+            if(i==199){
+                i=0;
+            }
+    }).mouseup(function () {
+       flag=false;
+    }).mousedown(function () {
+        flag=true;
+    });
+    var point = []; //结果
+    /*
+     * 求圆周上等分点的坐标
+     * ox,oy为圆心坐标
+     * r为半径
+     * count为等分个数
+     */
+    //绘制圆弧
+    function getPoint(r, ox, oy, count){
+        var radians = (Math.PI / 180) * Math.round(360 / count), //弧度
+            i = 0;
+        for(; i < count; i++){
+            var x = ox + r * Math.sin(radians * i),
+             y = oy + r * Math.cos(radians * i);
+
+            point.unshift({x:x,y:y}); //为保持数据顺时针
+            console.log(point[i].x,point[i].y);
+            container.append("<div class='drag-circle1' style='top: "+x+"px;left: "+y+"px'></div>")
+        }
+    }
+    getPoint(175,200,200,200);
+  var i = 0;
+
+
+
+//setInterval(run,50);
+</script>
+</body>
+</html>
