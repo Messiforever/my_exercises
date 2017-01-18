@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS</title>
+</head>
+<body ng-app="mainModel" ng-controller="mainController"><!--ng-app 指令,定义angular的边界-->
+
+<div><input ng-model="output" type="text" title="input">
+    <div>{{output}}</div><!--    双向绑定-->
+    <div ng-bind="now">当前时间为：</div>
+    <div ng-repeat="s in students">当前学生：{{s}}</div>
+
+</div>
+<br>
+<div><span>姓名</span>&nbsp;&nbsp;  <span>性别</span>&nbsp;&nbsp;  <span>职位</span> &nbsp;&nbsp; <span>标签</span><br>
+
+</div>
+<div ng-repeat="n in teacher">
+    <span>{{n.name}}  </span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;{{n.gender}}</span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;{{n.occupation}}</span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;{{n.special}}</span>
+</div>
+
+<!--子获取父的信息，子里面的scope会直接继承父里面的scope，他们的继承关系是由HTML标签决定的
+rootscop和scope在controller之间都可以进行通讯
+-->
+<div ng-controller="childController"></div>
+
+<script src="../../node_modules/angular/angular.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

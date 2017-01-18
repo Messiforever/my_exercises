@@ -73,6 +73,11 @@ section{
     height: 36px;
     margin: 20px auto 0 auto;
 }
+.content-right-1 p{
+    width: 302px;
+    height: auto;
+    margin: 20px auto 0 auto;
+}
 .content-right-1 .title,.content-right-2 .download{
     width: 302px;
     height: 36px;
@@ -163,6 +168,9 @@ section{
     margin: 0 auto;
     margin-bottom: 33px;
 
+}
+.content-right-1,.content-right-2,.content-right-3,.content-left-1,.content-left-2,.content-left-3{
+    border: 1px solid #E1E1E1;
 }
 .more{
     width: 670px;

@@ -2,6 +2,7 @@
   "name": "application-name",
   "version": "0.0.1",
   "devDependencies": {
+    "angular": "^1.6.1",
     "jquery": "^1.12.4",
     "jqueryui": "^1.11.1"
   }

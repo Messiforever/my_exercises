@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-app="mainModel" ng-controller="mainController">
+    <label for="parent">父</label><input ng-model="parent" id="parent" type="text">
+    <div ng-app="mainModel" ng-controller="childController"><label for="child">子</label><input ng-model="child" id="child" type="text"></div>
+</div>
+
+<script src="../../node_modules/angular/angular.js"></script>
+<script src="exercise.js"></script>
+</body>
+</html>
