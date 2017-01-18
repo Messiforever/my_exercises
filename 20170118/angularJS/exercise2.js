@@ -8,6 +8,5 @@
         $scope.Color1 = [
             {color:"#BE4800"},{color:"#01A9BE"},{color:"#56BF01"},{color:"#BF0143"},
             {color:"#01BE19"},{color:"#BBB403"},{color:"#BF003A"},{color:"#189CA8"}];
-
     }]);
 })(angular,window);
