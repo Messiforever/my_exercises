@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="mainModel" ng-controller="mainController">
+<div >{{uppercaseFilter}}</div>
+<div >{{lowercaseFilter}}</div>
+<div >{{currencycaseFilter | currency:'￥'}}</div>
+<div>date-filter:{{nowString | date:'yyyy年MM月dd日 HH时:mm分:ss秒:sss毫秒'}}</div>
+<div>{{["a","d","c","b"] |orderBy}}</div>
+<div>{{[{name:"林志玲",age:808},{name:"范冰冰",age:55}] | orderBy:"age"}}</div>
+<div>{{jsonObj | json}}</div>
+<div>{{"filterFilter" | filter:"f"}}</div>
+<div><ul>
+    <li ng-repeat="o in filterFilter |filter:{name:'八号'} ">{{o.name }}</li>
+</ul></div>
+<div><span>{{"当前时间为:" | prefix}}</span></div>
+
+<div ng-repeat="n in book"><span>{{::n | bookTitleMark}}</span></div>
+
+<div class="structure">
+    <ul>
+        <li ng-repeat="r in roots">{{r.name}}
+        <ul ng-repeat="child in r.childern">
+            <li>{{child.name}}
+            <ul ng-repeat="grandSon in child.grandSons">
+                <li>{{grandSon.name}}</li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+        <!--<li ng-repeat="r in nodes" ng-bind="r.name"></li>-->
+        <!--<li ng-repeat="r in node1" ng-bind="r.name"></li>-->
+        <!--<li ng-repeat="r in node2" ng-bind="r.name"></li>-->
+        <!--<li ng-repeat="r in node3" ng-bind="r.name"></li>-->
+        <!--<li ng-repeat="r in node4" ng-bind="r.name"></li>-->
+    </ul>
+</div>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="angular-service.js"></script>
+</body>
+</html>
