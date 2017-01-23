@@ -6,15 +6,14 @@ var input = $("#search");
 var header = $("header");
 var navContent=$(".nav-content");
 var circle = $(".circle");
-
 function myinit() {
     $(document).bind("scrollstart",function () {
-        if($(document).scrollTop()<=300){
-            var d= $(document).scrollTop();
+        if($(document).scrollTop()<=300 && $(document).scrollTop()>30){
+
             nav.css({
                 "background-color":"#00B38A",
                 color: "white",
-                opacity:d/300
+                opacity:$(document).scrollTop()/300
             });
             input.css({
                 "background-color": "#0AA37F",
@@ -25,14 +24,13 @@ function myinit() {
                 color: "white"
             });
         }
-        if($(document).scrollTop()<=10) {
+        if($(document).scrollTop()<=30) {
             nav.css({
                 "background-color":"transparent",
                 opacity:1
             });
             input.css({
                 "background-color": "white"
-
             });
             navContent.css({
                 "background-color": "white",
@@ -41,7 +39,6 @@ function myinit() {
             });
         }
     });
-
 }
 window.onload = myinit;
 var mouseY;
@@ -71,7 +68,7 @@ $(document).on("vmousemove",function (e) {
                    top:200
                })
            }
-           if(header.height()>700){
+           if(header.height()>=700){
                header.css({
                    height:700
                });
