@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container">
+        <input id="button" type="button" value="测试">
+</div>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="index.js"></script>
+<script>
+
+
+    $("#button").click(
+        function()
+        {
+            $(".container").Ajax({});
+        });
+</script>
+</body>
+</html>
