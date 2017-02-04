@@ -1,9 +1,14 @@
 *{
     box-sizing: border-box;
 }
+@font-face {
+    font-family: GLYPHICONS;
+    src: url("fonts/glyphicons-halflings-regular.ttf");
+}
 body{
     margin: 0;
     padding: 0;
+    font-family: "GLYPHICONS","微软雅黑", "宋体", "Arial Narrow";
 }
 header{
     width: 100%;
@@ -18,6 +23,7 @@ header > .container{
     background: url("images/01.jpg") no-repeat center;
     background-size: cover;
     padding: 1px;
+    position: relative;
 }
 .gallery-circle{
     width: 200px;
@@ -25,11 +31,247 @@ header > .container{
     margin: 170px auto;
     display: flex;
     justify-content: space-around;
-
 }
 .gallery-circle > div{
     width: 10px;
     height: 100%;
     border-radius: 50%;
-    background-color: rgba(255,255,255,0.3);
+    background-color: transparent;
+    border: 1px solid white;
+}
+.search{
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top:0;
+    left: 0;
+    padding-top: 5px;
+}
+.search > div{
+    float: left;
+}
+.search-left,.search-right{
+    width: 20%;
+    height: 30px;
+    text-align: center;
+}
+.search-inner{
+    width: 60%;
+    height: 30px;
+}
+.search-inner >input{
+    background-color: white;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+}
+.search-right > input{
+    width: 50%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+.search-left > span{
+    line-height: 30px;
+}
+.search-left > span:after{
+    content: "\e039";
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+main{
+    width: 100%;
+    height: auto;
+}
+.ad{
+    background: url("images/ad.jpg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 106px;
+}
+.classify{
+    width: 100%;
+    height: 200px;
+    background-color: #F3F3F3;
+     padding: 20px;
+}
+.classify >div{
+    width: 55px;
+    height: 55px;
+    float: left;
+    background-color: #00a1cb;
+    margin: 15px;
+    border-radius: 10px;
+}
+.newsflash{
+    width: 100%;
+    height: 38px;
+    background-color: #F3F3F3;
+}
+.newsflash > .content{
+    width: 90%;
+    height: 28px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.newsflash > .content >p{
+    margin: 0;
+    line-height: 28px;
+}
+.goods{
+    width: 100%;
+    height: 300px;
+}
+.goods2{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 58px;
+}
+.ad2{
+    width: 100%;
+    height: 41px;
+    background: url("images/ad2.jpg") no-repeat center;
+    background-size: cover;
+
+}
+footer{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border: 1px solid #F3F3F3;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+footer > div{
+    width: 20%;
+    height: 100%;
+    float: left;
+    color: #7C7F79;
+}
+footer > div > a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    color: #7C7F79;
+    padding-top: 5px;
+}
+footer > div > a >p{
+    margin: 0;
+    text-align: center;
+}
+footer > div > a >span{
+    width: 100%;
+    height: 24px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+footer > div:nth-child(1) > a > span:after{
+    content:"\e021" ;
+    font-size: 20px;
+    text-align: center;
+}
+footer > div:nth-child(2) > a > span:after{
+    content:"\e058" ;
+    font-size: 20px;
+}
+footer > div:nth-child(3) > a > span:after{
+    content:"\e135" ;
+    font-size: 20px;
+}
+footer > div:nth-child(4) > a > span:after{
+    content:"\e020" ;
+    font-size: 20px;
+}
+footer > div:nth-child(5) > a > span:after{
+    content:"\e008" ;
+    font-size: 20px;
+}
+.top{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top:-45px;
+    right: 10px;
+    border: 1px solid #F3F3F3;
+    text-align: center;
+}
+.top > a:after{
+    content: "\e093";
+}
+footer > div> a:hover{
+    color: red;
+}
+.goods .title{
+    width: 100%;
+    height: 10%;
+}
+.goods .content1{
+    width: 100%;
+    height: 50%;
+    padding-left: 50px;
+}
+.goods .content1 > div{
+    width: 123px;
+    height: 100%;
+    text-align: center;
+    float: left;
+    color: red;
+}
+.goods .content1 > div > div{
+    border-left: 1px solid #F3F3F3;
+    background: url("images/ad3.jpg") no-repeat center;
+    background-size: cover;
+    width: 123px;
+    height: 103px;
+}
+.goods .content1 > div:last-child > div{
+    border-right: 1px solid #F3F3F3;
+}
+.goods .content2{
+    width: 100%;
+    height: 40%;
+}
+.goods .content2 >div{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.goods .content2 >div:first-child{
+    border-right: 1px solid #F3F3F3;
+}
+h3{
+    margin: 0;
+}
+.goods .content2 >div h4{
+    width: 232px;
+    margin: 0;
+
+}
+.goods2 > div{
+    float: left;
+    border: 1px solid #F3F3F3;
+    padding: 5px;
+}
+.goods2 .content1{
+    width: 50%;
+    height: 100px;
+}
+.goods2 .content2{
+    width: 25%;
+    height: 100px;
 }

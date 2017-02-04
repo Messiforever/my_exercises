@@ -3,7 +3,9 @@
  */
 var gallery = $("header > .container");
 var circles = $(".circle");
+var search = $(".search");
 var i=0;
+//轮播
 function Carousel() {
     i++;
     var picturesadd = "url(images/0"+i+".jpg)";
@@ -17,3 +19,14 @@ function Carousel() {
 
 }
 setInterval(Carousel,3000);
+//滚轮事件
+$(document).scroll(function () {
+       if($(document).scrollTop()>=30){
+           search.css({"background-color":"red"});
+       }else{
+           search.css({"background-color":"transparent"});
+       }
+   });
+
+
+
