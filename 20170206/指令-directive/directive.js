@@ -12,7 +12,8 @@
             scope:{
                 link:"@asLink",
                 linkText:"@asLinkText",
-                inputMsg:"="
+                inputMsg:"=",
+                clicked:"&"
             }
 
         };

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="menuC" ng-controller="menuController" >
+<menu-select menus="arr" selected="selected" sources="resource"></menu-select>
+<script src="../../node_modules/angular/angular.js"></script>
+<script src="exercise.js"></script>
+<script>
+    angular.module("menuC",["Menu"])
+        .controller("menuController",["$scope",function ($scope) {
+            $scope.resource=[
+                {
+                    city:"成都",
+                    id:1,
+                    province:"四川"
+                },
+                {
+                    city:"上海",
+                    id:2,
+                    province:"上海"
+                },
+                {
+                    city:"北京",
+                    id:3,
+                    province:"北京"
+                },
+                {
+                    city:"深圳",
+                    id:4,
+                    province:"深圳"
+                }
+            ];
+            $scope.selected=$scope.resource[1].city;
+            $scope.$watch("selected",function (n,o) {
+                if(n !=o){
+                    alert(n.trim());
+                }
+            });
+
+        }]);
+</script>
+</body>
+</html>

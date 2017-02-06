@@ -6,7 +6,11 @@
 </head>
 <body ng-app="demo" ng-controller="demoController">
 <p><input type="text" title="" ng-model="outerInputMsg"></p>
-   <hello-world as-link="http://www.baidu.com" as-link-text="百度" input-msg="outerInputMsg"></hello-world>
+   <hello-world as-link="http://www.baidu.com"
+                as-link-text="百度"
+                input-msg="outerInputMsg"
+                clicked="clickedHandle()"
+   ></hello-world>
 <!--<div hello-world outer-msg="demoMessage"></div>-->
 <!--<div class="hello-world" outer-msg="demoMessage"></div>-->
    <!--&lt;!&ndash;directive:hello-world &ndash;&gt;-->
@@ -16,6 +20,9 @@
        angular.module("demo",["HelloModule"])
            .controller("demoController",["$scope",function ($scope) {
             $scope.outerInputMsg = "I'm outer input msg";
+            $scope.clickedHandle = function () {
+                alert("指令内部点击！");
+            }
        }]);
    </script>
 </body>
