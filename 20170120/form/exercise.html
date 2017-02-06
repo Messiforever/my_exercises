@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="formValid">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise</title>
+    <link rel="stylesheet" href="exercise.css">
+</head>
+<body ng-controller="formValidController">
+<form action="/userUpdate" method="post" novalidate name="userForm">
+    <h4>用户注册</h4>
+    <h6>您尚未注册：<label for="">请填写注册信息，带有*号的为必填项。</label></h6>
+    <div class="row">
+        <div><label>*</label>用户名:</div>
+        <div><input required ng-minlength="3" ng-maxlength="14" name="user" ng-model="userName" type="text" placeholder="请输入用户名"></div>
+        <div ng-show="userForm.user.$dirty && userForm.user.$invalid">
+            <span ng-show="userForm.user.$error.required">用户名不能为空</span>
+            <span ng-show="userForm.user.$error.minlength">用户名不能低于三个字符</span>
+            <span ng-show="userForm.user.$error.maxlength">用户名不能超过十四个字符</span>
+        </div>
+    </div>
+    <div class="row">
+        <div><label>*</label>密码:</div>
+        <div><input ng-minlength="6" ng-maxlength="20" required name="password" ng-model="password" type="password"></div>
+        <div ng-show="userForm.password.$dirty && userForm.password.$invalid">
+            <span ng-show="userForm.password.$error.required">密码不能为空</span>
+            <span ng-show="userForm.password.$error.minlength">密码不能低于6位</span>
+            <span ng-show="userForm.password.$error.maxlength">密码不能超过20位</span>
+        </div>
+    </div>
+    <div class="row">
+        <div><label>*</label>确认密码:</div>
+        <div><input required name="confirmPsd" ng-model="confirmPsd" type="password"></div>
+        <div ng-show="userForm.confirmPsd.$dirty && userForm.confirmPsd.$valid">
+            <span ng-show="userForm.confirmPsd.$error.required">确认密码不能为空</span>
+            <span ng-show="password !=confirmPsd">两次密码不一致</span>
+        </div>
+    </div>
+    <div class="row">
+        <div><label>*</label>邮箱:</div>
+        <div><input name="email" ng-model="email" type="email"></div>
+        <div ng-show="userForm.email.$dirty && userForm.email.$invalid">
+            <span ng-show="userForm.email.$error.required">邮箱不能为空</span>
+            <span ng-show="userForm.email.$error.email">邮箱不正确</span>
+        </div>
+    </div>
+    <div class="row">
+        <div>推荐人:</div>
+        <div><input required name="referee" ng-model="referee" type="text"></div>
+        <div ng-show="userForm.referee.$dirty && userForm.referee.$invalid">
+            <span ng-show="userForm.referee.$error.required">推荐人不能为空</span>
+        </div>
+    </div>
+    <div class="row">
+        <div>活动代码:</div>
+        <div><input required name="activityCode" ng-model="activityCode" type="text"></div>
+        <div ng-show="userForm.activityCode.$dirty && userForm.activityCode.$invalid">
+            <span ng-show="userForm.activityCode.$error.required">请输入活动代码</span>
+        </div>
+    </div>
+    <div class="row">
+        <div><label>*</label>验证码:</div>
+        <div><input name="identifyingCode" ng-model="identifyingCode" type="text"></div>
+        <div ng-show="userForm.identifyingCode.$dirty && userForm.identifyingCode.$valid">
+            <span ng-show="userForm.identifyingCode.$error.required">请输入验证码</span>
+            <span ng-show="identifyingCode !=50409">验证码错误</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="checkcode"></div>
+        <div>&nbsp;</div>
+        <div><input ng-disabled="userForm.email.$invalid
+             ||userForm.identifyingCode.$invalid
+             ||userForm.user.$invalid
+             ||userForm.password.$invalid
+             ||password != confirmPsd
+             ||userForm.confirmPsd.$invalid;" type="submit" value="提交注册" ></div>
+    </div>
+</form>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="exercise.js"></script>
+</body>
+</html>
