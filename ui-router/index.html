@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="mainModule" ng-controller="mainController">
+<a ui-sref="hello" ui-sref-active="active">Hello</a>
+<a ui-sref="about" ui-sref-active="active">About</a>
+<ui-view></ui-view>
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script>
+    angular.module("mainModule",['ui.router']).
+        controller("mainController",["$scope",function ($scope) {
+
+    }]).config(function ($stateProvider) {
+        var helloState={
+            name:'hello',
+            url:'/hello',
+            // template:'<h3>hello world!</h3>'
+            templateUrl:"views/hello.html"
+        };
+        var aboutState = {
+            name:'about',
+            url:'/about',
+            template:'<h3>Its the UI-Router</h3>'
+
+        };
+        $stateProvider.state(helloState);
+        $stateProvider.state(aboutState);
+    });
+</script>
+</body>
+</html>

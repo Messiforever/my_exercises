@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="import/import.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+
+</div>
+<div style="width: 100px;height: 100px;background-color: #0a9dc7;border: 1px solid red">
+    <div style="border: inherit;width: 50px;height: 50px"></div>
+</div>
+<!--行内元素不能包块级元素-->
+<div>
+    <span>
+        <div style="width: 200px;height: 100px;background-color: #00A69D"></div>
+    </span>
+    <span style="line-height: 30px;margin: 20px 20px;background-color: #0a9dc7">
+        行内元素的line-height
+    </span>
+</div>
+</body>
+</html>

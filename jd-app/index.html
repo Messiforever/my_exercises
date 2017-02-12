@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Todo</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="lib/ionic-v1.3.2/css/ionic.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/index.css">
+    <script src="lib/ionic-v1.3.2/js/ionic.bundle.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <!-- 在使用 Cordova/PhoneGap 创建的 APP 中包含的文件，由 Cordova/PhoneGap 提供，(开发过程中显示 404) -->
+    <!--<script src="cordova.js"></script>-->
+</head>
+<body ng-app="Home" ng-controller="HomeController" on-drag-left="scrollTop()" on-drag-right="scrollTop()">
+
+
+
+<ui-view></ui-view>
+
+<div class="tabs tabs-icon-top">
+    <a class="tab-item" ui-sref="home" ui-sref-active="active">
+        <i class="icon ion-home"></i>
+        主页
+    </a>
+    <a class="tab-item" ui-sref="page1" ui-sref-active="active">
+        <i class="icon ion-android-options"></i>
+        分类
+    </a>
+    <a class="tab-item" ui-sref="page2" ui-sref-active="active">
+        <i class="icon ion-star"></i>
+        发现
+    </a>
+    <a class="tab-item" ui-sref="page3" ui-sref-active="active">
+        <i class="icon ion-ios-cart"></i>
+        购物车
+    </a>
+    <a class="tab-item" ui-sref="page4" ui-sref-active="active">
+        <i class="icon ion-person"></i>
+        我的
+    </a>
+</div>
+<script src="script/index.js"></script>
+</body>
+</html>

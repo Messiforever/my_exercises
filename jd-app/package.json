@@ -2,10 +2,10 @@
   "name": "application-name",
   "version": "0.0.1",
   "devDependencies": {
-    "angular": "^1.6.1",
-    "angular-route": "^1.6.1",
+    "angular": "^1.6.2",
     "angular-ui-router": "^0.4.2",
-    "jquery": "^1.12.4",
-    "jqueryui": "^1.11.1"
+    "express": "^4.14.1",
+    "ionic": "^1.7.16",
+    "jquery": "^1.12.4"
   }
 }
