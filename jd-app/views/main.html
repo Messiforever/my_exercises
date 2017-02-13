@@ -1,0 +1,141 @@
+<div ng-show="showSearch" class="search-container" ng-style="wrapperStyle">
+    <div class="scan-container" on-tap="scan()">
+        <div class="ion-qr-scanner"></div>
+        <div class="text" >扫啊扫</div>
+    </div>
+    <div class="search"><div class="ion-ios-search-strong"></div>
+        <div class="title">2.14惠普盛典，暗夜精灵二代Pro首发</div>
+        <div class="ion-android-microphone"></div>
+    </div>
+
+    <div class="scan-container" on-tap="location()">
+        <div class="ion-chatbox-working"></div>
+        <div class="text">消息</div>
+    </div>
+</div>
+<ion-pane>
+    <ion-content >
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <!--<ion-list>-->
+        <!--<ion-item ng-repeat="item in items" ng-bind="item.name"></ion-item>-->
+        <!--</ion-list>-->
+        <div class="banner" on-drag-down="bannerDragDown()" on-release="bannerDragRelease()">
+            <!--<div ng-show="showSearch" class="search-container">-->
+            <!--<div class="scan-container">-->
+            <!--<div class="ion-qr-scanner"></div>-->
+            <!--<div class="text">扫啊扫</div>-->
+            <!--</div>-->
+            <!--<div class="search"><div class="ion-ios-search-strong"></div>-->
+            <!--<div class="title">2.14惠普盛典，暗夜精灵二代Pro首发</div>-->
+            <!--<div class="ion-android-microphone"></div>-->
+            <!--</div>-->
+
+            <!--<div class="scan-container">-->
+            <!--<div class="ion-chatbox-working"></div>-->
+            <!--<div class="text">消息</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="carousel">
+                <ion-slide-box on-slide-changed="slideHasChanged($index)">
+                    <ion-slide>
+                        <div class="box blue"><img src="images/asset/p1.jpg" alt=""></div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div class="box yellow"><img src="images/asset/p2.jpg" alt=""></div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div class="box pink"><img src="images/asset/p3.jpg" alt=""></div>
+                    </ion-slide>
+                </ion-slide-box>
+            </div>
+        </div>
+        <main class="content">
+            <div class="functionality">
+                <div class="inner" ng-repeat="f in fun">
+                    <img ng-src="{{f.icon}}" alt="">
+                    <div ng-bind="f.title"></div>
+                </div>
+                <!--<img src="images/asset/icon1.png" alt="">-->
+                <!--<img src="images/asset/icon2.png" alt="">-->
+                <!--<img src="images/asset/icon3.png" alt="">-->
+                <!--<img src="images/asset/icon4.png" alt="">-->
+                <!--<img src="images/asset/icon5.png" alt="">-->
+                <!--<img src="images/asset/icon6.png" alt="">-->
+                <!--<img src="images/asset/icon7.png" alt="">-->
+                <!--<img src="images/asset/icon8.png" alt="">-->
+                <!--<img src="images/asset/icon9.png" alt="">-->
+                <!--<img src="images/asset/icon10.png" alt="">-->
+            </div>
+            <div class="report">
+                <img src="/images/asset/jd-news-tit.png" alt="">
+                <div>
+                    <span style="color: #ff3b30;">荐</span>
+                    2017情人节满999，减50
+                </div>
+                <p>
+                    <a href="#">更多</a>
+                </p>
+            </div>
+            <div class="goods-container">
+                <div class="gallery-container" ng-class="wrapperStyleLeft" >
+                    <ion-scroll zooming="true" direction="x" style="width:100%; height: 110px">
+                        <div style="width: 1820px; height: 110px;">
+                            <img src="images/asset/q1.jpg" alt="">
+                            <img src="images/asset/q2.jpg" alt="">
+                            <img src="images/asset/q3.jpg" alt="">
+                            <img src="images/asset/q4.jpg" alt="">
+                            <img src="images/asset/q5.jpg" alt="">
+                            <img src="images/asset/q6.jpg" alt="">
+                            <img src="images/asset/q7.jpg" alt="">
+                            <img src="images/asset/q8.jpg" alt="">
+                            <img src="images/asset/q9.jpg" alt="">
+                            <img src="images/asset/q10.jpg" alt="">
+                        </div>
+                    </ion-scroll>
+                    <!--<ion-slide-box on-slide-changed="slideHasChanged($index)">-->
+                    <!--<ion-slide>-->
+                    <!--<div class="box"><img src="images/asset/q1.jpg" alt="">-->
+                    <!--<img src="images/asset/q2.jpg" alt="">-->
+                    <!--<img src="images/asset/q3.jpg" alt=""></div>-->
+
+                    <!--</ion-slide>-->
+                    <!--<ion-slide> <div class="box"><img src="images/asset/q4.jpg" alt="">-->
+                    <!--<img src="images/asset/q5.jpg" alt="">-->
+                    <!--<img src="images/asset/q6.jpg" alt=""></div>-->
+                    <!--</ion-slide>-->
+                    <!--<ion-slide>-->
+                    <!--<div class="box"><img src="images/asset/q7.jpg" alt="">-->
+                    <!--<img src="images/asset/q8.jpg" alt="">-->
+                    <!--<img src="images/asset/q9.jpg" alt="">-->
+                    <!--<img src="images/asset/q10.jpg" alt=""></div>-->
+                    <!--</ion-slide>-->
+
+                    <!--</ion-slide-box>-->
+                    <!--<div><img on-touch="dragdown()" on-release="dragup()" on-swipe="dragmove()" src="images/asset/q1.jpg" alt=""></div>-->
+                    <!--<div><img src="images/asset/q2.jpg" alt=""></div>-->
+                    <!--<div><img src="images/asset/q3.jpg" alt=""></div>-->
+                    <!--<div><img src="images/asset/q4.jpg" alt=""></div>-->
+                    <!--<div><img src="images/asset/q5.jpg" alt=""></div>-->
+                    <!--<div><img src="images/asset/q6.jpg" alt=""></div>-->
+                    <!--<div><img src="images/asset/q7.jpg" alt=""></div>-->
+                    <!--<div><img src="images/asset/q8.jpg" alt=""></div>-->
+                    <!--<div><img src="images/asset/q9.jpg" alt=""></div>-->
+                    <!--<div><img src="images/asset/q10.jpg" alt=""></div>-->
+                </div>
+            </div>
+            <div data-role="page" id="home">
+                <div data-role="main" class="ui-content">
+                    <p>
+                        <a on-tap="scan()" target="_blank" href="javascript:scan();" style="text-decoration: none"><button>Scan</button></a>
+                        <a target="_blank" href="#display" style="text-decoration: none"><button>Display Scanned Data</button></a>
+                    </p>
+                </div>
+            </div>
+            <p id="demo">点击按钮获取您当前坐标（可能需要比较长的时间获取）：</p>
+            <button on-tap="getLocation()">获取位置</button>
+            <div id="mapholder"></div>
+            <input type="button" value="获取网络信息" on-tap="getNetworkInfo()">
+        </main>
+
+    </ion-content>
+</ion-pane>

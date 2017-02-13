@@ -1,0 +1,168 @@
+.banner{
+    width: 100vw;
+    height: 40vh;
+    background-color: #ff3b30;
+}
+.banner .carousel,.banner .carousel .slider{
+    width: 100%;
+    height: 100%;
+}
+.search-container{
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    /*background-color: rgba(255,255,255,0.3);*/
+    top:0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.scan-container{
+    width: 15vw;
+    height: 80%;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+.scan-container > .text{
+    font-size: 0.5em;
+}
+/*.scan-container >.icon{*/
+    /*width: 65px;*/
+    /*height: 63px;*/
+    /*background:url("../images/sprite/icon.png") -6px -6px no-repeat;*/
+    /*overflow: hidden;*/
+    /*!*background-size: cover;*!*/
+/*}*/
+.search-container > .search{
+    width: 70vw;
+    height: 80%;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 5px;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.search-container .search .title{
+    font-size: 0.7em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 70%;
+}
+.carousel img{
+    width: 100%;
+    height: 100%;
+}
+.carousel .box{
+    height: 100%;
+}
+main{
+    width: 100vw;
+    height: 400vh;
+}
+.functionality{
+    width: 100%;
+    height: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
+
+}
+.functionality .inner{
+    width: 17vw;
+    text-align: center;
+}
+.functionality img{
+    width: 80%;
+}
+.report{
+    width: 90%;
+    height: 6vw;
+    margin: auto;
+    line-height: 20vw;
+}
+.report img{
+    height: 4vw;
+    display: block;
+    float: left;
+}
+.report > div{
+    float: left;
+    line-height: 1.2;
+    color: gray;
+}
+.report > p{
+    float: right;
+    line-height: 1.2;
+}
+.report > p a{
+    color: #000;
+    text-decoration: none;
+}
+.scroll .search-container{
+    transform: translate3d(0px,0px,0px);
+}
+.goods-container{
+    width: 100vw;
+    height: auto;
+    background-color: #0a9dc7;
+    position: relative;
+}
+.goods-container .gallery-container{
+    width: 1100px;
+    height: 110px;
+
+    position: absolute;
+    left: 0;
+}
+.goods-container .gallery-container img{
+    width: 110px !important;
+    height: 110px !important;
+}
+#home{
+    margin-top: 300px;
+}
+#mapholder{
+    width: 100%;
+    height: 300px;
+}
+.classify{
+    display: flex;
+}
+.classify-content{
+    width: 80%;
+    height: 1000px;
+    background-color: #F3F5F7;
+    margin-bottom: 45px;
+    margin-top: 45px;
+    padding: 10px;
+}
+.classify-content .ad >img{
+    width: 100%;
+}
+.classify-inner{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #F3F5F7;
+}
+.classify-inner:hover,.classify-inner:active{
+    color: red;
+}
+.recommend-inner{
+    width: 100%;
+    height: 20vh;
+    background-color: white;
+}
+.hot-classify{
+    width: 100%;
+    height: 30vh;
+    background-color: white;
+}

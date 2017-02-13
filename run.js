@@ -1,6 +1,7 @@
 /**
  * Created by Messi on 2017/1/17.
  */
+
 var express = require("express");
 var app = express();
 app.use("/", express.static(__dirname));
@@ -57,7 +58,6 @@ router.post("/students", function (req, res) {
        }
        ]);
     });
-
 app.use("/", router);
 var port = 2017;
 app.listen(port);

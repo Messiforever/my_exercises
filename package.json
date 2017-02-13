@@ -6,6 +6,7 @@
     "angular-route": "^1.6.1",
     "angular-ui-router": "^0.4.2",
     "jquery": "^1.12.4",
-    "jqueryui": "^1.11.1"
+    "jqueryui": "^1.11.1",
+    "ws": "^2.0.3"
   }
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数没返回值</title>
+</head>
+<body>
+<script>
+//    var x = 1;
+//    var y = 0;
+//    var z = 0;
+//    function add(n) {
+//        n=n+1;
+//    }
+//    y =add(x);
+//    function add(n) {
+//        n=n+3;
+//    }
+//    z =add(x);
+//    alert(y);
+//    alert(z);
+//    var animal = {
+//        name:"qw",
+//        age:0
+//    };
+//    var Human = function (favorite) {
+//        this.favorite = favorite;
+//
+//    };
+//    Human.prototype = animal;
+//    var zyy = new Human("帅锅");
+//    var tom = Human.apply(animal,["美女"]);
+//    tom = Human.call(animal,"美女");
+//    tom = Human.bind(animal,["美女"])();
+
+     var handles = [];
+     for(var i1 = 0;i1 < 10; i1++){
+         handles.push(function () {
+             console.log(i1);
+         });
+     }
+    var result = handles[4]();
+ alert(result);
+var source = "abcdace";
+var split1 = source.substr(4,3);//start，length
+var split2 = source.substring(4,3);//start，end
+</script>
+</body>
+</html>

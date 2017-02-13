@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>socket.io</title>
+</head>
+<body>
+<h1>Welcome socket.io</h1>
+<div id="login"></div>
+<div id="realTime"></div>
+<script src="socket.io/socket.io.js"></script>
+<script>
+    var lTime = document.querySelector("#login");
+    var rTime = document.querySelector("#realTime");
+    var socket = io.connect('http://localhost:8004');
+    socket.on('loginSucessfull',function (res) {
+        var loginTime = res.loginTime;
+        lTime.innerText = "登陆成功,时间:"+loginTime;
+    });
+    socket.on('now',function (res) {
+        var now = res.now;
+        rTime.innerText = "当前时间为:"+now;
+    });
+
+</script>
+</body>
+</html>

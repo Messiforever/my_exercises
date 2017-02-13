@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var q = typeof (Number(undefined));
+    var w = typeof (Number(null));
+    var e;
+    var r={};
+    var t=function () {
+
+    };
+    document.write("undefined->number:"+Number(undefined));
+    document.write("<br>");
+    document.write("null->number:"+Number(null));
+    document.write("<br>");
+    document.write("null->typeof:"+(typeof null));
+    document.write("<br>");
+    document.write("undefined->typeof:"+(typeof undefined));
+    document.write("<br>");
+    document.write(typeof e);
+    document.write("<br>");
+    document.write(typeof r.a);
+    document.write("<br>");
+    document.write(typeof t());
+    var parent = {
+        a:1,
+        b:2
+    };
+   function fun(a,b,c) {
+       this.title = "title";
+       return a*b*c;
+   }
+
+    fun.prototype = parent;
+   var o = new fun(1,2,3);
+   alert(o);
+</script>
+</html>
