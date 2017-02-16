@@ -82,7 +82,6 @@
                     icon:"images/asset/icon2.png"
                 }
             ];
-
             $scope.wrapperStyle = {};
             $scope.wrapperStyleLeft = {};
             $scope.scrollTop = function() {
