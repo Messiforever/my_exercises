@@ -5,8 +5,16 @@
     "angular": "^1.6.1",
     "angular-route": "^1.6.1",
     "angular-ui-router": "^0.4.2",
+    "babel-standalone": "^6.23.1",
+    "body-parser": "^1.16.1",
     "jquery": "^1.12.4",
     "jqueryui": "^1.11.1",
     "ws": "^2.0.3"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.23.0",
+    "babelify": "^7.3.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }
